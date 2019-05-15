@@ -23,8 +23,8 @@ pygmentscodefencesguesssyntax = true
 
     dateformat = "January 2, 2006"
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+    favicon_32 = "images/favicon.ico"
+    favicon_16 = "images/favicon.ico"
 
     footercontent = "Enter a text here."
 

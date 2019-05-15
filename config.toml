@@ -13,6 +13,7 @@ pygmentsstyle = "b2"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+googleAnalytics = "UA-72982917-1"
 
 [params]
     author = "Louis Guitton"

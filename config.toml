@@ -59,6 +59,11 @@ googleAnalytics = "UA-140255752-1"
     weight = 4
     url = "https://twitter.com/louis_guitton"
 [[params.social]]
+    name = "Telegram"
+    icon = "fab fa-telegram fa-2x"
+    weight = 4
+    url = "https://t.me/louisguitton"
+[[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
     weight = 5

@@ -1,4 +1,4 @@
-baseurl = "http://guitton.co/"
+baseurl = "https://guitton.co/"
 title = "Louis Guitton"
 
 theme = "hugo-coder"
@@ -17,8 +17,8 @@ googleAnalytics = "UA-140255752-1"
 
 [params]
     author = "Louis Guitton"
-    info = "Data Scientist and Freelance Software Engineer"
-    description = "Louis Guitton's personal website"
+    info = "Data Scientist at Onefootball and Freelance Software Engineer"
+    description = "My personal serverless website"
     keywords = "blog,developer,personal"
     avatarurl = "images/louis.jpg"
 

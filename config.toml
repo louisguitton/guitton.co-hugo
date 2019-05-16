@@ -16,7 +16,7 @@ pygmentscodefencesguesssyntax = true
 googleAnalytics = "UA-140255752-1"
 
 [params]
-    author = "Louis Guitton"
+    author = "Hi, I'm Louis."
     info = "Data Scientist at Onefootball and Freelance Software Engineer"
     description = "My personal serverless website"
     keywords = "blog,developer,personal"
@@ -27,7 +27,7 @@ googleAnalytics = "UA-140255752-1"
     favicon_32 = "images/favicon.ico"
     favicon_16 = "images/favicon.ico"
 
-    footercontent = "Enter a text here."
+    footercontent = "This website is serverless <a href='https://github.com/louisguitton/guitton.co' target='_blank'>https://github.com/louisguitton/guitton.co</a>"
 
     hidecredits = false
     hidecopyright = false

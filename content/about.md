@@ -8,6 +8,7 @@ I'm a data scientist and freelance software engineer in **Berlin** with entrepre
 Paid to code **since 2014**.
 
 French and European.
+{{< tweet 987615293773139968 >}}
 
 Alumni from `Entrepreneur First` and `Mines ParisTech`.
 {{< instagram BijxHd-A7Jn >}}

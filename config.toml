@@ -84,6 +84,6 @@ googleAnalytics = "UA-140255752-1"
     weight = 1
     url  = "/posts/"
 [[menu.main]]
-    name = "Contact me"
+    name = "Contact"
     weight = 3
     url = "/contact/"

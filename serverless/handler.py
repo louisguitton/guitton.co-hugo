@@ -1,7 +1,6 @@
 import boto3
 import os
 
-
 client = boto3.client('ses', region_name="eu-west-1")
 sender = os.environ['SENDER_EMAIL']
 subject = os.environ['EMAIL_SUBJECT']
@@ -11,7 +10,8 @@ charset = 'UTF-8'
 
 def sendMail(event, context):
     data = event['body']
-    content = 'Message from ' + data['firstname'] + ' ' + data['lastname'] + ',\n Email: ' + data['email'] + ',\n Message Contents: ' + data['message']
+    content = 'Message from ' + data['name'] + ',\n Email: ' + data[
+        'email'] + ',\n Message Contents: ' + data['message']
     response = sendMailToUser(data, content)
 
     return response

@@ -11,12 +11,12 @@ French and European.
 {{< tweet 987615293773139968 >}}
 
 Alumni from `Entrepreneur First` and `Mines ParisTech`.
+I'm passionate about learning, building products and prototyping my ideas.
 {{< instagram BijxHd-A7Jn >}}
 
 Playing the bass guitar.
 {{< instagram BtJG5usF5Fq hidecaption >}}
 
-I'm passionate about learning, building products and prototyping my ideas.
 
 I lived in Paris, Singapore, Brighton and Berlin.
 {{< instagram BXqUGmLl7DJ >}} {{< instagram vyflLNBXPc >}}

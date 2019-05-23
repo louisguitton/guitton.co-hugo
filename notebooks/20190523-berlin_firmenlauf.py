@@ -3,7 +3,7 @@
 
 # # Yesterday, I ran the Berliner Firmenlauf
 # 
-# {{ instagram BxxtOXDIJ2X }}
+# {{< instagram BxxtOXDIJ2X >}}
 # 
 # Data can be found at https://www.davengo.com/event/result/18-ikk-bb-berliner-firmenlauf-2019/
 

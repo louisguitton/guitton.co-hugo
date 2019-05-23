@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Yesterday, I ran the Berliner Firmenlauf
+# Yesterday, together with 23 colleagues, I ran the Berliner Firmenlauf.
 # 
-# {{< instagram BxxtOXDIJ2X >}}
+# Here is a short analysis of the data.
 # 
 # Data can be found at https://www.davengo.com/event/result/18-ikk-bb-berliner-firmenlauf-2019/
 

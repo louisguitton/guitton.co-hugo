@@ -3,7 +3,7 @@ title: "European Elections in Berlin"
 date: 2019-05-26
 ---
 
-Yeterday I was `assesseur` at the French embassy in Berlin to help organise the european elections for french people that live in Berlin.
+Yesterday I was `assesseur` at the French embassy in Berlin to help organise the european elections for french people that live in Berlin.
 
 We finished late in the night because we were centralising data from Bremen and Bohn too.
 

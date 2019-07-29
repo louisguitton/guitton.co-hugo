@@ -36,7 +36,7 @@ But in my case, I didn't have 6 classes but 2000. Going from 6 classes to 2k wit
 | Jigsaw Toxic Comments | 144k                        |                          | 6                 |
 | _My dataset_          | _20k_                       | _151k_                   | _2.5k_            |
 
-### TagSpace (2014) and StarSpace (2017) by Facebook
+### TagSpace (2014) and StarSpace (2017) by Facebook {#starspace}
 
 StarSpace is a general embedding model that improves over fastText (which was an improvement over word2vec). It establishes good baselines for different NLP tasks that are relevant to a lot of applied NLP practitioners. Among those, it performs 2 tasks that I'm interested in :
 
@@ -62,11 +62,20 @@ Here are the datasets mentioned in the paper compared to my own dataset:
 | People for TagSpace | 201M                        | 5.5B                     | 100k ?            |
 | _My dataset_        | _20k_                       | _151k_                   | _2.5k_            |
 
+**Note**: [Rasa is also using](https://blog.rasa.com/rasa-nlu-in-depth-part-1-intent-classification/) a flavour of StarSpace implemented in tensorflow
+
 ### BlazingText by AWS
 
 BlazingText is AWS's version of word2vec. You can also learn embeddings and train a texcat task. Finally, you can used pre-trained fastText embedddings. [Link](https://docs.aws.amazon.com/sagemaker/latest/dg/blazingtext.html)
 
 I've trained a model on DBPedia using SageMaker. You can expose both the textcat model and the similarity from the embeddings.
+
+### Pitfalls to watch out for with those end-to-end models {#pitfalls}
+
+1. Lack of training data
+1. Out-of-Vocabulary words
+1. Classes that are too similar
+1. Skewed data
 
 ### Framing the problem as Entity Linking
 

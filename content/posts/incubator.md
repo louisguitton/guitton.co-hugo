@@ -1,6 +1,8 @@
 ---
 title: "Working on something cool ..."
 date: 2018-09-11
+categories:
+  - Blogging
 ---
 
 > My last 5 months and beyond

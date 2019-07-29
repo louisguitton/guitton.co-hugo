@@ -1,6 +1,8 @@
 ---
 title: "Lyon's love for electric scooters"
 date: 2019-04-28
+categories:
+  - Blogging
 ---
 
 I left Paris and France in mid 2016 after graduation to come live in Berlin. I have never lived in Lyon, and to be honest I don't know the city really well. But last weekend, I attended a wedding there and I was really surprised by Lyon's love for electric scooters.

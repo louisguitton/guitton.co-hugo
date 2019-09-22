@@ -20,7 +20,7 @@ googleAnalytics = "UA-140255752-1"
 
 [params]
     author = "Hi, I'm Louis."
-    info = "Data Scientist at Onefootball and Freelance Software Engineer"
+    info = "Machine Learning Engineer at Onefootball and Freelance Software Engineer"
     description = "My personal serverless website"
     keywords = "blog,developer,personal,nlp,data science,machine learning"
     avatarurl = "images/louis.jpg"

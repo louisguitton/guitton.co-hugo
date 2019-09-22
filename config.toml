@@ -72,10 +72,10 @@ googleAnalytics = "UA-140255752-1"
     weight = 5
     url = "https://linkedin.com/in/louisguitton/"
 [[params.social]]
-    name = "Medium"
-    icon = "fab fa-medium"
+    name = "Goodreads"
+    icon = "fab fa-goodreads"
     weight = 6
-    url = "https://medium.com/@LaGuitteMH"
+    url = "https://goodreads.com/user/show/58757583-louis"
 
 # Menu links
 [[menu.main]]

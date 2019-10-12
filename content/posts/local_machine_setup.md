@@ -5,10 +5,12 @@ categories:
   - Software Engineering
 ---
 
-I still haven't had the time to setup a proper [dotfiles](https://www.quora.com/What-are-dotfiles) setup.
+I still haven't taken the time to setup [dotfiles](https://www.quora.com/What-are-dotfiles).
 
 But I use a script that gets me 80% of the way there and that I'm pretty happy with.
 
 Credits go to Gitlab's Data team: their open source [onboarding script](https://gitlab.com/gitlab-data/analytics/blob/master/admin/onboarding_script.sh) heavily influenced my script in its present form.
+
+Here is also a blog post on [Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.u0sci0q71), and a list of [popular dotfiles](https://dotfiles.github.io/) to build your own.
 
 {{< gist louisguitton 1f97640d7398fa9e251a679c1360e8e4 >}}

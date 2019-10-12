@@ -2,7 +2,7 @@
 title: "Building a Trombone with LittleBits"
 date: 2015-03-03T11:54:56+02:00
 categories:
-  - Software Engineering
+  - Blogging
 ---
 
 [LittleBits](https://littlebits.com/) are LEGO-like electronic components designed to allow students of all ages to create with technology.

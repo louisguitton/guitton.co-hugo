@@ -39,10 +39,10 @@ So the answer lies in **practicing informal authority**. Inspire people by acts,
 
 According to the book, there are **4 foundational behaviours** to practice informal authority:
 
-1. Demonstrate respect (eg: talk straight, don't judge without understanding, ...)
-1. Listen first (eg: look for answers, have empathy, gather input ...)
-1. Clarify expectations (eg: explain one more time, write better tickets, talk in stand-ups, organise one-off clarification meetings, ...)
-1. Practice accountability (eg: be an example, finish on time, chase for completion, have performance 1-to-1 discussions ...)
+1. Demonstrate respect (eg: confront reality and talk straight to people, anticipate potential issues from the other side, don't ask for the Moon)
+1. Listen first (eg: you don't have to know everything, look for answers, have empathy, gather input, don't interrupt team members)
+1. Clarify expectations (eg: explain one more time, write better tickets, talk in stand-ups, organise one-off clarification meetings, explain how everyone fits in the big picture)
+1. Practice accountability (eg: be an example, finish on time, admit mistakes, chase for completion)
 
 <img src="https://www.pmi.org/-/media/pmi/other-images/logos/pmi_logo_ogshare.png?v=a5703389-c37e-4aee-9aad-b7540f5c6c54"  width="66%" height="33%" style="float: right; margin: 0 2%;">
 

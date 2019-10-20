@@ -9,7 +9,7 @@ categories:
 
 <img src='https://cdn.shopify.com/s/files/1/1494/3290/t/32/assets/HomepageCircuitGIF_1084x600x_585.gif?37282'>
 
-During my time at EDF Energy, my colleagues and I used them extensively to develop electronics hackathons called [#PrettyCurious]({{< ref "posts/pretty-curious" >}}).
+During my time at EDF Energy, my colleagues and I used them extensively to develop electronics hackathons called [#PrettyCurious]({{< ref "/posts/pretty-curious" >}}).
 
 One of the challenges for me was to take those simple components and come up with mini-projects with varying difficulties to create a curriculum that would teach the teenagers attending the hackathons about electronics, coding and physics.
 

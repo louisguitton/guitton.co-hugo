@@ -1,6 +1,6 @@
 ---
 title: "Hacktoberfest 2019"
-date: 2019-10-12
+date: 2019-10-20
 draft: true
 categories:
   - Software Engineering

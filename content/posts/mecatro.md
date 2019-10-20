@@ -9,7 +9,7 @@ categories:
 
 Back in engineering school, during the scholar year of 2013-2014, I led a 25 people team to build a robot from scratch with a 2000€ budget. Our client was a [parisian robotics laboratory](http://www.isir.upmc.fr/index.php?op=view_page&id=2&menuid=1&old=N&lang=en).
 
-That project was part of a year-long class part of my engineering curriculum. The goal of the class was to combine electronics and mecanics with waterfall project management, thus giving us unforgettable memories.
+That project was a year-long class part of my engineering curriculum. The goal of the class was to combine electronics and mechanics with waterfall project management, thus giving us unforgettable memories.
 
 Being the project manager, I had to gather the specifications, derive the Work Breakdown Structure, build a Roadmap, conduct the functional analysis, handle stakeholders and then engage the team weekly to make sure we would deliver on time.
 

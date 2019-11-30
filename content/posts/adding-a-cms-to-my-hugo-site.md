@@ -1,7 +1,7 @@
 ---
 title: Adding a CMS to my Hugo site
 date: 2019-11-30T10:56:12.852Z
-categories: Software Engineering
+categories: '[Software Engineering]'
 ---
 ![kata](/images/uploads/kata.jpg "Female karateka practicing a kata")
 

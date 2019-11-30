@@ -8,7 +8,7 @@ public_folder: "/images/uploads"      # The src attribute for uploaded media wil
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}" # Filename template, e.g., {{year}}-{{month}}-{{day}}-{{slug}} for YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter

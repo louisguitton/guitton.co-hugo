@@ -14,5 +14,5 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Categories", name: "categories"}
+      - {label: "Categories", name: "categories", widget: "list", default: ["Blogging"]}
       - {label: "Body", name: "body", widget: "markdown"}

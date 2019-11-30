@@ -1,0 +1,18 @@
+# Follow https://www.netlifycms.org/docs/add-to-your-site/
+backend:
+  name: git-gateway
+  branch: master
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads"      # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}" # Filename template, e.g., {{year}}-{{month}}-{{day}}-{{slug}} for YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Categories", name: "categories"}
+      - {label: "Body", name: "body", widget: "markdown"}

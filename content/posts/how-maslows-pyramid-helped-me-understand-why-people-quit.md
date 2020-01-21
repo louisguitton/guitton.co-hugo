@@ -1,15 +1,14 @@
 ---
 title: How Maslow's pyramid helped me understand why people quit
-date: 2020-01-20T09:13:04.837Z
+date: 2020-01-20
 categories:
   - Blogging
 ---
-## Maslow's hierarchy of needs...
+
+## Maslow's hierarchy of needs
 
 The other day I read that twitter thread from Paul Graham on learnings:\
 {{< tweet 1215673204125073408 >}}
-
-
 
 One of the comment was pretty enlightening.
 
@@ -33,7 +32,7 @@ Is it for lack of belonging or esteem 💖 - or psychological needs ?
 
 Is it for lack of self fulfilment ?
 
-## What to do as a company?
+## What to do as a company
 
 | Maslow                       | Applied                                                        |
 |------------------------------|----------------------------------------------------------------|

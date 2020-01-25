@@ -1,5 +1,6 @@
 baseurl = "https://guitton.co/"
 title = "guitton.co | python machine learning engineering"
+aab = "guitton.co"
 
 theme = "hugo-coder"
 

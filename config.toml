@@ -1,5 +1,5 @@
 baseurl = "https://guitton.co/"
-title = "Louis Guitton"
+title = "guitton.co | python machine learning engineering"
 
 theme = "hugo-coder"
 
@@ -19,10 +19,10 @@ googleAnalytics = "UA-140255752-1"
   category = "categories"
 
 [params]
-    author = "Hi, I'm Louis."
+    author = "Louis Guitton"
     info = "Machine Learning Engineer at Onefootball"
-    description = "My personal serverless website"
-    keywords = "blog,developer,personal,nlp,data science,machine learning"
+    description = "My personal serverless website where I blog and store useful snippets for python software development, machine learning and data engineering."
+    keywords = "blog,nlp,machine learning,data engineering,python"
     avatarurl = "images/louis.jpg"
 
     dateformat = "January 2, 2006"

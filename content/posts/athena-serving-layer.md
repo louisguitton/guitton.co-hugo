@@ -41,7 +41,7 @@ After a quick Google search, I found out that [this approach is what companies l
 
 1. *[In theory]* A (more advanced) feature of Parquet and ORC to not overlook is the use of column indexes, or `Predicate pushdown`. This combined with partitions can further improve performance. When an Athena query obtains specific column values from your data, it uses statistics from data block predicates, such as max/min values, to determine whether to read or skip the block.
 
-    > Note: it's unclear if ORC indexing on columns is better than Parquet. Since Dec 2018, Parquet [now supports column indexes](https://issues.apache.org/jira/browse/PARQUET-1201) too. It's unclear if Spark as a backend for Praquet is implementing Parquet column indexes.
+    > Note: it's unclear if ORC indexing on columns is better than Parquet. Since Dec 2018, Parquet [now supports column indexes](https://issues.apache.org/jira/browse/PARQUET-1201) too. It's unclear if Spark as a backend for Parquet is implementing Parquet column indexes. If it isn't, then it could mean that switching from Parquet to ORC and leverage column indexes would further improve performance and cost.
 
 1. Keep in mind that for an effective storage index you need to [insert the data into the table sorted on the columns for which you want to leverage the storage index](https://snippetessay.wordpress.com/2015/07/25/hive-optimizations-with-indexes-bloom-filters-and-statistics/). It is much less effective on unsorted tables, because it contains the min-max values of the column. If you have a badly sorted table the min-max value for all blocks will be overlapping or even the same and then the storage index is of no use.
 

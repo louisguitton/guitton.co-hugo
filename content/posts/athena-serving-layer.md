@@ -33,7 +33,7 @@ Notes that start with *[In theory]* are things I haven't tried and collected her
 1. Athena support Hive **partitions** so they remain the best way to restrict the amount of data scanned by each query (= [use physical partitions in folders](https://docs.aws.amazon.com/athena/latest/ug/partitions.html)).
 
     ```python
-    df.partitionBy("user_id").write.parquet(...)
+    df.partitionBy("year", "month", "day").write.parquet(...)
     ```
 
 1. Always turn on Google **snappy compression**. (It's [already the default](https://spark.apache.org/docs/latest/sql-data-sources-parquet.html#configuration) for parquet when using spark)
@@ -45,15 +45,18 @@ Notes that start with *[In theory]* are things I haven't tried and collected her
 1. Partitioning has a cost. As the number of partitions in your table increases, the higher the overhead of retrieving and processing the partition metadata, and the smaller your files. Partitioning too finely can wipe out the initial benefit. In those cases, look at **bucketting** in Hive. Choose a column with high cardinality, frequently used for filtering, like a primary key or user_id.
 
     ```sql
-    CREATE TABLE ctas_avro_bucketed
+    CREATE TABLE users_bucketted
     WITH (
         format = 'PARQUET',
         parquet_compression = 'SNAPPY',
-        bucketed_by = ARRAY['mktsegment'],
-        bucket_count = 3)
-    AS SELECT key1, name1, address1, phone1, acctbal, mktsegment, comment1, nationkey
-    FROM table1;
+        bucketed_by = ARRAY['user_id'],
+        bucket_count = 100)
+    AS SELECT user_id, user_name, country
+    FROM users_not_bucketted;
     ```
+
+    > Note 1: Although spark has a bucketting fetaure, Athena doesn't support it; so we're forced to use either Hive or a `CREATE TABLE AS` statement in Athena
+    > Note 2: choose the number of buckets based on the optimal file size for Athena (= don't go below 128 MB per file, unless you never aggregate)
 
 1. *[In theory]* A (more advanced) feature of Parquet and ORC to not overlook is the use of column indexes, or **`Predicate pushdown`**. This combined with partitions can further improve performance. When an Athena query obtains specific column values from your data, it uses statistics from data block predicates, such as max/min values, to determine whether to read or skip the block.
 

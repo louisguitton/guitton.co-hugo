@@ -16,6 +16,8 @@ Notes that start with *[In theory]* are things I haven't tried and collected her
 
 ### Notes
 
+![Optimise Athena](/images/athena-serving-layer.png)
+
 1. Athena's pricing and performance (= speed) is indexed on the **amount of data scanned** for each query.
 
 1. [Using **columnar storage formats** (Parquet or ORC) is the first improvement step](https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html). They are great because they are column based (great for intensive read queries), have efficient compression (due to column based compression).

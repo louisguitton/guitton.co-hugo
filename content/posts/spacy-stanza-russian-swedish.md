@@ -18,17 +18,17 @@ Stanza has a meaning borrowed from poetry and starts with "stan" like Stanford I
 by a blank line or indentation. Stanzas can have regular rhyme and metrical schemes,
 though stanzas are not strictly required to have either.
 
-What's even more awesome is that Explosion quickly followed to release the `spaCy` wrapper to `Stanza`.
+What's even more awesome is that Explosion quickly followed with the release of their `spaCy` wrapper to `Stanza`.
 
 ```sh
 pip install spacy-stanza
 ```
 
-The reason this is so awesome, is that - as of writing - cloud providers only provide NLP models in a few languages.
+The reason this is so awesome, is that cloud providers only provide NLP models in a few languages.
 For example for NER:
 
-- AWS Comprehend covers 12 languages, Russian and Swedish are not supported [(source)](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html#supported-languages-feature)
-- Google Cloud Natural Language covers 11 languages, Russian is supported but not Swedish [(source)](https://cloud.google.com/natural-language/docs/languages#content_classification)
+- AWS Comprehend covers 12 languages; neither Russian or Swedish are supported [(source)](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html#supported-languages-feature)
+- Google Cloud Natural Language covers 11 languages; Russian is supported but not Swedish [(source)](https://cloud.google.com/natural-language/docs/languages#content_classification)
 
 So if you want to expand beyond the 12 supported languages, you're pretty much left with what I describe below.
 
@@ -36,7 +36,7 @@ So if you want to expand beyond the 12 supported languages, you're pretty much l
 
 Let's try to parse a Russian document. I head over to Wikipedia and look for the [Arshavin page](https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%88%D0%B0%D0%B2%D0%B8%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87).
 
-Arshavin is a famous Russian player that I use to follow when he played for Arsenal.
+Arshavin is a famous Russian player that I used to follow when he played for Arsenal.
 
 ![arshavin](https://www.arsenal.com/sites/default/files/styles/player_featured_image_1045x658/public/gun__1416482723_arsh.jpg)
 
@@ -79,7 +79,7 @@ Downloading http://nlp.stanford.edu/software/stanza/1.0.0/ru/default.zip: 100%|�
 >>> displacy.render(doc, style="ent")
 ```
 
-![arshavin](/images/uploads/arshavin.png "Russian document parsed with NER entities")
+![arshavin](/images/arshavin.png "Russian document parsed with NER entities")
 
 ## Spacy to find keywords in Swedish
 
@@ -91,9 +91,9 @@ Ibrahimovic was playing for Paris while I lived there.
 
 ```python
 >>> stanza.download('sv')
-Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/master/resources_1.0.0.json: 116kB [00:00, 3.38MB/s]                    
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/master/resources_1.0.0.json: 116kB [00:00, 3.38MB/s]
 2020-03-19 07:16:01 INFO: Downloading default packages for language: sv (Swedish)...
-Downloading http://nlp.stanford.edu/software/stanza/1.0.0/sv/default.zip: 100%|██████████| 225M/225M [03:36<00:00, 1.04MB/s] 
+Downloading http://nlp.stanford.edu/software/stanza/1.0.0/sv/default.zip: 100%|██████████| 225M/225M [03:36<00:00, 1.04MB/s]
 2020-03-19 07:19:43 INFO: Finished downloading models and saved to /Users/louis.guitton/stanza_resources.
 >>> snlp = stanza.Pipeline(lang="sv")
 >>> nlp = StanzaLanguage(snlp)
@@ -113,28 +113,20 @@ Downloading http://nlp.stanford.edu/software/stanza/1.0.0/sv/default.zip: 100%|�
 2020-03-19 07:49:44 INFO: Loading: lemma
 2020-03-19 07:49:44 INFO: Loading: depparse
 2020-03-19 07:49:45 INFO: Done loading processors!
->>> text = """Zlatan Ibrahimović, född 3 oktober 1981 i Västra Skrävlinge församling i Malmö, är en svensk fotbollsspelare.
-Ibrahimović har tilldelats Guldbollen elva gånger och anses allmänt vara Sveriges bäste fotbollsspelare genom tiderna. 
-Från 2001 till 2016 spelade han i svenska landslaget, där han med sina 62 mål är den främste målgöraren genom tiderna.
-Under sina 18 år som utlandsproffs har svensken vunnit ligan vid elva tillfällen med fem olika klubbar i fyra länder och 
-blivit skyttekung i italienska Serie A två gånger och i franska Ligue 1 vid tre tillfällen. Ibrahimović är den ende 
-som spelat för sju olika klubbar i Champions League, där han med sina 48 mål också intar en delad niondeplats i 
-skytteligans maratontabell. Hans främsta internationella merit är segern i Europa League med Manchester United 2016/2017.
-Svenskens övergång från Inter till Barcelona 2009 var den spanska storklubbens dittills dyraste spelarköp (69 miljoner euro).
-2015 var Ibrahimović enligt tidskriften Forbes den 55:e bäst betalda kändisen i världen, med en årsinkomst på 39 miljoner dollar.
-I september 2018 gjorde Ibrahimović sitt 500:e mål och blev därmed en av 28 spelare i fotbollshistorien som gjort minst 
-500 mål (landslag och klubblag)."""
+>>> text = """Zlatan Ibrahimović, född 3 oktober 1981 i Västra Skrävlinge församling i Malmö, är en svensk fotbollsspelare. Ibrahimović har tilldelats Guldbollen elva gånger och anses allmänt vara Sveriges bäste fotbollsspelare genom tiderna. Från 2001 till 2016 spelade han i svenska landslaget, där han med sina 62 mål är den främste målgöraren genom tiderna. Under sina 18 år som utlandsproffs har svensken vunnit ligan vid elva tillfällen med fem olika klubbar i fyra länder och blivit skyttekung i italienska Serie A två gånger och i franska Ligue 1 vid tre tillfällen. Ibrahimović är den ende som spelat för sju olika klubbar i Champions League, där han med sina 48 mål också intar en delad niondeplats i skytteligans maratontabell. Hans främsta internationella merit är segern i Europa League med Manchester United 2016/2017. Svenskens övergång från Inter till Barcelona 2009 var den spanska storklubbens dittills dyraste spelarköp (69 miljoner euro). 2015 var Ibrahimović enligt tidskriften Forbes den 55:e bäst betalda kändisen i världen, med en årsinkomst på 39 miljoner dollar. I september 2018 gjorde Ibrahimović sitt 500:e mål och blev därmed en av 28 spelare i fotbollshistorien som gjort minst 500 mål (landslag och klubblag)."""
 ```
 
 Contrary to Russian, the Swedish `stanza` model doesn't have a NER model (yet). You can double check available
 NER models [here](https://stanfordnlp.github.io/stanza/models.html).
 
-But the really cool thing for Swedish is that noun chunks rules are available for that language in spacy 
-(ie `spacy.lang.sv` has a `synteax_iterators.py` file).
+But the really cool thing for Swedish is that noun chunks rules are available in spacy (not the case for Russian)
 
-Why does it matter whether a document has noun_chunks or not ? Well, if `doc.noun_chunks` are available,
-you can then use the awesome [pytextrank](https://github.com/DerwenAI/pytextrank) library to extract 
-the top 5 keywords.
+> Tip: To check if noun chunks are available for one language in spacy, look for a `syntax_iterators.py` file
+in the language folder (eg `spacy.lang.sv`)
+
+Why does it matter whether a document has noun chunks or not ? Well, if `doc.noun_chunks` are available,
+you can then use the awesome [pytextrank](https://github.com/DerwenAI/pytextrank) library to extract
+the top keywords.
 
 ```sh
 pip install pytextrank
@@ -146,6 +138,6 @@ pip install pytextrank
 >>> doc = nlp(text)
 ```
 
-After writing a couple of functions to highlight in HTML the otp 5 keywords from pytextrank, here is the result:
+After writing a couple of convenience functions, here are the top 5 TextRank keywords highlighted in HTML:
 
-![zlatan](/images/uploads/zlatan.png "Swedish document parsed with top 5 keywords")
+![zlatan](/images/zlatan.png "Swedish document parsed with top 5 keywords")

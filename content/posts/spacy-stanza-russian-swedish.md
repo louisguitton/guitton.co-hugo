@@ -7,7 +7,7 @@ categories:
 ---
 
 
-This week, StanfordNLP released v1.0.0 of `Stanza`, their NLP toolkit in 70+ languages.
+This week, StanfordNLP released v1.0.0 of `Stanza`, their NLP toolkit in 70+ languages. [Paper](https://paperswithcode.com/paper/stanza-a-python-natural-language-processing)
 
 {{< tweet 1239982230203764738 >}}
 

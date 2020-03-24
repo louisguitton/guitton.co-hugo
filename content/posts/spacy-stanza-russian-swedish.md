@@ -11,7 +11,7 @@ This week, StanfordNLP released v1.0.0 of `Stanza`, their NLP toolkit in 70+ lan
 
 {{< tweet 1239982230203764738 >}}
 
-It was previously known as `Standford CoreNLP` and apparently went through a little renaming.
+It was previously known as `StandfordNLP` and apparently went through a little renaming.
 Stanza has a meaning borrowed from poetry and starts with "stan" like Stanford I guess:
 
 > In poetry, a stanza is a grouped set of lines within a poem, usually set off from other stanzas

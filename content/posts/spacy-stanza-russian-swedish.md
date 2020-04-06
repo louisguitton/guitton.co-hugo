@@ -32,6 +32,23 @@ For example for NER:
 
 So if you want to expand beyond the 12 supported languages, you're pretty much left with what I describe below.
 
+### A note on Spacy vs Stanza
+
+In a [Hacker News post](https://news.ycombinator.com/item?id=22683184) from March 25,
+spaCy's author himself writes :
+
+> Our models are quite a bit behind state-of-the-art atm because we're still optimized for CPU.
+
+He then explains the design choices spaCy made in more details before concluding:
+
+> The bottom-line anyone should care about is, "Am I likely to see a difference in accuracy
+between Stanza and spaCy on my problem". At the moment I think the answer is "yes".
+(Although spaCy's default models are still cheaper to run on large datasets).
+>
+> We're a bit behind the current research atm, and the improvements from that research are
+definitely real. We're looking forward to releasing new models, but in the meantime you can
+also use the Stanza models with very little change to your spaCy code, to see if they help on your problem.
+
 ## Spacy to find lemma or entities in Russian
 
 Let's try to parse a Russian document. I head over to Wikipedia and look for the [Arshavin page](https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%88%D0%B0%D0%B2%D0%B8%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87).

@@ -2,8 +2,7 @@
 title: "spacy in Russian and Swedish"
 date: 2020-03-22T18:39:56+02:00
 categories:
-  - Applied NLP
-  - Football
+  - ML
 ---
 
 

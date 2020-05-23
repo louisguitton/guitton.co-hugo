@@ -2,7 +2,7 @@
 title: "Project Management for the Unofficial Project Manager"
 date: 2019-10-12
 categories:
-  - Blogging
+  - Ideas
 ---
 
 *If you like this post, checkout [Design for non designers]({{< ref "/posts/design" >}})*

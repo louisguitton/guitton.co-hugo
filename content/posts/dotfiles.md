@@ -2,7 +2,7 @@
 title: "How I set up my laptops"
 date: 2019-08-07
 categories:
-  - Software Engineering
+  - Code
 ---
 
 I still haven't taken the time to setup [dotfiles](https://www.quora.com/What-are-dotfiles).

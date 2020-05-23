@@ -1,8 +1,6 @@
 ---
 title: "#PrettyCurious - Electronics Hackathons"
 date: 2015-09-25T11:54:56+02:00
-categories:
-  - Blogging
 ---
 
 Back in 2015, I was living in Brighton, UK, and was working at EDF Energy as a R&D Engineer. The achievement I'm most proud of from that time is something called #PrettyCurious.

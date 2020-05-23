@@ -2,8 +2,7 @@
 title: My ML Engineer stack
 date: 2020-05-09
 categories:
-  - Data Engineering
-  - Software Engineering
+  - Data
 ---
 
 Here I will try to structure my personal stack for ML Engineering, and update it over time.

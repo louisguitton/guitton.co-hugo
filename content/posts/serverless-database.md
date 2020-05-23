@@ -2,7 +2,7 @@
 title: "Serverless Database"
 date: 2019-08-10T11:54:56+02:00
 categories:
-  - Data Engineering
+  - Data
 ---
 
 In this very short post, I just want to gather useful python snipets to get data from a datalake or an athena instance.

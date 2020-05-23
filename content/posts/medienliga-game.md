@@ -1,8 +1,6 @@
 ---
 title: "media:net 4:2 Onefootball"
 date: 2019-09-23
-categories:
-  - Football
 ---
 
 At [Onefootball](https://company.onefootball.com/) we are not all football aficionados but for those of us who want to, we can play quite a bit of football.

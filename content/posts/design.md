@@ -2,7 +2,7 @@
 title: "Design for non designers"
 date: 2018-07-22
 categories:
-  - Blogging
+  - Ideas
 ---
 
 When I was going through Entrepreneur First - trying to turn an idea into a startup - I became aware of my lack of awareness of design.

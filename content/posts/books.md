@@ -1,8 +1,6 @@
 ---
 title: "My Favorite books"
 date: 2019-10-06T17:01:22+02:00
-categories:
-  - Blogging
 ---
 
 

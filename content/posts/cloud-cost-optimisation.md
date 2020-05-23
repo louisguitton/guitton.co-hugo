@@ -2,7 +2,7 @@
 title: Cloud cost optimisation for ML Engineers
 date: 2020-04-14
 categories:
-  - Software Engineering
+  - Data
 ---
 
 This is a microblog, mostly for myself, to keep track of things I need to check when wanting to reduct costs

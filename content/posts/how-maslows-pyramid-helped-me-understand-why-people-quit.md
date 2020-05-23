@@ -2,7 +2,7 @@
 title: How Maslow's pyramid helped me understand why people quit
 date: 2020-01-20
 categories:
-  - Blogging
+  - Ideas
 ---
 
 ## Maslow's hierarchy of needs

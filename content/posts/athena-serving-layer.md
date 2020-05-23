@@ -2,8 +2,7 @@
 title: Athena serving layer
 date: 2020-02-23
 categories:
-  - Data Engineering
-  - Software Engineering
+  - Data
 ---
 
 ## How to optimise Athena (speed and cost) to unlock backend serving

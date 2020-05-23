@@ -1,8 +1,6 @@
 ---
 title: "Mecatronics - Building a Snakeboard"
 date: 2014-06-01T11:54:56+02:00
-categories:
-  - Blogging
 ---
 
 ## Project Management

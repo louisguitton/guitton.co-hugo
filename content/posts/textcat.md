@@ -2,7 +2,7 @@
 title: "Real world text classification, ... I guess"
 date: 2019-07-29
 categories:
-  - Applied NLP
+  - ML
 ---
 
 ## Business problem

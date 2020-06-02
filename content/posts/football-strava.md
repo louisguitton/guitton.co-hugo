@@ -5,17 +5,30 @@ categories:
   - ML
 ---
 
-Strava unfortunately doesn't have first-class support for football.
+## Step 1 - Visualise your football games
 
-Instead, I track my games using my activity tracker, and then I can analyse the GPS file in python.
-Libraries I used are: `geopandas`, `folium`, `shapely`.
+I play football at work for fun and also as part of a company league.
+[I've written before about one game]({{< ref "medienliga-game.md" >}}), and here is how I built a visualisation of our
+March 9th game (just before confinement): `Onefootball 3 - 1 Exozet`.
 
-With only a little bit of manual input (the corners of the pitch),
-you can visualise your game in the following way:
+I track my games using my activity tracker and Strava.
+Strava unfortunately doesn't have first-class support for football at the moment.
+But I can download the GPX file from [Strava here](https://www.strava.com/activities/3169231179)
+and then analyse in in python.
 
-<embed type="text/html" src="/others/stava_football.html" width="800" height="600", style="display: flex; margin: auto;">
+The only manual input was to annotate the corners of the big pitch in the Mauerpark.
+I then derive the small pitch location (orange) and the goal posts location (target markers) automatically.
+I also detect when the warm up ends to make sure I visualise only my game (the blue dot).
 
-On top of nice visualisations, my idea is to also extract football specific insights from this data.
+<embed type="text/html" src="/others/strava_football.html" width="800" height="600", style="display: flex; margin: auto;">
+
+## Step 2 - Derive data insights
+
+On top of those nice visualisations, my idea is to also extract football specific insights from this data.
 
 For example, I want to use Bayesian Statistics (a Hidden Markov Model) to automatically tag
-offensive and defensive sprints you do as player.
+offensive and defensive sprints you do as player. You could have 3 states: sprinting towards
+the opponent goal (= `attacking`), sprinting towards your own goal (= `defending`), or not sprinting (= `supporting`).
+The nice thing with bayesian statistics is that they wouldn't require a lot of games as supervised learning would.
+On the other hand, instead of data labelling, you have to do a thorough modelling
+and I still need to think more about how I would model this.

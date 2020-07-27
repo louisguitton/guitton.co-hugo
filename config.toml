@@ -48,29 +48,24 @@ googleAnalytics = "UA-140255752-1"
     weight = 1
     url = "https://github.com/louisguitton"
 [[params.social]]
-    name = "Gitlab"
-    icon = "fab fa-gitlab fa-2x"
-    weight = 2
-    url = "https://gitlab.com/louisguitton"
-[[params.social]]
     name = "Stackoverflow"
     icon = "fab fa-stack-overflow fa-2x"
-    weight = 3
+    weight = 2
     url = "https://stackoverflow.com/users/3823815/louis-guitton"
 [[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
-    weight = 4
+    weight = 3
     url = "https://twitter.com/louis_guitton"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
-    weight = 5
+    weight = 4
     url = "https://linkedin.com/in/louisguitton/"
 [[params.social]]
     name = "Goodreads"
     icon = "fab fa-goodreads"
-    weight = 6
+    weight = 5
     url = "https://goodreads.com/user/show/58757583-louis"
 
 # Menu links

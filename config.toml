@@ -21,7 +21,7 @@ googleAnalytics = "UA-140255752-1"
 
 [params]
     author = "Louis Guitton"
-    info = "Machine Learning Engineer at Onefootball"
+    info = "Machine Learning Engineer at OneFootball"
     description = "My personal serverless website where I blog and store useful snippets for python software development, machine learning and data engineering."
     keywords = "blog,nlp,machine learning,data engineering,python"
     avatarurl = "images/louis.jpg"

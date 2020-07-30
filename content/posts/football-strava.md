@@ -9,7 +9,7 @@ categories:
 
 I play football at work for fun and also as part of a company league.
 [I've written before about one game]({{< ref "medienliga-game.md" >}}), and here is how I built a visualisation of our
-March 9th game (just before confinement): `Onefootball 3 - 1 Exozet`.
+March 9th game (just before confinement): `OneFootball 3 - 1 Exozet`.
 
 I track my games using my activity tracker and Strava.
 Strava unfortunately doesn't have first-class support for football at the moment.

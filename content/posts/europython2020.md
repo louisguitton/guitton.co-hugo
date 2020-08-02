@@ -98,6 +98,7 @@ for r, l1, l2, l3 in itertools.product('WK', alpha, alpha, alpha):
     print(f"{r}{l1}{l2}{l3}")
 ```
 
+
 ## NLP
 
 - Tansformers
@@ -108,13 +109,51 @@ for r, l1, l2, l3 in itertools.product('WK', alpha, alpha, alpha):
 
 ## Data
 
-- Faust
+- [Real Time Stream Processing for Machine Learning at Massive Scale, Alex Saucedo](https://ep2020.europython.eu/talks/Ccb6D5Z-real-time-stream-processing-for-machine-learning-at-massive-scale/)
 
-- TerminusDB (see https://terminusdb.com/blog/2020/03/02/why-graph-will-win)
+I had seen this talk before. Don't connect to kafak streams with anything other than `faust`.
 
-- Cassandra and Scylla
+- [How to be Pythonic? Design a Query Language in Python, Cheuk Ho, TerminusDB](https://ep2020.europython.eu/talks/BiuMv57-how-to-be-pythonic-design-a-query-language-in-python/)
 
-- making pandas fly
+The modelling potential of graph databases in inherently bigger than relational DBs. `TerminusDB` is positioned
+at the top of the foodchain. It shines especially to build ontologies or knowledge graphs.
+The python client is in the making but tries to be very pythonic.
+![graph_dbs](/images/graph_dbs.png)
+More details [here](https://terminusdb.com/blog/2020/03/02/why-graph-will-win).
+
+- [A deep dive and comparison of Python drivers for Cassandra and Scylla, Alexys Jacob](https://ep2020.europython.eu/talks/a-deep-dive-and-comparison-of-python-drivers-for-cassandra-and-scylla/)
+
+Really advanced talk about ScyllaDB ([used by Discord](https://www.youtube.com/watch?v=MHI29_c8S0k) for example).
+ScyllaDB add a key feature on top of Cassandra which is to shard data by CPU on a node (`shard-per-core`)
+instead of "just" by node in a cluster (`shard-per-node`).
+For both Cassandra and Scylla, when looking for a data row, you can locate the shard where it's stored by
+hashing its `partition key`, which gives you a `token`.
+For ScyllaDB, this means that you know which CPU will crunch that row so you can optimise the query plan.
+If your client implements this, you can preselect the right node to query in the python cassandra driver,
+and hence you save network, and get reduced latency (due to naïvely querying the cluster and then letting the
+clustering sort out where the data is).
+You also get reduced load on the cluster which means you can achieve the same thorughput with a smaller cluster.
+
+- [Making Pandas Fly, Ian Ozsvald](https://ep2020.europython.eu/talks/A7TniMV-making-pandas-fly/)
+
+First advice to make pandas faster is to save RAM to fit more data. For example, cast raw strings as pandas categoricals.
+If you encode low cardinality items well, you can get 1% memory footprint for 15x speed up.
+He introduced his tool [`dtype_diet`](https://github.com/ianozsvald/dtype_diet) to automatically shrink your pandas footprint.
+
+Second advice was about dropping to numpy to calculate faster. Some pandas types are not part of numpy (like timedeltas, datetimes etc...).
+But you can get a 10x speedup.
+
+Pandas has 2 [recommended dependencies](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html#recommended-dependencies)
+`bottleneck` and `numexpr` that will give you another speedup as well.
+
+Finally, you can wrap your slow function with `@njit` from `numba` but not everything is supported.
+Or you could scale out of core by using `dask`.
+
+Ultimately the takeaway was that you should worry about *being* performant (writing unit tests, writing time saving docs, ...)
+
+> Get things right first, and worry about speed later
+
+Ref: [Enhancing performance — pandas 1.0.5 documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html)
 
 ## Web and APIs
 
@@ -189,3 +228,8 @@ Essentially you turn your Rust code into a **dynamic library** (.dll file on Win
 or .dylib on Mac) using a python wrappers like [maturin](https://github.com/PyO3/maturin).
 You can build the dynamic library with a docker multi-stage build for example.
 You can upload it to PyPI (or a private pip server).
+
+- [Diffprivlib: Privacy-preserving machine learning with Scikit-learn, Naoise Holohan, IBM](https://ep2020.europython.eu/talks/6Js4E4r-diffprivlib-privacy-preserving-machine-learning-with-scikit-learn/)
+
+In order to achieve privacy-preserving machine learning, you can add noise to your training data (concept of "bounds").
+There is the idea of fixing a privacy budget for a dataset, and then spending it on training your pipeline (concept of "epsilon").

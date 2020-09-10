@@ -103,3 +103,14 @@ k logs -f -n ambassador \
 kubectl get secrets <my-deployment> \
     -o jsonpath="{.data.POSTGRES_PASSWORD}" | base64 --decode
 ```
+
+```yml
+apiVersion: apps/v1
+kind: Deployment  # create a deployment of a container
+---
+apiVersion: v1
+kind: Service  # create a service, that allows us to connect to a given deployment
+---
+apiVersion: v1
+kind: PersistentVolume  # create a "disk" that provides space for pods to store data
+```

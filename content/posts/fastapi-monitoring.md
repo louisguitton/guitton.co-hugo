@@ -15,14 +15,14 @@ Notes:
 
 References:
 
-- [StatsD, what it is and how it can help you - DataDog Blog](https://www.datadoghq.com/blog/statsd/)
+- [StatsD, what it is and how it can help you - Datadog Blog](https://www.datadoghq.com/blog/statsd/)
 
 ## Short overview of available application monitoring tools
 
 Most likely you've used (or your organisation is already using) 1 or more monitoring tools such as:
 
 - New Relic (commercial with parts open source)
-- DataDog (commercial with parts open source)
+- Datadog (commercial with parts open source)
 - StatsD (open source)
 - Prometheus (open source)
 - OpenTelemetry (open source)
@@ -42,7 +42,7 @@ At this point, chosing a tool doesn't matter, but I'll tell you later what tool(
    Monitoring client library examples:
 
    - [newrelic/newrelic-python-agent](https://github.com/newrelic/newrelic-python-agent)
-   - [DataDog/dd-trace-py](https://github.com/DataDog/dd-trace-py)
+   - [Datadog/dd-trace-py](https://github.com/DataDog/dd-trace-py)
    - [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python)
 
 2. Then the `monitoring client library` sends each individual call to the `monitoring server daemon` over the network (UDP in particular, as opposed to TCP or HTTP).

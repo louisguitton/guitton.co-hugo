@@ -64,7 +64,7 @@ ecosystem to support it.
 
 Given the 4 steps of monitoring layed out above, a problem arise if
 the `monitoring client library` doesn't support ASGI. For example,
-this is the case with NewRelic at the moment (see [newrelic/newrelic-python-agent#5](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at DataDog too and saw that ~~ASGI is also not supported at the moment~~. (Correction: [there seem to be support for ASGI in ddtrace](http://pypi.datadoghq.com/trace/docs/web_integrations.html?highlight=asgi#asgi)).
+this is the case with NewRelic at the moment (see [newrelic/newrelic-python-agent#5](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ~~ASGI is also not supported at the moment~~. (Correction: [there seem to be support for ASGI in ddtrace](http://pypi.datadoghq.com/trace/docs/web_integrations.html?highlight=asgi#asgi)).
 
 On the open source side of the tools however, OpenTelemetry had
 great support for ASGI. So I set out to instrument my FastAPI
@@ -92,9 +92,9 @@ I couldn't find any open source monitoring backend with a data pipeline that wou
 (latency percentile plots, bar chart of total requests and errors ...).
 
 It became apparent that that's where commercial solutions like
-NewRelic and DataDog shine. I hence set out to try the DataDog exporter.
+NewRelic and Datadog shine. I hence set out to try the Datadog exporter.
 
-## Instrumenting FastAPI with OpenTelemetry and DataDog
+## Instrumenting FastAPI with OpenTelemetry and Datadog
 
 ![opentelemetry datadog](/images/opentelemetry_datadog.png "Example instrumentation")
 
@@ -103,9 +103,9 @@ that will allow you to have full observability for your microservice.
 
 The 2 drawbacks are:
 
-- you need to deploy the DataDog agent yourself (with docker or on Kuberetes or on whatever environment fits your stack) and this can get a bit involved
-- DataDog being a commercial product, this solution will not be free.
-  You will have to pay extra attention to the pricing of DataDog (especially if you deploy the DataDog
+- you need to deploy the Datadog agent yourself (with docker or on Kuberetes or on whatever environment fits your stack) and this can get a bit involved
+- Datadog being a commercial product, this solution will not be free.
+  You will have to pay extra attention to the pricing of Datadog (especially if you deploy the Datadog
   agent to Kubernetes 😈).
 
 ## Conclusion
@@ -115,7 +115,7 @@ I hope that with this post you've learned:
 - the architecture of application monitoring
 - some of application monitoring tools out there
 - that as of now, I use OpenTelemetry in combination with
-  DataDog to instrument my FastAPI microservices 😅
+  Datadog to instrument my FastAPI microservices 😅
 
 I didn't go into the code itself as 1) all these libraries
 have well written docs and 2) in my experience, the blocker is to understand how the different pieces fit together on a high

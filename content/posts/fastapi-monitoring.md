@@ -73,6 +73,9 @@ service with OpenTelemetry.
 _Update - Sep 19th, 2020:_
 [There seems to be support for ASGI in ddtrace](http://pypi.datadoghq.com/trace/docs/web_integrations.html?highlight=asgi#asgi)
 
+_Update - Sep 22th, 2020:_
+[There is now an API in the NewRelic agent to support ASGI frameworks](https://docs.newrelic.com/docs/agents/python-agent/python-agent-api/asgiapplication-python-agent-api), with uvicorn already supported and starlette on the way.
+
 ## Instrumenting FastAPI with OpenTelemetry and Jaeger
 
 OpenTelemetry provides a standard for steps 1 (with `Instrumentors`) and 2 (with `Exporters`) from the 4 steps above. One of the big advantages of

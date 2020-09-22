@@ -64,11 +64,14 @@ ecosystem to support it.
 
 Given the 4 steps of monitoring layed out above, a problem arise if
 the `monitoring client library` doesn't support ASGI. For example,
-this is the case with NewRelic at the moment (see [newrelic/newrelic-python-agent#5](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ~~ASGI is also not supported at the moment~~. (Correction: [there seem to be support for ASGI in ddtrace](http://pypi.datadoghq.com/trace/docs/web_integrations.html?highlight=asgi#asgi)).
+this is the case with NewRelic at the moment (see [newrelic/newrelic-python-agent#5](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ASGI is also not supported at the moment.
 
 On the open source side of the tools however, OpenTelemetry had
 great support for ASGI. So I set out to instrument my FastAPI
 service with OpenTelemetry.
+
+_Update - Sep 19th, 2020:_
+[There seems to be support for ASGI in ddtrace](http://pypi.datadoghq.com/trace/docs/web_integrations.html?highlight=asgi#asgi)
 
 ## Instrumenting FastAPI with OpenTelemetry and Jaeger
 

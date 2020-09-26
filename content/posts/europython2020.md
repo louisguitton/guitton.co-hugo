@@ -5,7 +5,6 @@ categories:
   - Data
   - ML
   - Code
-draft: true
 ---
 
 From July 23 to July 26, I attented Europython 2020 online.
@@ -98,14 +97,26 @@ for r, l1, l2, l3 in itertools.product('WK', alpha, alpha, alpha):
     print(f"{r}{l1}{l2}{l3}")
 ```
 
-
 ## NLP
 
-- Tansformers
+- [Why Transformers Work and RNNs fall short, Vincent D. Warmerdam](https://ep2020.europython.eu/talks/6tgwXVi-why-transformers-work/)
 
-- pythonic fulltext search
+The intuition behind **self-attention** is that it's a re-weighting mechanism on top of pre-computed word vectors, that account for the fact that language is a sequence. `Bank` has a different meaning in the sequence "money in the bank" than in the sequence "the bank of the river". The simplest attention mechanism you can design is by doing a dot product of the word embeddings, normalise them and add them up to get a context-sensitive embedding.
 
-- NLPeasy (ElasticSearch)
+![](/images/attention.png)
+
+You can move this idea into a layer, which gets you a so-called `Self-Attention Block` which turns a sequence of word embeddings into context-sensitive embeddings. It's all fine but at this point you are not learning anything because there are no weights to tune. It's when you add those extra layers of learnable weights to the self-attention block that you get a `Transformer Layer`.
+
+The speaker then goes into how Rasa applies the transformer idea to their business problem of dialogue systems. He mentions DIET (Dual Intent and Entity Transformer) which is their way to label entities and classify intents both at the same time (the really cool part is the shared gradient update). He also mentions TED (Transformer Embedding Dialog) which is they way to decide what action to take for the chatbot. The really cool part there is that **you don't have to use word embeddings to use transformers**: TED is not even using text data but instead, it's using a composite feature space.
+
+- [A pythonic full-text search using only Django and PostgreSQL, Paolo Melchiorre](https://ep2020.europython.eu/talks/iGXPHck-a-pythonic-full-text-search/)
+
+The idea of this talk is that instead of using an external enigne like ElasicSearch (based on Apache Lucene), you can use native PostgreSQL's [Full text search](https://www.postgresql.org/docs/9.5/textsearch.html) feature. Because this can be too low-level, the speaker advises to use a web-framework. His choice is on Django, which has great support for fulltext-search. See [`django.contrib.postgres.search`](https://docs.djangoproject.com/en/3.1/ref/contrib/postgres/search/).
+
+- [NLPeasy - a Workflow to Analyse, Enrich, and Explore Textual Data - Philipp Thomann](https://ep2020.europython.eu/talks/6x7ezDb-nlpeasy-a-workflow-to-analyse-enrich-and-explore-textual-data/)
+
+The speaker presents his library that wraps around spacy, elasticsearch and the python docker client to build an end to end NLP pipeline. This is an interesting workflow for ad-hoc analysis or for small projects where you don't need APIs between ElasticSearch, a stream of article and a language model.
+Example python notebooks can be found [here](https://github.com/d-one/NLPeasy-workshop).
 
 ## Data
 

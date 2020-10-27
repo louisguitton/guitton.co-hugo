@@ -56,6 +56,9 @@ helm status <my-deployment>
 k get po -o wide
 k describe po <my-pod>
 
+# if you're facing a CrashLoopBackOff, it's useful to access the logs from the previous (crashed) instance using -p
+k logs po <my-pod> -p
+
 # profile CPU and memory consumption on nodes
 k describe nodes | egrep 'Name:|Resource' -A2 | grep -v Roles | grep -v Labels
 

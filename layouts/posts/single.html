@@ -1,6 +1,12 @@
 {{ define "title" }}
   {{ .Title }} · {{ strings.TrimSuffix " | python machine learning engineering" .Site.Title }}
 {{ end }}
+{{ define "description" }}
+  {{ .Summary }}
+{{ end }}
+{{ define "keywords" }}
+  {{ delimit .Keywords ", " }}
+{{ end }}
 {{ define "content" }}
   <section class="container post">
     <article>
@@ -24,6 +30,7 @@
           {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
         </div>
+        {{ partial "posts/sharing.html" . }}
       </header>
 
       <div>

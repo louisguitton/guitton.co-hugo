@@ -13,7 +13,7 @@ I assist in designing, developing, deploying and maintaining your data architect
 
 Stack: _python, AWS, Digital Ocean, flask, Apache Airflow, dbt, Metabase_
 
-<img src="/images/Mercedes_Benz_io_black.png" height="48" title="mb-io"/> 
+<img src="/images/Mercedes_Benz_io_black.png" height="48" title="mb-io"/>
 <img src="/images/enpact.png" height="48" title="enpact"/>
 
 | year         | title                                                                                       | work                                                                                                                                                                                                                        |

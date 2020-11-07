@@ -3,7 +3,7 @@ title: How to monitor your FastAPI service
 date: 2020-09-18
 summary: In this post I explain how to get visibility into
   your FastAPI application's performance
-  for both developement and production environments.
+  for both development and production environments.
 keywords:
   - fastapi monitoring
   - fastapi jaeger

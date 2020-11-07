@@ -30,6 +30,7 @@
           {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
         </div>
+        {{ partial "posts/sharing.html" . }}
       </header>
 
       <div>

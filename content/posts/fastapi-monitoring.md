@@ -1,21 +1,36 @@
 ---
 title: How to monitor your FastAPI service
 date: 2020-09-18
+summary:
+  In this post I explain how to get visibility into
+  your FastAPI application's performance
+  for both developement and production environments.
+keywords:
+  - fastapi
+  - python
+  - api
+  - apm tracing
+  - monitoring
+  - datadog
+  - new relic
+  - jaeger
+  - open telemetry
 categories:
   - Code
+featuredImage: /images/4_steps_monitoring.png
+images:
+  - /images/4_steps_monitoring.png
+  - /images/monitoring_backend.png
+  - /images/opentelemetry_jaeger.png
+  - /images/opentelemetry_datadog.png
 ---
 
 In this article, I'll discuss how to monitor the latency and code performance of a FastAPI service.
 
 Notes:
 
-- For an introduction to monitoring and why it's necessary, see this excellent
-  post from [Full Stack Pythion](https://www.fullstackpython.com/monitoring.html).
+- For an introduction to monitoring and why it's necessary, see [this excellent post from Full Stack Python](https://www.fullstackpython.com/monitoring.html).
 - I will not talk about monitoring application errors and warnings. For this purpose, check Sentry, it has great ASGI support and will work out of the box with your FastAPI service.
-
-References:
-
-- [StatsD, what it is and how it can help you - Datadog Blog](https://www.datadoghq.com/blog/statsd/)
 
 ## Short overview of available application monitoring tools
 
@@ -41,9 +56,9 @@ At this point, chosing a tool doesn't matter, but I'll tell you later what tool(
    (in our case python). This is the `monitoring client library`.
    Monitoring client library examples:
 
-   - [newrelic/newrelic-python-agent](https://github.com/newrelic/newrelic-python-agent)
-   - [Datadog/dd-trace-py](https://github.com/DataDog/dd-trace-py)
-   - [open-telemetry/opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python)
+   - [newrelic/newrelic-python-agent: New Relic Python Agent](https://github.com/newrelic/newrelic-python-agent)
+   - [DataDog/dd-trace-py: Datadog Python APM Client](https://github.com/DataDog/dd-trace-py)
+   - [open-telemetry/opentelemetry-python: OpenTelemetry Python API and SDK](https://github.com/open-telemetry/opentelemetry-python)
 
 2. Then the `monitoring client library` sends each individual call to the `monitoring server daemon` over the network (UDP in particular, as opposed to TCP or HTTP).
 
@@ -64,7 +79,7 @@ ecosystem to support it.
 
 Given the 4 steps of monitoring layed out above, a problem arise if
 the `monitoring client library` doesn't support ASGI. For example,
-this is the case with NewRelic at the moment (see [newrelic/newrelic-python-agent#5](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ASGI is also not supported at the moment.
+this is the case with NewRelic at the moment (see [ASGI - Starlette/Fast API Framework · Issue #5 · newrelic/newrelic-python-agent](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ASGI is also not supported at the moment.
 
 On the open source side of the tools however, OpenTelemetry had
 great support for ASGI. So I set out to instrument my FastAPI
@@ -84,7 +99,7 @@ backend (commercial or open source). Depending on the language you use for your 
 there is no NewRelic OpenTelemetry Exporter in Python yet.
 But there are OpenTelemetry Exporters for many others, see the list here: https://opentelemetry.io/registry/ (filter by language and with type=Exporter).
 
-One of the available backends is [Jaeger](https://www.jaegertracing.io/) (NB: Jaeger is also a monitoring client library that you can
+One of the available backends is [Jaeger: open source, end-to-end distributed tracing](https://www.jaegertracing.io/) (NB: Jaeger is also a monitoring client library that you can
 instrument your application with, but here that's not the part
 of interest).
 
@@ -129,3 +144,8 @@ level.
 
 Having said that, if you have further questions on the topic,
 feel free to reach out on [twitter](https://twitter.com/louis_guitton) or open a [github issue](https://github.com/louisguitton/guitton.co/issues).
+
+## Resources
+
+1. [Monitoring - Full Stack Python](https://www.fullstackpython.com/monitoring.html)
+2. [StatsD, What It Is and How It Can Help You | Datadog](https://www.datadoghq.com/blog/statsd/)

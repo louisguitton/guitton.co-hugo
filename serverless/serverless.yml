@@ -17,7 +17,7 @@ provider:
         - ses:SendRawEmail
       Resource: "*"
 
-  environment: 
+  environment:
     SENDER_EMAIL: ${self:custom.secrets.SENDER_EMAIL}
     EMAIL_SUBJECT: Serverless Mail
     CONFIG_SET: ConfigSet

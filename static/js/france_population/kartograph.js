@@ -133,17 +133,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -248,17 +248,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -360,17 +360,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -965,19 +965,19 @@
   $.extend(root.kartograph, K);
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -1034,19 +1034,19 @@
   root.kartograph.LatLon = LatLon;
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -1345,19 +1345,19 @@
   map_layer_path_uid = 0;
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -1440,19 +1440,19 @@
   })();
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -1461,7 +1461,7 @@
   /*
       This is a reduced version of Danial Wachsstocks jQuery based CSS parser
       Everything is removed but the core css-to-object parsing
-  
+
       jQuery based CSS parser
       documentation: http://youngisrael-stl.org/wordpress/2009/01/16/jquery-css-parser/
       Version: 1.3
@@ -1475,10 +1475,10 @@
       copies of the Software, and to permit persons to whom the
       Software is furnished to do so, subject to the following
       conditions:
-  
+
       The above copyright notice and this permission notice shall be
       included in all copies or substantial portions of the Software.
-  
+
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
       EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
       OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -1587,17 +1587,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -1969,17 +1969,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -2771,7 +2771,7 @@
     /*
     Canters, F. (2002) Small-scale Map projection Design. p. 218-219.
     Modified Sinusoidal, equal-area.
-    
+
     implementation borrowed from
     http://cartography.oregonstate.edu/temp/AdaptiveProjection/src/projections/Canters1.js
     */
@@ -3090,7 +3090,7 @@
 
     /*
     Orthographic Azimuthal Projection
-    
+
     implementation taken from http://www.mccarroll.net/snippets/svgworld/
     */
 
@@ -3127,7 +3127,7 @@
 
     /*
     Lambert Azimuthal Equal-Area Projection
-    
+
     implementation taken from
     Snyder, Map projections - A working manual
     */
@@ -3249,7 +3249,7 @@
 
     /*
     Stereographic projection
-    
+
     implementation taken from
     Snyder, Map projections - A working manual
     */
@@ -3290,10 +3290,10 @@
 
     /*
     General perspective projection, aka Satellite projection
-    
+
     implementation taken from
     Snyder, Map projections - A working manual
-    
+
     up .. angle the camera is turned away from north (clockwise)
     tilt .. angle the camera is tilted
     */
@@ -3393,7 +3393,7 @@
 
     /*
     Equidistant projection
-    
+
     implementation taken from
     Snyder, Map projections - A working manual
     */
@@ -3442,7 +3442,7 @@
 
     /*
     Aitoff projection
-    
+
     implementation taken from
     Snyder, Map projections - A working manual
     */
@@ -3628,19 +3628,19 @@
   })(Conic);
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
-  
+
       This program is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more detailme.
-  
+
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
@@ -3745,17 +3745,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -3876,17 +3876,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -4201,17 +4201,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -4283,19 +4283,19 @@
   };
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -4500,17 +4500,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -4566,17 +4566,17 @@
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -4584,7 +4584,7 @@
 
   SymbolGroup = (function() {
     /* symbol groups
-    
+
     Usage:
     new $K.SymbolGroup(options);
     map.addSymbols(options)
@@ -5128,7 +5128,7 @@
     return new SymbolGroup(opts);
   };
 
-  
+
 /*
     Copyright (c) 2010, SimpleGeo and Stamen Design
     All rights reserved.
@@ -5369,17 +5369,17 @@ function kdtree() {
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -5498,19 +5498,19 @@ function kdtree() {
   root.kartograph.Bubble = Bubble;
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -5593,17 +5593,17 @@ function kdtree() {
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -5749,17 +5749,17 @@ function kdtree() {
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -5873,17 +5873,17 @@ function kdtree() {
   /*
       kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
@@ -6072,25 +6072,25 @@ function kdtree() {
   };
 
   /*
-      kartograph - a svg mapping library 
+      kartograph - a svg mapping library
       Copyright (C) 2011,2012  Gregor Aisch
-  
+
       This library is free software; you can redistribute it and/or
       modify it under the terms of the GNU Lesser General Public
       License as published by the Free Software Foundation; either
       version 2.1 of the License, or (at your option) any later version.
-  
+
       This library is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
       Lesser General Public License for more details.
-  
+
       You should have received a copy of the GNU Lesser General Public
       License along with this library. If not, see <http://www.gnu.org/licenses/>.
   */
 
 
-  
+
 
 drawStackedBars = function (cx, cy, w, h, values, labels, colors, stroke) {
     var paper = this,
@@ -6110,14 +6110,14 @@ drawStackedBars = function (cx, cy, w, h, values, labels, colors, stroke) {
                 ms = 500,
                 delta = 30,
                 p = bar(x, y-bh, bw, bh, {fill: color, stroke: stroke, "stroke-width": 1});
-            
+
             yo += bh;
-            
+
             p.mouseover(function () {
                 p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "elastic");
             }).mouseout(function () {
                 p.stop().animate({transform: ""}, ms, "elastic");
-                
+
             });
             chart.push(p);
         };

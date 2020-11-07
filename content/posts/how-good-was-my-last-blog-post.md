@@ -63,7 +63,7 @@ Here I intend to collect a growing list of website tracking data points. The goa
 - organic traffic before was averaging at ~100 users per day; and after was averaging at ~1k users per day.
   So that successful content piece 10-folded the organic traffic.
 - finally, twitter is still a very big source of referrals (number 2 after Hackernews and before Hackernewsletter).
-  Unfortunately, you will get only the tweeter shortened link as a source of referral (instead of the tweet) 
+  Unfortunately, you will get only the tweeter shortened link as a source of referral (instead of the tweet)
   so it might be hard to figure out what tweets worked for you.
 
 More details here:

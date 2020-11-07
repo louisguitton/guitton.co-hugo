@@ -32,3 +32,9 @@ git push
 cd serverless
 sls deploy -v
 ```
+
+## Todo
+
+- add check for title, summary, keywords and images in front matter
+- add check for clean link names using SEO title
+- add check for images alt

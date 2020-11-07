@@ -1,5 +1,5 @@
 $(function(){
- 
+
     $('#serverless-form').submit(function(e){
         e.preventDefault();
         var formdata = toJSONString(this);

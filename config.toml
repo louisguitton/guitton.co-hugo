@@ -18,6 +18,7 @@ googleAnalytics = "UA-140255752-1"
 
 [taxonomies]
   category = "categories"
+  series = "series"
 
 [params]
     author = "Louis Guitton"

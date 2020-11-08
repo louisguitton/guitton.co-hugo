@@ -22,7 +22,8 @@ images:
   - /images/monitoring_backend.png
   - /images/opentelemetry_jaeger.png
   - /images/opentelemetry_datadog.png
-weight: 1
+series:
+  - top posts
 ---
 
 In this article, I'll discuss how to monitor the latency and code performance of a FastAPI service.

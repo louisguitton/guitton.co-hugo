@@ -22,7 +22,8 @@ images:
   - /images/arshavin.png
   - https://www.welt.de/img/sport/fussball/mobile183435048/6811357887-ci16x9-w1300/PSG-s-Zlatan-Ibrahimovic-during-the-First-League-Champion-PSG-Na.jpg
   - /images/zlatan.png
-weight: 1
+series:
+  - top posts
 ---
 
 ## spaCy NER in more than 12 Languages

@@ -1,11 +1,40 @@
 ---
-title: "spacy in Russian and Swedish"
-date: 2020-03-22T18:39:56+02:00
+title: "How to use spaCy language models in Russian or Swedish"
+date: 2020-03-22
+summary:
+  I demo how you can use spaCy in 70+ languages by leveraging Stanza, a NLP toolkit by StandfordNLP. I give spaCy NER examples in Russian and Swedish.
+keywords:
+  - stanza vs spacy
+  - spacy ner
+  - spacy swedish
+  - spacy russian
+  - spacy swedish model
+  - spacy russian language
+  - standfordnlp
+  - stanza pipeline
+  - textrank spacy
+  - spacy noun_chunks
 categories:
   - ML
+featuredImage: https://www.arsenal.com/sites/default/files/styles/player_featured_image_1045x658/public/gun__1416482723_arsh.jpg
+images:
+  - https://www.arsenal.com/sites/default/files/styles/player_featured_image_1045x658/public/gun__1416482723_arsh.jpg
+  - /images/arshavin.png
+  - https://www.welt.de/img/sport/fussball/mobile183435048/6811357887-ci16x9-w1300/PSG-s-Zlatan-Ibrahimovic-during-the-First-League-Champion-PSG-Na.jpg
+  - /images/zlatan.png
 weight: 1
 ---
 
+## spaCy NER in more than 12 Languages
+
+Let's say you want to do Named Entity Recognition (NER) in Russian or Swedish. You first look at NLP APIs.
+
+Unfortunately, **cloud providers only provide NLP models in a few languages**:
+
+- AWS Comprehend covers 12 languages; neither Russian or Swedish are supported [(source)](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html#supported-languages-feature)
+- Google Cloud Natural Language covers 11 languages; Russian is supported but not Swedish [(source)](https://cloud.google.com/natural-language/docs/languages#entity_analysis)
+
+Fortunately, you can now expand beyond those 12 languages and **tap into language models in more than 70 languages**.
 
 This week, StanfordNLP released v1.0.0 of `Stanza`, their NLP toolkit in 70+ languages. [Paper](https://paperswithcode.com/paper/stanza-a-python-natural-language-processing)
 
@@ -24,15 +53,9 @@ What's even more awesome is that Explosion quickly followed with the release of 
 pip install spacy-stanza
 ```
 
-The reason this is so awesome, is that cloud providers only provide NLP models in a few languages.
-For example for NER:
+So in the rest of this article, I will show how to do NER in Russian and Swedish using Stanza and spaCy.
 
-- AWS Comprehend covers 12 languages; neither Russian or Swedish are supported [(source)](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html#supported-languages-feature)
-- Google Cloud Natural Language covers 11 languages; Russian is supported but not Swedish [(source)](https://cloud.google.com/natural-language/docs/languages#content_classification)
-
-So if you want to expand beyond the 12 supported languages, you're pretty much left with what I describe below.
-
-### A note on Spacy vs Stanza
+## Spacy vs Stanza
 
 In a [Hacker News post](https://news.ycombinator.com/item?id=22683184) from March 25,
 spaCy's author himself writes :
@@ -41,15 +64,15 @@ spaCy's author himself writes :
 
 He then explains the design choices spaCy made in more details before concluding:
 
-> The bottom-line anyone should care about is, "Am I likely to see a difference in accuracy
-between Stanza and spaCy on my problem". At the moment I think the answer is "yes".
+> The bottom-line anyone should care about is, "Am I likely to see **a difference in accuracy
+between Stanza and spaCy** on my problem". At the moment I think the answer is "yes".
 (Although spaCy's default models are still cheaper to run on large datasets).
 >
 > We're a bit behind the current research atm, and the improvements from that research are
 definitely real. We're looking forward to releasing new models, but in the meantime you can
 also use the Stanza models with very little change to your spaCy code, to see if they help on your problem.
 
-## Spacy to find lemma or entities in Russian
+## Spacy in Russian: How to Find Lemmas or Entities
 
 Let's try to parse a Russian document. I head over to Wikipedia and look for the [Arshavin page](https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%88%D0%B0%D0%B2%D0%B8%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87).
 
@@ -98,7 +121,7 @@ Downloading http://nlp.stanford.edu/software/stanza/1.0.0/ru/default.zip: 100%|â
 
 ![arshavin](/images/arshavin.png "Russian document parsed with NER entities")
 
-## Spacy to find keywords in Swedish
+## Spacy in Swedish: How to Find Keywords
 
 Now, let's try to parse a Swedish document. Once again, I head over to Wikipedia and look for the [Ibrahimovic page](https://sv.wikipedia.org/wiki/Zlatan_Ibrahimovi%C4%87).
 
@@ -158,3 +181,12 @@ pip install pytextrank
 After writing a couple of convenience functions, here are the top 5 TextRank keywords highlighted in HTML:
 
 ![zlatan](/images/zlatan.png "Swedish document parsed with top 5 keywords")
+
+## Resources
+
+1. [Stanza: A Python Natural Language Processing Toolkit for Many Human Languages | Papers With Code](https://paperswithcode.com/paper/stanza-a-python-natural-language-processing)
+1. [You can also try out Stanza in spaCy --- Ines updated the spacy-stanfordnlp wrap... | Hacker News](https://news.ycombinator.com/item?id=22683184)
+1. [Models - Stanza](https://stanfordnlp.github.io/stanza/models.html)
+1. [DerwenAI/pytextrank: Python implementation of TextRank for phrase extraction and summarization of text documents](https://github.com/DerwenAI/pytextrank)
+1. [Languages Supported in Amazon Comprehend - Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html#supported-languages-feature)
+1. [Language Support  |  Cloud Natural Language API  |  Google Cloud](https://cloud.google.com/natural-language/docs/languages#entity_analysis)

@@ -3,16 +3,18 @@ title: Kubernetes Deployment Cheatsheet
 date: 2020-07-16
 categories:
   - Code
+summary: Get a Kubectl Cheat Sheet to use Kubernetes and Helm in practice. Troubleshoot your deployment and your application. Updated regularly.
+keywords:
+  - kubernetes cheat sheet
+  - kubectl cheat sheet
+  - kubectl exec
+  - kubectl commands
+lastmod: 2020-11-09
 ---
 
-This is a version of a Kubernetes deployment cheatsheet that I wrote internally in my team.
+This is the Kubectl Cheat Sheet I wrote for my team at OneFootball. It is designed **to help you use Kubernetes and Helm in practice.** You will learn how to troubleshoot your deployment and your application.
 
-References:
-
-- [kubectl cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-- [helm cheatsheet](https://gist.github.com/tuannvm/4e1bcc993f683ee275ed36e67c30ac49)
-- [Troubleshoot Applications](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application)
-- [Debug Running Pods](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/)
+Last updated on: {{< lastmod >}}
 
 ## Prerequisites: check your setup
 
@@ -117,3 +119,10 @@ kind: Service  # create a service, that allows us to connect to a given deployme
 apiVersion: v1
 kind: PersistentVolume  # create a "disk" that provides space for pods to store data
 ```
+
+## References
+
+- [kubectl Cheat Sheet | Kubernetes](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [#Helm #Kubernetes #cheatsheet, happy helming!](https://gist.github.com/tuannvm/4e1bcc993f683ee275ed36e67c30ac49)
+- [Troubleshoot Applications | Kubernetes](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application)
+- [Debug Running Pods | Kubernetes](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/)

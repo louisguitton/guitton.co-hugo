@@ -1,6 +1,14 @@
-+++
-title = "Freelance work"
-+++
+---
+title: Freelance work
+summaries: >
+    I'm available for freelance missions. I am a Data and Machine Learning solutions developer.
+keyword:
+    - louis guitton
+    - freelance
+    - data engineer
+    - machine learning engineer
+    - backend engineer
+---
 
 Since 2015, I've been doing freelance on the side of my main job. It started in France with teaching,
 and it continued after moving to Germany with data.

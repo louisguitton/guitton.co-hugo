@@ -110,10 +110,10 @@ In my case, because my peak brought ~40 users and koaning.io's peak brought ~800
 
 ## Conclusion
 
-Full disclaimer, this appraoch is simplistic and I have not looked for litterature that models Content Marketing this way.
+Full disclaimer, this appraoch is simplistic and I have not looked for literature that models Content Marketing this way.
 Here are a couple issues I can see:
 
 - I look at 1 isolated content outreach and not recurring content outreachs (maybe over multiple outreachs that discharge curve doesn't look the same)
-- I also assume that all content referrers are equal: Twitter was "my HackerNews" in this post. But is this true? If you have a database of customers email adresses, is an email outreach more efficient? Is a mobile push notification in your native app behaving the same etc...?
+- I also assume that all content referrers are equal: Twitter was "my HackerNews" in this post. But is this true? If you have a database of customers email addresses, is an email outreach more efficient? Is a mobile push notification in your native app behaving the same etc...?
 
 Despite all that, I hope I gave you a quick way to eyeball the success of your last content outreach and to gauge how much work you still need to put in to reach the numbers you're after 😀!

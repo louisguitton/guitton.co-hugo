@@ -5,7 +5,7 @@ categories:
   - Data
 ---
 
-In this very short post, I just want to gather useful python snipets to get data from a datalake or an athena instance.
+In this very short post, I just want to gather useful python snippets to get data from a datalake or an athena instance.
 
 Create a virtual environment with the following libraries:
 

@@ -97,7 +97,7 @@ ASGI is a relatively new standard for python web servers. As with
 every new standard, **it will take some time for all tools in the
 ecosystem to support it**.
 
-Given the 4 steps of monitoring layed out above, a problem arise if
+Given the 4 steps of monitoring laid out above, a problem arise if
 the `monitoring client library` doesn't support ASGI. For example,
 this is the case with NewRelic at the moment (see [ASGI - Starlette/Fast API Framework · Issue #5 · newrelic/newrelic-python-agent](https://github.com/newrelic/newrelic-python-agent/issues/5) for more details). I looked at Datadog too and saw that ASGI is also not supported at the moment.
 

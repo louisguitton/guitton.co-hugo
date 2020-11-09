@@ -79,7 +79,7 @@ I've trained a model on DBPedia using SageMaker. You can expose both the textcat
 
 ### Framing the problem as Entity Linking
 
-Pretty early on, I've thought of using Named Entity Recognition to extract entity mentions from text spans in the documents, and then compare that to surface forms dictionnaries to get the entities mentioned. Add to this a pruning step with some frequency rules, and you have a "tagging" system.
+Pretty early on, I've thought of using Named Entity Recognition to extract entity mentions from text spans in the documents, and then compare that to surface forms dictionaries to get the entities mentioned. Add to this a pruning step with some frequency rules, and you have a "tagging" system.
 
 We would run into issues with polysemy (Red Devils is both a club from EPL or a European national team) and vagueness (eg: "his club" when talking about a player).
 

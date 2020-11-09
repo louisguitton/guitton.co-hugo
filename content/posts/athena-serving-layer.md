@@ -25,7 +25,7 @@ Notes that start with *[In theory]* are things I haven't tried and collected her
     df.write.parquet("s3://users.parquet")
     ```
 
-1. How to choose between Parquet and ORC: if you don't have many nested data types, Parquet might be unecessary. There is a tooling affinity for each format though: Hive and ORC, Spark and Parquet, Kafka and Avro... So given that ORC and Parquet are sensibly similar *at my scale* (note: see point 9 on predicate pushdown), I'd go for Parquet as it's the most convenient when using Spark.
+1. How to choose between Parquet and ORC: if you don't have many nested data types, Parquet might be unnecessary. There is a tooling affinity for each format though: Hive and ORC, Spark and Parquet, Kafka and Avro... So given that ORC and Parquet are sensibly similar *at my scale* (note: see point 9 on predicate pushdown), I'd go for Parquet as it's the most convenient when using Spark.
 
 1. **Discard rows and columns that are known to be irrelevant**. For example, if we have a long-tail distribution, consider throwing away those rows that are unlikely to be queried.
 
@@ -56,7 +56,7 @@ Notes that start with *[In theory]* are things I haven't tried and collected her
     FROM users_not_bucketted;
     ```
 
-    > Note 1: Although spark has a bucketting fetaure, Athena doesn't support it; so we're forced to use either Hive or a `CREATE TABLE AS` statement in Athena
+    > Note 1: Although spark has a bucketting feature, Athena doesn't support it; so we're forced to use either Hive or a `CREATE TABLE AS` statement in Athena
     > Note 2: choose the number of buckets based on the optimal file size for Athena (= don't go below 128 MB per file, unless you never aggregate)
 
 1. *[In theory]* A (more advanced) feature of Parquet and ORC to not overlook is the use of column indexes, or **`Predicate pushdown`**. This combined with partitions can further improve performance. When an Athena query obtains specific column values from your data, it uses statistics from data block predicates, such as max/min values, to determine whether to read or skip the block.

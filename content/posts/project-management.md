@@ -25,11 +25,11 @@ But recently I decided to brush up on those concepts by reading [Project Managem
 
 ## Managing projects is equivalent to Leading people (Chapters 1 & 2)
 
-Accross the book, the one concept that comes back all the time is that leading people is not only a necessary condition to manage projects, but that it can become a sufficient one too.
+Across the book, the one concept that comes back all the time is that leading people is not only a necessary condition to manage projects, but that it can become a sufficient one too.
 
 As put in Chapter two `Success = People + Process`.
 
-So for better sucess you need to better lead people. How to better lead people?
+So for better success you need to better lead people. How to better lead people?
 
 For an unofficial manager, the situation is clear: you won't have any kind of official authority. Back in the [mecatronics class]({{< ref "/posts/mecatro" >}}), the people I needed to lead to success were classmates with as much authority as me. Today in the workplace, my title is `Machine Learning Engineer` not `Project Manager` or `Product Owner`.
 

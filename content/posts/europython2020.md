@@ -7,7 +7,7 @@ categories:
   - Code
 ---
 
-From July 23 to July 26, I attented Europython 2020 online.
+From July 23 to July 26, I attended Europython 2020 online.
 Here, I will go over my notes.
 
 Disclaimer: I've attended some talks that I've not included here.
@@ -73,7 +73,7 @@ values = thread_last(raw_example, (map, int), tuple)
 values = [int(digit) for digit in raw_example]
 ```
 
-Another gotcha was to define indempotent FP functions outside classes and use them inside.
+Another gotcha was to define idempotent FP functions outside classes and use them inside.
 
 - [Writing Zenlike Python, Jason McDonald](https://ep2020.europython.eu/talks/6Le7GKY-writing-zenlike-python/)
 
@@ -222,12 +222,12 @@ It was designed to speed up latency: you bundle things and don’t need to wait 
 HTTP transfers data over TCP.
 `TCP` is a protocol layer that handles network unreliabilities for you.
 You can write anything to a TCP socket (email POP3, or FTP, or HTTP).
-TCP is also reponsible of the `head-of-line blocking` (the traffic jam).
+TCP is also responsible of the `head-of-line blocking` (the traffic jam).
 
 There is a TCP alternative called `QUIC` that comes out of Google.
 It gives you a reliable bytestream like TCP.
 But it has TLC built-in which means it is encrypted by default.
-It also improves performance by leveraging independant bytes streams, thus avouding head-of-line blocking.
+It also improves performance by leveraging independent bytes streams, thus avouding head-of-line blocking.
 
 `HTTP/3` is HTTP, rebuilt on top of QUIC instead of TCP. It can change the Internet as we know it today.
 More time is needed for HTTP/3 to come out of Google and be standardized by IETF, let alone be supported by python libraries likes `httpx`.

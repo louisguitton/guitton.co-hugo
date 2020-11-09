@@ -30,7 +30,7 @@ Is it for lack of safety 😱 ? (saw some of that in my time in the incubator)
 
 Is it for lack of belonging or esteem 💖 - or psychological needs ?
 
-Is it for lack of self fulfilment ?
+Is it for lack of self fulfillment ?
 
 ## What to do as a company
 

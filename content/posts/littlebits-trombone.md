@@ -23,7 +23,7 @@ Example of advanced activities:
 
 Overall, the activities were organised in a sensible progression and the narrative would be about the different kinds of energy and the different kinds of wavelength (visible light, infrared, radio, wifi & internet). Looking back, that "curriculum" still seems pretty good.
 
-But on some occasions, I would go off the beaten track and come up with the weirdest projects that - thank God - never made it into the curriculum. Here is a trombone that I made using LittleBits and Arduino. God save the Queen from hearing my intepretation of the english anthem ...
+But on some occasions, I would go off the beaten track and come up with the weirdest projects that - thank God - never made it into the curriculum. Here is a trombone that I made using LittleBits and Arduino. God save the Queen from hearing my interpretation of the english anthem ...
 
 {{< youtube q8ZCtzoAvg0 >}}
 

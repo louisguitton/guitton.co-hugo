@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Deployment Cheatsheet
+title: Kubernetes Deployment Cheat Sheet
 date: 2020-07-16
 categories:
   - Code

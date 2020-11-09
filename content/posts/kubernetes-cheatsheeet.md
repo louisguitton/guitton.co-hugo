@@ -10,15 +10,26 @@ keywords:
   - kubectl exec
   - kubectl commands
 lastmod: 2020-11-09
+images:
+  - /images/kubernetes_cheat_sheet.png
 ---
 
 This is the Kubectl Cheat Sheet I wrote for my team at OneFootball. It is designed **to help you use Kubernetes and Helm in practice.** You will learn how to troubleshoot your deployment and your application.
 
 Last updated on: {{< lastmod >}}
 
-## Prerequisites: check your setup
+![Kubernetes Cheat Sheet](/images/kubernetes_cheat_sheet.png "Kubernetes Cheat Sheet")
+
+## Prerequisites: doublecheck your setup
+
+You will need to **check your kubernetes context**, for example you might want to switch between a staging kubernetes cluster and a production cluster.
+
+You will want to double **check your helm versions** too. One ⚠️ thing to pay attention to is whether you have the same version in your client than in your cluster.
 
 ```sh
+# Kubectl Alias
+alias k=kubectl
+
 # check your context
 k config current-context
 
@@ -37,7 +48,11 @@ helm ls
 k config set-context --current --namespace=<your-default-namespace>
 ```
 
-## Kubernetes Dashboard
+## Use the Kubernetes Dashboard
+
+The Kubernetes Dashboard is a web-based Kubernetes user interface. While most of the commands in this cheat sheet are about the `kubectl` CLI, **using a GUI can be helpful**, especially when you're starting out.
+
+In particular, you can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources, or troubleshoot your containerized application. For example you can scale a Deployment, restart a pod etc...
 
 ```sh
 k proxy
@@ -49,10 +64,11 @@ open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernet
 
 ## Debbuging the helm deployment
 
-We create objects with `helm`, not with `kubectl` directly.
+When you're deploying a new application, things can go wrong for many reasons: the pod can't pull the docker image, or the liveliness probes fail for some reason etc... Here are commands to help you debug your deployment.
 
 ```sh
 # check Kubernetes logs
+# We create objects with `helm`, not with `kubectl` directly.
 helm status <my-deployment>
 # or get your pod name and describe it
 k get po -o wide
@@ -71,7 +87,9 @@ k scale deployment <my-deployment> --replicas=0
 k scale deployment <my-deployment> --replicas=1
 ```
 
-## Debugging the application
+## Debugging the deployed application
+
+Once the application is deployed, it can still fail. You then need to investigate the application itself. You can do so by checking its logs or port-forwarding the application to your local machine.
 
 ```sh
 # check the application logs
@@ -81,13 +99,15 @@ k get po -o wide
 k logs <my-pod>
 
 # ssh into the pod
-kubectl exec --stdin --tty <my-pod> -- /bin/sh
+k exec --stdin --tty <my-pod> -- /bin/sh
 
 # listen on port 5000 on the local machine and forward to port 8501 on the pod
-kubectl port-forward <my-pod> 5000:8501
+k port-forward <my-pod> 5000:8501
 ```
 
 ## Debugging Ambassador configs
+
+If you're using a reverse proxy in front of your application, things could fail there too. Here are commands to debug your Ambassador configs.
 
 ```sh
 # open the Ambassador UI
@@ -101,7 +121,7 @@ k logs -f -n ambassador \
     -c ambassador
 ```
 
-## Others
+## Other Useful Bits
 
 ```sh
 # Retrieve a k8s secret

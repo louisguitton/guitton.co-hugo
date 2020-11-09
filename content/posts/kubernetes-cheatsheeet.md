@@ -140,7 +140,7 @@ apiVersion: v1
 kind: PersistentVolume  # create a "disk" that provides space for pods to store data
 ```
 
-## References
+## References
 
 - [kubectl Cheat Sheet | Kubernetes](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - [#Helm #Kubernetes #cheatsheet, happy helming!](https://gist.github.com/tuannvm/4e1bcc993f683ee275ed36e67c30ac49)

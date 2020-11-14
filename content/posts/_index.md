@@ -1,6 +1,15 @@
 ---
-title: Ramblings
+title: My Latest Blog Posts
 date: 2019-05-19
+summary: My articles about python software development, machine learning and data engineering.
+keywords:
+  - python
+  - machine learning
+  - nlp
+  - data engineering
+  - fastapi
+  - spacy
 ---
 
-Hang tight while I gather here all the blog posts I've written over the years.
+Here are my latest blog posts.
+I write about: {{< keywords >}}.

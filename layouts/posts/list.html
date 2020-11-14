@@ -1,0 +1,24 @@
+{{ define "title" }}
+  {{ .Title }} · {{ strings.TrimSuffix " | python machine learning engineering" .Site.Title }}
+{{ end }}
+{{ define "description" }}
+  {{ .Summary }}
+{{ end }}
+{{ define "keywords" }}
+  {{ delimit .Keywords ", " }}
+{{ end }}
+{{ define "content" }}
+  <section class="container list">
+    <h1 class="title">{{ .Title }}</h1>
+
+    {{ .Content }}
+
+    <ul>
+      {{- range .Paginator.Pages -}}
+        {{- .Render "li" -}}
+      {{- end -}}
+    </ul>
+
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}

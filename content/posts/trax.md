@@ -1,36 +1,54 @@
 ---
-title: "Text classification with trax"
+title: "How to Train a Text Classification Model with trax"
 date: 2020-09-28
 lastmod: 2020-09-28
+summary: In this post, I show you how to train  a model with trax, the very concise deep learning framework.
+keywords:
+  - trax training
+  - trax traintask
+  - trax.data.tfds
+  - trax cross entropy loss
 categories:
   - ML
+featuredImage: /images/text-classification-on-ag-news.png
+images:
+    - /images/text-classification-on-ag-news.png
 ---
 
-## The trax deep learning framework
+## What is the trax deep learning framework
 
-Reference:
-
-- https://github.com/google/trax
-
-Trax is coming out of the Google Brain team and is the latest iteration after almost a decade of work on TensorFlow, machine translation, and Tensor2Tensor. Being a new-comer in a somewhat crowded space (keras, pytorch, thinc), it has been able to learn from those APIs.
+[`trax`](https://trax.readthedocs.io/en/latest/) is coming out of the Google Brain team and is the latest iteration after almost a decade of work on TensorFlow, machine translation, and Tensor2Tensor. Being a new-comer in a somewhat crowded space (`keras`, `pytorch`, `thinc`), it has been able to learn from those APIs.
 In particular:
 
 - it is very concise
-- it runs on TensorFlow backend
-- it uses Jax to speed up tensor-based computation (instead of numpy)
+- it runs on `TensorFlow` backend
+- it uses `Jax` to speed up tensor-based computation (instead of numpy)
 
-## The AG News dataset
+## Text Classification on the AG News Dataset
 
-A great dataset to look into text classification. https://www.tensorflow.org/datasets/catalog/ag_news_subset
+The [AG's news topic classification dataset](https://www.tensorflow.org/datasets/catalog/ag_news_subset) is a dataset of 120,000 training samples of news articles that are of one of 4 classes.
 
-## Prepare the dataset
+It has been used as a text classification benchmark in numerous papers, like [[1509.01626]](https://arxiv.org/abs/1509.01626). You can see the papers using that dataset on [paperswithcode.com](https://paperswithcode.com/sota/text-classification-on-ag-news)
+
+![Text Classification on AG News](/images/text-classification-on-ag-news.png "AG News Benchmark (Text Classification) | Papers With Code")
+
+On top of being a well-understood dataset, it has the advantage of being available on [TensorFlow Datasets](https://www.tensorflow.org/datasets). Therefore we will use it in the rest of this post.
+
+## Prepare the dataset using data.TFDS and data.Serial
 
 `trax` needs generators of data. Each element is a tuple (input, target) or (input, target, weight) (usually weight is =1 because all examples have the same importance).
 
 ```python
-# https://www.tensorflow.org/datasets/catalog/ag_news_subset
-train_stream = data.TFDS('ag_news_subset', keys=('description', 'label'), train=True)()
-eval_stream = data.TFDS('ag_news_subset', keys=('description', 'label'), train=False)()
+train_stream = data.TFDS(
+    'ag_news_subset',
+    keys=('description', 'label'),
+    train=True
+)()
+eval_stream = data.TFDS(
+    'ag_news_subset',
+    keys=('description', 'label'),
+    train=False
+)()
 ```
 
 ```python
@@ -47,7 +65,7 @@ train_batches_stream = data_pipeline(train_stream)
 eval_batches_stream = data_pipeline(eval_stream)
 ```
 
-## Model
+## Build the Text Classification Model using tl.Serial
 
 `trax` is really concise, you can use the library of layers available.
 
@@ -60,9 +78,9 @@ model = tl.Serial(
 )
 ```
 
-## Training
+## Model Training using training.Loop
 
-For training, there is the concep of a "task" which wraps the data, the optimiser, the metrics etc...
+For training, there is the concept of a "task" which wraps the data, the optimiser, the metrics etc...
 
 ```python
 # Training task.
@@ -92,7 +110,7 @@ training_loop = training.Loop(model,
 training_loop.run(2000)
 ```
 
-## Look at the predictions
+## Look at the Predictions
 
 ```python
 inputs, targets, weights = next(eval_batches_stream)
@@ -102,6 +120,15 @@ expected_class = targets[0]
 example_input_str = trax.data.detokenize(example_input, vocab_file='en_8k.subword')
 print(f'example input_str: {example_input_str}')
 sentiment_log_probs = model(example_input[None, :])  # Add batch dimension.
-print(f'Model returned sentiment probabilities: {np.exp(sentiment_log_probs)}')
+print(f'Model returned class probabilities: {np.exp(sentiment_log_probs)}')
 print(f'Expected class: {expected_class}')
 ```
+
+## References
+
+1. [google/trax: Trax — Deep Learning with Clear Code and Speed](https://github.com/google/trax)
+1. [Welcome to TraX library documentation — TraX 3.0.3 documentation](https://trax.readthedocs.io/en/latest/)
+1. [ag_news_subset  |  TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/ag_news_subset)
+1. [[1509.01626] Character-level Convolutional Networks for Text Classification](https://arxiv.org/abs/1509.01626)
+1. [AG News Benchmark (Text Classification) | Papers With Code](https://paperswithcode.com/sota/text-classification-on-ag-news)
+1. [TensorFlow Datasets](https://www.tensorflow.org/datasets)

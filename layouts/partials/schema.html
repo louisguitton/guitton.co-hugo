@@ -1,7 +1,21 @@
 {{/*  https://dev.to/pdwarkanath/adding-structured-data-to-your-hugo-site-58db  */}}
 {{/*  https://developers.google.com/search/docs/data-types/article  */}}
 {{/*  https://search.google.com/test/rich-results  */}}
-{{ if eq .Section "posts" }}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": {{ .Site.Params.publisher_name }},
+        "url": {{ .Site.BaseURL }},
+        "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}],
+        "logo": {
+            "@type": "ImageObject",
+            "url": {{ .Site.Params.avatarurl | absURL  }}
+        }
+    }
+</script>
+{{/*  https://gohugo.io/templates/section-templates/#page-kinds  */}}
+{{ if and (eq .Section "posts") (not (eq .Kind "section"))}}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -28,12 +42,3 @@
     }
 </script>
 {{ end }}
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": {{ .Site.Params.publisher_name }},
-    "url": {{ .Site.BaseURL }},
-    "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}]
-}
-</script>

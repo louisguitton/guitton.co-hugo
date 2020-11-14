@@ -1,6 +1,7 @@
 ---
 title: "Mecatronics - Building a Snakeboard"
 date: 2014-06-01T11:54:56+02:00
+lastmod: 2020-05-23
 ---
 
 ## Project Management

@@ -1,6 +1,7 @@
 ---
 title: "Text classification with trax"
 date: 2020-09-28
+lastmod: 2020-09-28
 categories:
   - ML
 ---

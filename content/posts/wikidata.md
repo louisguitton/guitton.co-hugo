@@ -1,6 +1,7 @@
 ---
 title: "Querying WikiData with SPARQL"
 date: 2020-05-27T18:54:56+02:00
+lastmod: 2020-05-27
 categories:
   - Data
 ---

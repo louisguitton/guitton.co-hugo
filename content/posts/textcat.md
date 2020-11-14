@@ -1,6 +1,7 @@
 ---
 title: "Real world text classification, ... I guess"
 date: 2019-07-29
+lastmod: 2020-11-09
 categories:
   - ML
 ---

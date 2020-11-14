@@ -1,6 +1,7 @@
 ---
 title: "How I set up my laptops"
 date: 2019-08-07
+lastmod: 2020-05-23
 categories:
   - Code
 ---

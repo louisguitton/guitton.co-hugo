@@ -1,6 +1,7 @@
 ---
 title: Football Strava
 date: 2020-06-01
+lastmod: 2020-07-30
 categories:
   - ML
 ---

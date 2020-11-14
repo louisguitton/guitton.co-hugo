@@ -1,6 +1,7 @@
 ---
 title: Notes on Europython 2020
 date: 2020-07-27
+lastmod: 2020-11-07
 categories:
   - Data
   - ML

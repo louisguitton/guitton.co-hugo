@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Deployment Cheat Sheet
 date: 2020-07-16
+lastmod: 2020-11-09
 categories:
   - Code
 summary: Get a Kubectl Cheat Sheet to use Kubernetes and Helm in practice. Troubleshoot your deployment and your application. Updated regularly.
@@ -9,7 +10,6 @@ keywords:
   - kubectl cheat sheet
   - kubectl exec
   - kubectl commands
-lastmod: 2020-11-09
 images:
   - /images/kubernetes_cheat_sheet.png
 ---

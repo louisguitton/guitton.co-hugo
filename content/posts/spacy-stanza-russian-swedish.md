@@ -1,6 +1,7 @@
 ---
 title: "How to use spaCy language models in Russian or Swedish"
 date: 2020-03-22
+lastmod: 2020-11-08
 summary:
   I demo how you can use spaCy in 70+ languages by leveraging Stanza, a NLP toolkit by StandfordNLP. I give spaCy NER examples in Russian and Swedish.
 keywords:

@@ -1,6 +1,7 @@
 ---
 title: "Design for non designers"
 date: 2018-07-22
+lastmod: 2020-05-23
 categories:
   - Ideas
 ---

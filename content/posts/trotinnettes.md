@@ -1,6 +1,7 @@
 ---
 title: "Lyon's love for electric scooters"
 date: 2019-04-28
+date: 2020-05-23
 categories:
   - Ideas
 ---

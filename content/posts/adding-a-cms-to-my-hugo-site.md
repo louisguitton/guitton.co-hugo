@@ -1,6 +1,7 @@
 ---
 title: Adding a CMS to my Hugo site
-date: 2019-11-30T10:56:12.852Z
+date: 2019-11-30
+lastmod: 2020-11-07
 categories:
     - Code
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Project Management for the Unofficial Project Manager"
 date: 2019-10-12
+lastmod: 2020-11-09
 categories:
   - Ideas
 ---

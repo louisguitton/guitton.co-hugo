@@ -1,6 +1,7 @@
 ---
 title: My ML Engineer stack
 date: 2020-05-09
+lastmod: 2020-05-27
 categories:
   - Data
 ---

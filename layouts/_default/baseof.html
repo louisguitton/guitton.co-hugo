@@ -88,7 +88,9 @@
       {{ partial "footer.html" . }}
     </main>
 
-    {{ template "_internal/google_analytics.html" . }}
+    {{ if not .Site.IsServer }}
+      {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
 
     <script>
         if (window.netlifyIdentity) {

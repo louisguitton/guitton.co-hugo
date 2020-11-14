@@ -45,6 +45,9 @@ googleAnalytics = "UA-140255752-1"
     math = true
     custom_css = []
 
+    # for schema.org
+    publisher_name = "Guitton.co"
+
 # Social links
 [[params.social]]
     name = "Github"

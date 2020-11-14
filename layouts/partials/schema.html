@@ -1,0 +1,39 @@
+{{/*  https://dev.to/pdwarkanath/adding-structured-data-to-your-hugo-site-58db  */}}
+{{/*  https://developers.google.com/search/docs/data-types/article  */}}
+{{/*  https://search.google.com/test/rich-results  */}}
+{{ if eq .Section "posts" }}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {{ .Title }},
+        "image": {{ .Params.featuredImage | absURL }},
+        "datePublished": {{ .PublishDate }},
+        "dateModified": {{ .Lastmod }},
+        "author": {
+            "@type": "Person",
+            "name": {{ .Site.Params.author }}
+        },
+        "mainEntityOfPage": { "@type": "WebPage" },
+        "publisher": {
+            "@type": "Organization",
+            "name": {{ .Site.Params.publisher_name }},
+            "logo": {
+                "@type": "ImageObject",
+                "url": {{ .Site.Params.avatarurl | absURL  }}
+            }
+        },
+        "description": {{ .Summary | plainify | safeHTML }},
+        "keywords": [{{ range $i, $e := .Keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}]
+    }
+</script>
+{{ end }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ .Site.Params.publisher_name }},
+    "url": {{ .Site.BaseURL }},
+    "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}]
+}
+</script>

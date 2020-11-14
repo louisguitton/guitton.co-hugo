@@ -1,22 +1,31 @@
-+++
-title = "Hi, I'm Louis."
-slug = "about"
-+++
+---
+title: Hi, I'm Louis.
+summary: >
+    I am not Louis Vuitton. Instead, I am a Machine Learning Engineer from France, living in Berlin.
+keywords:
+    - louis guitton
+    - machine learning engineer
+    - machine learning
+    - nlp
+    - python
+lastmod: 2020-11-14
+---
 
-I'm a data scientist and freelance software engineer in **Berlin** with entrepreneurial experience.
+No, I'm not Louis Vuitton 😂.
 
-Paid to code **since 2014**.
+Instead, I am a Machine Learning Engineer from France, living in **Berlin**. I also [work freelance]({{< ref "/freelance" >}} "Freelance Work") and have entrepreneurial experience.
 
-French and European.
-{{< tweet 987615293773139968 >}}
+I have experience with Natural Language Processing (NLP) in python. I am curious and try to keep up with as much research papers as possible, but I'm not a Machine Learning Scientist.
+
+I love Open Source and try to contribute when time allows:
+{{< tweet 1312342451198267392 >}}
+
+I play football:
+{{< tweet 1267760942932254722 >}}
 
 Alumni from `Entrepreneur First` and `Mines ParisTech`.
-I'm passionate about learning, building products and prototyping my ideas.
-{{< instagram BijxHd-A7Jn >}}
+I have lived in 🇫🇷 Paris, 🇸🇬 Singapore, 🇬🇧 Brighton and 🇩🇪 Berlin.
 
-Playing the bass guitar.
-{{< instagram BtJG5usF5Fq hidecaption >}}
-
-
-I lived in Paris, Singapore, Brighton and Berlin.
-{{< instagram BXqUGmLl7DJ >}} {{< instagram vyflLNBXPc >}}
+<img src="/images/ef_countdown.jpg" alt="Entrepreneur First" width="33%">
+<img src="/images/in_my_room.jpg" alt="Playing Music" width="33%">
+<img src="/images/singapore.jpg" alt="Singapore" width="33%">

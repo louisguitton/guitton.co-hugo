@@ -16,9 +16,12 @@ pygmentscodefencesguesssyntax = true
 
 googleAnalytics = "UA-140255752-1"
 
+[markup.goldmark.renderer]
+    unsafe= true
+
 [taxonomies]
-  category = "categories"
-  series = "series"
+    category = "categories"
+    series = "series"
 
 [params]
     author = "Louis Guitton"

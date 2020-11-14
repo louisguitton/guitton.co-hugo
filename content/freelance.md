@@ -1,13 +1,14 @@
 ---
-title: Freelance work
-summaries: >
+title: Freelance Work
+summary: >
     I'm available for freelance missions. I am a Data and Machine Learning solutions developer.
-keyword:
+keywords:
     - louis guitton
     - freelance
     - data engineer
     - machine learning engineer
     - backend engineer
+lastmod: 2020-11-09
 ---
 
 Since 2015, I've been doing freelance on the side of my main job. It started in France with teaching,
@@ -21,8 +22,8 @@ I assist in designing, developing, deploying and maintaining your data architect
 
 Stack: _python, AWS, Digital Ocean, flask, Apache Airflow, dbt, Metabase_
 
-<img src="/images/Mercedes_Benz_io_black.png" height="48" title="mb-io"/>
-<img src="/images/enpact.png" height="48" title="enpact"/>
+<img src="/images/Mercedes_Benz_io_black.png" alt="Mercedes-Benz.io" height="48">
+<img src="/images/enpact.png" alt="Enpact" height="48">
 
 | year         | title                                                                                       | work                                                                                                                                                                                                                        |
 | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

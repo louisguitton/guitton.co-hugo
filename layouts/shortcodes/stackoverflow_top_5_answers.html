@@ -1,0 +1,25 @@
+<!-- https://api.stackexchange.com/docs/answers-on-users -->
+<!-- https://api.stackexchange.com/docs/types/answer -->
+
+{{ $answersJ := getJSON "https://api.stackexchange.com/2.2/users/3823815/answers?pagesize=5&order=desc&sort=votes&site=stackoverflow&filter=!4-8tq1nkLS403vv)X" }}
+
+<table class="table table-hover" id="report">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Upvotes</th>
+            <th scope="col">Answer</th>
+            <th scope="col">Created at</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range first 5 $answersJ.items }}
+        <tr>
+            <th scope="row">{{ .score }}</th>
+            <td>
+                <a href="{{ .share_link }}" target="_blank">{{ htmlUnescape .title }}</a>
+            </td>
+            <td>{{ dateFormat "Jan 2, 2006" (int .creation_date) }}</td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>

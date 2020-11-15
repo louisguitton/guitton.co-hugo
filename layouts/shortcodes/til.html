@@ -1,0 +1,28 @@
+{{/*  create empty array  */}}
+{{ $learnings := slice }}
+
+{{/*  https://docs.github.com/en/free-pro-team@latest/rest/reference/activity#list-public-events-for-a-user  */}}
+{{/*  github API will return at most 100 events in one page  */}}
+{{ $githubAPI := getJSON "https://api.github.com/users/louisguitton/events/public?per_page=100" }}
+{{ range where $githubAPI "type" "WatchEvent" }}
+    {{ $record := dict "date_at" (time .created_at) "icon" "fa-github" "url" (print "https://github.com/" .repo.name) "title" .repo.name }}
+    {{ $learnings = $learnings | append $record }}
+{{ end }}
+
+{{/*  https://api.stackexchange.com/docs/timeline-on-users#ids=3823815&filter=default&site=stackoverflow */}}
+{{ $stackoverflowAPI := getJSON "https://api.stackexchange.com/2.2/users/3823815/timeline?fromdate=" (now.AddDate 0 -3 0).Unix "&site=stackoverflow" }}
+{{ range where $stackoverflowAPI.items "timeline_type" "in" (slice "commented" "asked" "answered" ) }}
+    {{ $record := dict "date_at" (time (int .creation_date)) "icon" "fa-stack-overflow" "url" (print "https://stackoverflow.com/q/" .post_id) "title" .title }}
+    {{ $learnings = $learnings | append $record }}
+{{ end }}
+
+<ul>
+
+    {{ range sort $learnings "date_at" "desc" }}
+        <li>
+            {{ dateFormat "Jan 2, 2006" .date_at }}
+            <i class='fab {{ .icon }}'></i><a href='{{ .url }}'> {{ .title }}</a>
+        </li>
+    {{ end }}
+
+</ul>

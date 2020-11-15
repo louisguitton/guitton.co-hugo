@@ -38,9 +38,7 @@ You can follow my reading challenge this year here:
 	<script src="https://www.goodreads.com/user_challenges/widget/58757583-louis?challenge_id=8863&v=2"></script>
 </div>
 
-
 One of the things you can do is organise your reads into **shelves**. I personally have mainly genre shelves but I also have one to display my favorite books. This will stay up to date beyond October 2019 and if you see anything that you're curious about, drop me a note.
-
 
 <style type="text/css" media="screen">
     .gr_custom_container_1570373703 {

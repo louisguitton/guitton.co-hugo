@@ -1,19 +1,6 @@
 {{/*  https://dev.to/pdwarkanath/adding-structured-data-to-your-hugo-site-58db  */}}
 {{/*  https://developers.google.com/search/docs/data-types/article  */}}
 {{/*  https://search.google.com/test/rich-results  */}}
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": {{ .Site.Params.publisher_name }},
-        "url": {{ .Site.BaseURL }},
-        "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}],
-        "logo": {
-            "@type": "ImageObject",
-            "url": {{ .Site.Params.avatarurl | absURL  }}
-        }
-    }
-</script>
 {{/*  https://gohugo.io/templates/section-templates/#page-kinds  */}}
 {{ if and (eq .Section "posts") (not (eq .Kind "section"))}}
 <script type="application/ld+json">
@@ -32,13 +19,25 @@
         "publisher": {
             "@type": "Organization",
             "name": {{ .Site.Params.publisher_name }},
-            "logo": {
-                "@type": "ImageObject",
-                "url": {{ .Site.Params.avatarurl | absURL  }}
-            }
+            "url": {{ .Site.BaseURL }},
+            "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}],
+            "logo": {{ .Site.Params.avatarurl | absURL  }}
         },
         "description": {{ .Summary | plainify | safeHTML }},
-        "keywords": [{{ range $i, $e := .Keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}]
+        "keywords": [{{ range $i, $e := .Keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}],
+        "wordcount": {{ .WordCount }}
+    }
+</script>
+{{ else }}
+{{/*  Blog or WebSite could also work here  */}}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": {{ .Site.Params.publisher_name }},
+        "url": {{ .Site.BaseURL }},
+        "sameAs": [{{ range $i, $e := .Site.Params.Social }}{{ if $i }}, {{ end }}{{ $e.url }}{{ end }}],
+        "logo": {{ .Site.Params.avatarurl | absURL  }}
     }
 </script>
 {{ end }}

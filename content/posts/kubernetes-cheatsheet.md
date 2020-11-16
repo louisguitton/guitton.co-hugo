@@ -14,6 +14,8 @@ images:
   - /images/kubernetes_cheat_sheet.png
 series:
   - top posts
+aliases:
+  - /posts/kubernetes-cheatsheeet/
 ---
 
 This is the Kubectl Cheat Sheet I wrote for my team at OneFootball. It is designed **to help you use Kubernetes and Helm in practice.** You will learn how to troubleshoot your deployment and your application.

@@ -42,7 +42,7 @@ googleAnalytics = "UA-140255752-1"
 
     rtl = false
 
-    math = true
+    math = false  # can be overriden for each post
     custom_css = []
 
     # for schema.org

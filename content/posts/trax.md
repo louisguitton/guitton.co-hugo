@@ -17,7 +17,7 @@ images:
 
 ## What is the trax deep learning framework
 
-[`trax`](https://trax.readthedocs.io/en/latest/) is coming out of the Google Brain team and is the latest iteration after almost a decade of work on TensorFlow, machine translation, and Tensor2Tensor. Being a new-comer in a somewhat crowded space (`keras`, `pytorch`, `thinc`), it has been able to learn from those APIs.
+[`trax`](https://trax-ml.readthedocs.io/en/latest/) is coming out of the Google Brain team and is the latest iteration after almost a decade of work on TensorFlow, machine translation, and Tensor2Tensor. Being a new-comer in a somewhat crowded space (`keras`, `pytorch`, `thinc`), it has been able to learn from those APIs.
 In particular:
 
 - it is very concise
@@ -34,7 +34,7 @@ It has been used as a text classification benchmark in numerous papers, like [[1
 
 On top of being a well-understood dataset, it has the advantage of being available on [TensorFlow Datasets](https://www.tensorflow.org/datasets). Therefore we will use it in the rest of this post.
 
-## Prepare the dataset using data.TFDS and data.Serial
+## Prepare the dataset using trax.data.TFDS and data.Serial
 
 `trax` needs generators of data. Each element is a tuple (input, target) or (input, target, weight) (usually weight is =1 because all examples have the same importance).
 
@@ -127,7 +127,7 @@ print(f'Expected class: {expected_class}')
 ## References
 
 1. [google/trax: Trax — Deep Learning with Clear Code and Speed](https://github.com/google/trax)
-1. [Welcome to TraX library documentation — TraX 3.0.3 documentation](https://trax.readthedocs.io/en/latest/)
+1. [Trax Tutorials — Trax documentation](https://trax-ml.readthedocs.io/en/latest/)
 1. [ag_news_subset  |  TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/ag_news_subset)
 1. [[1509.01626] Character-level Convolutional Networks for Text Classification](https://arxiv.org/abs/1509.01626)
 1. [AG News Benchmark (Text Classification) | Papers With Code](https://paperswithcode.com/sota/text-classification-on-ag-news)

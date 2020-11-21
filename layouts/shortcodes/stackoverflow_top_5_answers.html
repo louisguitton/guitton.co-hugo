@@ -16,7 +16,7 @@
         <tr>
             <th scope="row">{{ .score }}</th>
             <td>
-                <a href="{{ .share_link }}" target="_blank">{{ htmlUnescape .title }}</a>
+                <a href="{{ .share_link }}" target="_blank" rel="noopener">{{ htmlUnescape .title }}</a>
             </td>
             <td>{{ dateFormat "Jan 2, 2006" (int .creation_date) }}</td>
         </tr>

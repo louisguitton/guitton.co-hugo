@@ -10,17 +10,19 @@ categories:
 
 I left Paris and France in mid 2016 after graduation to come live in Berlin. I have never lived in Lyon, and to be honest I don't know the city really well. But last weekend, I attended a wedding there and I was really surprised by Lyon's love for electric scooters.
 
+## Trotinnette or Electric Scooter
+
 ![What is a scooter?](https://cdn-images-1.medium.com/max/5728/1*wKR-663OdGwD3wawK3q5iw.png "Google search scooter images")_What is a scooter?_
 
 Before we carry on, I must admit my confusion as a Frenchman around the usage of the word scooter. For Google — and other American English native speakers I'm sure — [scooter means two things at once](https://dictionary.cambridge.org/dictionary/english/scooter), while in french we have two different words for them. There is on the one hand the “_light two-wheeled motor vehicle smaller than a motocycle_” (**scooter** in french) and on the other hand the “_child’s toy consisting of a footboard and a long steering handle_” (**trottinette** in french). In the rest of this article, I will actually discuss Lyon’s love for electric trottinettes.
 
-> # I will actually discuss **Lyon’s love for electric trottinettes**
+## Lyon is not the only one
 
-Mobility is a really interesting space in 2019. In the last few years, I've seen bike sharing (_Velib_ in Paris) and car sharing (_Autolib_ in Paris) evolve into services where you can park anywhere (_Mobike_ and _Drive Now_ in Berlin respectively). Last year in Berlin electric scooters (as in the french scooter) popped up too (_Coup_ in Berlin). The job market followed the trend and suddenly I had friends working for ride-sharing platforms (*Free2Move *in Berlin). But it's in Lyon that I properly discovered electric trottinettes.
+Mobility is a really interesting space in 2019. In the last few years, I've seen bike sharing (_Velib_ in Paris) and car sharing (_Autolib_ in Paris) evolve into services where you can park anywhere (_Mobike_ and _Drive Now_ in Berlin respectively). Last year in Berlin electric scooters (as in the french scooter) popped up too (_Coup_ in Berlin). The job market followed the trend and suddenly I had friends working for ride-sharing platforms (_Free2Move_ in Berlin). But it's in Lyon that I properly discovered electric trottinettes.
 
 Yes, people use them a lot. Yes, people drive them with no concern for pedestrians' security, using sidewalks or streets at their convenience. I had heard of all that from other cities. But the really mind blowing thing was that in a matter of 30 minutes, I could count not less than seven different e-trottinette brands, and I probably missed one or two.
 
-> # In a matter of 30 minutes, I could count not less than seven different e-trottinette brands
+## Plethora of Brands
 
 [Dott](https://ridedott.com/), [Lime](https://www.li.me), [Wind](https://www.wind.co/), [Voi](https://www.voiscooters.com/), [Tier](https://www.tier.app/), [Flash](https://goflash.com/), [Bird](https://www.bird.co/) … Here is a small selection of pictures and best bits that I found on their websites.
 
@@ -40,7 +42,7 @@ _Startupy branding overdose_
 
 Enough with the sarcasm. I actually had quite some fun walking in Lyon and counting the e-scooter brands. And comparing their websites was a great exercise. Indeed, what would **you** do if you had to release one more of these brands?
 
-> # What would be the branding of your e-trottinette startup?
+## What Would be the Branding of Your E-Trottinette Startup
 
 As a parting thought, I can’t help but think about these pictures from bike-sharing cemeteries in China. The (probably upcoming) concentration of the e-trotinette market could have the hidden side-effect of creating similar e-trotinette cemeteries.
 

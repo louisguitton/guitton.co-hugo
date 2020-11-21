@@ -1,8 +1,7 @@
 ---
 title: What You Can Hire Me For
 summary: >
-    I'm available for freelance missions.
-    I am a Data and Machine Learning solutions developer.
+    I'm available for freelance missions if you're looking for a Data and Machine Learning solutions developer. Reach out to me via email, I'd be happy to chat.
 keywords:
     - louis guitton
     - freelance

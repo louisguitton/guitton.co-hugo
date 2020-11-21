@@ -1,7 +1,7 @@
 ---
 title: Hi, I'm Louis.
 summary: >
-    I am not Louis Vuitton. Instead, I am a Machine Learning Engineer from France, living in Berlin.
+    I am not Louis Vuitton. Instead, I am a Machine Learning Engineer from France, living in Berlin. I love Open Source, the Bass Guitar and Football.
 keywords:
     - louis guitton
     - machine learning engineer

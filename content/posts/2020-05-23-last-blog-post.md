@@ -1,8 +1,9 @@
 ---
 slug: last-blog-post
-title: "How did my last blog post perform?"
+title: How did my last blog post perform?
 date: 2020-05-23
 lastmod: 2020-11-09
+summary: A back of the napkin modeling of social media referred blog post views.
 categories:
   - Ideas
 aliases:

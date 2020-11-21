@@ -1,8 +1,9 @@
 ---
 slug: medienliga-game
-title: "media:net 4:2 OneFootball"
+title: media:net 4:2 OneFootball
 date: 2019-09-23
 lastmod: 2020-07-30
+summary: A night in the OneFootball team competing in Berlin's Medienliga.
 ---
 
 At [OneFootball](https://company.onefootball.com/) we are not all football aficionados but for those of us who want to, we can play quite a bit of football.

@@ -3,6 +3,7 @@ slug: adding-a-cms-to-my-hugo-site
 title: Adding a CMS to my Hugo site
 date: 2019-11-30
 lastmod: 2020-11-07
+summary: How to add a CMS to a Staic Site Generator.
 categories:
     - Code
 ---

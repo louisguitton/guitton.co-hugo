@@ -1,8 +1,9 @@
 ---
 slug: incubator
-title: "Working on something cool ..."
+title: Working on something cool ...
 date: 2018-09-11
 lastmod: 2020-05-23
+summary: Collecting my thoughts on my time at the incubator Entrepreneur First in Berlin.
 ---
 
 > My last 5 months and beyond

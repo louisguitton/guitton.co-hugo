@@ -1,8 +1,9 @@
 ---
 slug: project-management
-title: "Project Management for the Unofficial Project Manager"
+title: Project Management for the Unofficial Project Manager
 date: 2019-10-12
 lastmod: 2020-11-09
+summary: A review of the book 'Project Management for the Unofficial Project Manager'.
 categories:
   - Ideas
 ---

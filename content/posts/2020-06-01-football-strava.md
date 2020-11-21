@@ -3,7 +3,7 @@ slug: football-strava
 title: Football Strava
 date: 2020-06-01
 lastmod: 2020-11-15
-summary:
+summary: How I track my football games using Strava and python.
 keywords:
   - strava football
   - playertek

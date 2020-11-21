@@ -3,6 +3,7 @@ slug: athena-serving-layer
 title: Athena serving layer
 date: 2020-02-23
 lastmod: 2020-11-09
+summary: Steps to follow to use AWS Athena as a serving layer for a backend service.
 categories:
   - Data
 ---

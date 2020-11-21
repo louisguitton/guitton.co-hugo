@@ -1,8 +1,9 @@
 ---
 slug: serverless-database
-title: "Serverless Database"
+title: Serverless Database
 date: 2019-08-10
 lastmod: 2020-11-09
+summary: Get data from a S3 data lake or form Athena in python.
 categories:
   - Data
 ---

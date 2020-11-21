@@ -1,8 +1,9 @@
 ---
 slug: trotinnettes
-title: "Lyon's love for electric scooters"
+title: Lyon's love for electric scooters
 date: 2019-04-28
 date: 2020-05-23
+summary: The rise of electric scooters in Lyon.
 categories:
   - Ideas
 ---

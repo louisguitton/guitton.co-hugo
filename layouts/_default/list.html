@@ -1,0 +1,14 @@
+{{ define "title" }}
+  {{- if eq .Kind "taxonomy" -}}
+    {{- i18n .Data.Singular | title -}}
+    {{- print ": " -}}
+  {{- end -}}
+
+  {{ .Title }} · {{ strings.TrimSuffix " | python machine learning engineering" .Site.Title }}
+{{ end }}
+{{ define "description" }}
+  {{ print "Browse all categories on the blog. Some articles don't have a category and can only be accessed from the posts page." }}
+{{ end }}
+{{ define "content" }}
+  {{ partial "list.html" . }}
+{{ end }}

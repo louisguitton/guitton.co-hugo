@@ -1,7 +1,7 @@
 ---
 title: My Latest Blog Posts
 date: 2019-05-19
-summary: My articles about python software development, machine learning and data engineering.
+summary: My articles about python software development, machine learning and data engineering. You can find in particular NLP, but also more generic ideas.
 keywords:
   - python
   - machine learning

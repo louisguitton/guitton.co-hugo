@@ -1,0 +1,72 @@
+---
+slug: france-population
+title: Population Extremes in France
+date: 2015-08-16
+lastmod: 2020-05-23
+summary: An interactive map to show population density differences in France.
+categories:
+- Data
+---
+
+<head>
+  <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/js/france_population/raphael-2.1.0.min.js"></script>
+  <script type="text/javascript" src="/js/france_population/kartograph.js"></script>
+</head>
+
+<body>
+  <link rel="stylesheet" type="text/css" href="/css/jquery.qtip.css" />
+  <style type="text/css">
+    .mapnail {
+      display: inline-block;
+      width: 100%;
+    }
+  </style>
+  <script type="text/javascript" src="/js/france_population/jquery.qtip.min.js"></script>
+  <script type="text/javascript" src="/js/france_population/chroma.min.js"></script>
+  <script type="text/javascript" src="/js/france_population/map.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          I like dataviz and D3.js, and recently I got inspired by 2 pieces of
+          work around population extremes
+          <a href="http://dadaviz.com/s/population-extremes">in the US</a> and
+          in Sweden.
+          {{< tweet 632550560252719104 >}}
+        </p>
+        <p>
+          I decided to try to do my own and as I'm french, I produced the
+          following dataviz.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3 style="color:#CC0000">Half of the french population</h3>
+        <p>32,592,560 residents in 23 departments.</p>
+        <p><b>49.8% of total population</b></p>
+      </div>
+      <div class="col-md-6">
+        <h3 style="color:#FFFF00">Half of the french population</h3>
+        <p>32,861,326 residents in 78 departments.</p>
+        <p><b>50.2% of total population</b></p>
+      </div>
+    </div>
+
+    <div id="map" style="width:100%">&nbsp;</div>
+
+    <p>
+      Made with <a href="http://kartograph.org/">Kartograph</a> for the dataviz,
+      a D3 like.
+    </p>
+    <p>
+      The data comes from
+      <a
+        href="https://fr.wikipedia.org/wiki/Liste_des_d%C3%A9partements_fran%C3%A7ais_class%C3%A9s_par_population_et_superficie">Wikipedia,
+        year 2012</a>.
+    </p>
+  </div>
+</body>

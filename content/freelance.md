@@ -1,8 +1,7 @@
 ---
 title: What You Can Hire Me For
 summary: >
-    I'm available for freelance missions.
-    I am a Data and Machine Learning solutions developer.
+    I'm available for freelance missions if you're looking for a Data and Machine Learning solutions developer. Reach out to me via email, I'd be happy to chat.
 keywords:
     - louis guitton
     - freelance
@@ -40,7 +39,7 @@ I teach anything that interest me and that I feel confident sharing.
 | year          | title                                                                                           | work                                                                                                                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2017 and 2018 | Machine Learning and Internet of Things classes for [IFP School](https://www.ifp-school.com/en) | Designing the classes material to introduce ML and IoT to Energy MBA students. Delivering 4 days of teaching with lectures and hands-on exercises. IoT: 2018-06-07, ML: 2017-06-30, 2018-05-17, 2018-06-01 |
-| 2015          | Littlebits hackathons of #PrettyCurious campaign                                                | More details in [my blog post]({{< ref "pretty-curious.md" >}}).                                                                                                                                           |
+| 2015          | Littlebits hackathons of #PrettyCurious campaign                                                | More details in [my blog post]({{< ref "2015-09-25-pretty-curious.md" >}}).                                                                                                                                           |
 
 ## Websites (not looking for projects)
 

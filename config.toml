@@ -29,6 +29,7 @@ googleAnalytics = "UA-140255752-1"
     description = "My personal serverless website where I blog and store useful snippets for python software development, machine learning and data engineering."
     keywords = "blog,nlp,machine learning,data engineering,python"
     avatarurl = "images/louis.jpg"
+    images = ["images/guitton_co.png"]  # important for default OpenGraph image
 
     dateformat = "January 2, 2006"
 

@@ -1,4 +1,5 @@
 ---
+slug: incubator
 title: "Working on something cool ..."
 date: 2018-09-11
 lastmod: 2020-05-23

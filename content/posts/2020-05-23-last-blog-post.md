@@ -1,9 +1,12 @@
 ---
+slug: last-blog-post
 title: "How did my last blog post perform?"
 date: 2020-05-23
 lastmod: 2020-11-09
 categories:
   - Ideas
+aliases:
+  - /posts/how-good-was-my-last-blog-post/
 ---
 
 

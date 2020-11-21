@@ -1,4 +1,5 @@
 ---
+slug: ml-engineer-stack
 title: My ML Engineer stack
 date: 2020-05-09
 lastmod: 2020-05-27
@@ -28,7 +29,7 @@ Here I will try to structure my personal stack for ML Engineering, and update it
         - ingest from S3 to S3 using python FaaS (e.g. `pandas` or `dask`)
   - orchestrate those batch transformations with `Apache Airflow`
   - default back to Spark when its value-add trumps the complexity overhead (e.g. `pyspark.sql.functions.explode`)
-  - use parquet for the data lake default format (see [my other post]({{< ref "athena-serving-layer.md" >}}))
+  - use parquet for the data lake default format (see [my other post]({{< ref "2020-02-23-athena-serving-layer.md" >}}))
   - if batch ingesting (and transforming) in Spark, use `Glue` over `EMR`
   - for streaming, default to `Kinesis` and think of those 3 use cases:
         - use `Kinesis Firehose` to ingest into S3, and then transform in batches

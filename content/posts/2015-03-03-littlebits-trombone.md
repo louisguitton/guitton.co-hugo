@@ -1,6 +1,7 @@
 ---
+slug: littlebits-trombone
 title: "Building a Trombone with LittleBits"
-date: 2015-03-03T11:54:56+02:00
+date: 2015-03-03
 lastmod: 2020-11-09
 ---
 
@@ -8,7 +9,7 @@ lastmod: 2020-11-09
 
 <img src='https://cdn.shopify.com/s/files/1/1494/3290/t/32/assets/HomepageCircuitGIF_1084x600x_585.gif?37282'>
 
-During my time at EDF Energy, my colleagues and I used them extensively to develop electronics hackathons called [#PrettyCurious]({{< ref "/posts/pretty-curious" >}}).
+During my time at EDF Energy, my colleagues and I used them extensively to develop electronics hackathons called [#PrettyCurious]({{< ref "2015-09-25-pretty-curious.md" >}}).
 
 One of the challenges for me was to take those simple components and come up with mini-projects with varying difficulties to create a curriculum that would teach the teenagers attending the hackathons about electronics, coding and physics.
 

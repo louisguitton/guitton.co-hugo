@@ -1,4 +1,5 @@
 ---
+slug: project-management
 title: "Project Management for the Unofficial Project Manager"
 date: 2019-10-12
 lastmod: 2020-11-09
@@ -6,7 +7,7 @@ categories:
   - Ideas
 ---
 
-*If you like this post, checkout [Design for non designers]({{< ref "/posts/design" >}})*
+*If you like this post, checkout [Design for non designers]({{< ref "2018-07-22-design.md" >}})*
 
 In my work as a Data Scientist, I often face project management situations. Most of the time, they are not clearly defined as such but yet they're vital to the success of my work. For example, nobody will say
 
@@ -18,7 +19,7 @@ but I would instead hear
 
 This is project management territory: planning, executing and maximising ROI along the way.
 
-As part of my degree, I studied waterfall project management ([see this post where I explain my experience leading a 25 people team for one year]({{< ref "/posts/mecatro" >}})). And as part of the first 4 years of my career, I've experienced agile project management in different teams and setups.
+As part of my degree, I studied waterfall project management ([see this post where I explain my experience leading a 25 people team for one year]({{< ref "2014-06-01-mecatro.md" >}})). And as part of the first 4 years of my career, I've experienced agile project management in different teams and setups.
 
 But recently I decided to brush up on those concepts by reading [Project Management for the Unofficial Project Manager](https://www.goodreads.com/book/show/22859860-project-management-for-the-unofficial-project-manager), a book vulgarising the theory from the [Project Management Institute](https://www.pmi.org/). Here are my notes.
 
@@ -32,7 +33,7 @@ As put in Chapter two `Success = People + Process`.
 
 So for better success you need to better lead people. How to better lead people?
 
-For an unofficial manager, the situation is clear: you won't have any kind of official authority. Back in the [mecatronics class]({{< ref "/posts/mecatro" >}}), the people I needed to lead to success were classmates with as much authority as me. Today in the workplace, my title is `Machine Learning Engineer` not `Project Manager` or `Product Owner`.
+For an unofficial manager, the situation is clear: you won't have any kind of official authority. Back in the [mecatronics class]({{< ref "2014-06-01-mecatro.md" >}}), the people I needed to lead to success were classmates with as much authority as me. Today in the workplace, my title is `Machine Learning Engineer` not `Project Manager` or `Product Owner`.
 
 So the answer lies in **practicing informal authority**. Inspire people by acts, and they will follow (parts of) your plan.
 

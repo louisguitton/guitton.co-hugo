@@ -1,4 +1,5 @@
 ---
+slug: data-driven-spellcheck
 title: A data driven spell checker
 date: 2020-07-26
 lastmod: 2020-07-26

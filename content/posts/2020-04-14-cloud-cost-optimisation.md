@@ -1,4 +1,5 @@
 ---
+slug: cloud-cost-optimisation
 title: Cloud cost optimisation for ML Engineers
 date: 2020-04-14
 lastmod: 2020-05-23

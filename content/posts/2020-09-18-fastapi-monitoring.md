@@ -1,4 +1,5 @@
 ---
+slug: fastapi-monitoring
 title: How to monitor your FastAPI service
 date: 2020-09-18
 lastmod: 2020-11-14

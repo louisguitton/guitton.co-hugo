@@ -1,6 +1,7 @@
 ---
+slug: pretty-curious
 title: "#PrettyCurious - Electronics Hackathons"
-date: 2015-09-25T11:54:56+02:00
+date: 2015-09-25
 lastmod: 2020-05-23
 ---
 
@@ -18,7 +19,7 @@ We got to replicate that format in 6 different cities in that first year.
 
 <iframe src="https://www.google.com/maps/d/embed?mid=13-sG1idRDPhVgAVLREFB6iayZ6LRk-bn" width="640" height="480"></iframe>
 
-I personally was in charge of developing [the different electronics activities]({{< ref "/posts/littlebits-trombone" >}}
+I personally was in charge of developing [the different electronics activities]({{< ref "2015-03-03-littlebits-trombone.md" >}}
 ) and then running the workshops as a facilitator.
 
 ## London

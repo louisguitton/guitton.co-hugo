@@ -1,4 +1,5 @@
 ---
+slug: adding-a-cms-to-my-hugo-site
 title: Adding a CMS to my Hugo site
 date: 2019-11-30
 lastmod: 2020-11-07

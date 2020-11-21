@@ -1,4 +1,5 @@
 ---
+slug: football-strava
 title: Football Strava
 date: 2020-06-01
 lastmod: 2020-11-15
@@ -28,7 +29,7 @@ If like me, you remain unsatisfied with those options, follow along.
 ## How I Track and Visualise my Football Games with Strava
 
 I play football at work for fun and also as part of a company league.
-[I've written before about one game]({{< ref "medienliga-game.md" >}}), and here is how I built a visualisation of our
+[I've written before about one game]({{< ref "2019-09-23-medienliga-game.md" >}}), and here is how I built a visualisation of our
 March 9th game (just before confinement): `OneFootball 3 - 1 Exozet`.
 
 I track my games using my activity tracker and Strava.

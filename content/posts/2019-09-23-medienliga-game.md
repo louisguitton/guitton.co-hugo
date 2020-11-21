@@ -1,4 +1,5 @@
 ---
+slug: medienliga-game
 title: "media:net 4:2 OneFootball"
 date: 2019-09-23
 lastmod: 2020-07-30

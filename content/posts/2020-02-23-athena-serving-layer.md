@@ -1,4 +1,5 @@
 ---
+slug: athena-serving-layer
 title: Athena serving layer
 date: 2020-02-23
 lastmod: 2020-11-09
@@ -8,7 +9,7 @@ categories:
 
 ## How to optimise Athena (speed and cost) to unlock backend serving
 
-On Friday, I had the idea of using Athena as a serving layer for a Machine Learning backend application of mine. The motivation was that by [querying Athena in python]({{< ref "serverless-database.md" >}}), it was drastically reducing the amount of logic I had to write (= backend code) and also reducing the infrastructure blueprint of the application (= no database to spin up and maintain - PostgreSQL or DynamoDB). But after implementing quick wins like caching, I still hit a road block where each Athena query takes 7 seconds and scans 10 GB of data.
+On Friday, I had the idea of using Athena as a serving layer for a Machine Learning backend application of mine. The motivation was that by [querying Athena in python]({{< ref "2019-08-10-serverless-database.md" >}}), it was drastically reducing the amount of logic I had to write (= backend code) and also reducing the infrastructure blueprint of the application (= no database to spin up and maintain - PostgreSQL or DynamoDB). But after implementing quick wins like caching, I still hit a road block where each Athena query takes 7 seconds and scans 10 GB of data.
 
 After a quick Google search, I found out that [this approach is what companies like SimilarWeb do](https://similarweb.engineering/athena-serving-layer/) and that there are further tricks to optimise Athena. I then proceeded into a rabbit hole of Athena, Parquet and ORC.
 

@@ -1,4 +1,5 @@
 ---
+slug: spacy-stanza-russian-swedish
 title: "How to use spaCy language models in Russian or Swedish"
 date: 2020-03-22
 lastmod: 2020-11-08

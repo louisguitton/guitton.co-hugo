@@ -1,6 +1,7 @@
 ---
+slug: serverless-database
 title: "Serverless Database"
-date: 2019-08-10T11:54:56+02:00
+date: 2019-08-10
 lastmod: 2020-11-09
 categories:
   - Data

@@ -1,4 +1,5 @@
 ---
+slug: kubernetes-cheatsheet
 title: Kubernetes Deployment Cheat Sheet
 date: 2020-07-16
 lastmod: 2020-11-09

@@ -8,7 +8,7 @@ summary: A funny example of what you can built with simple lego-like electronics
 
 [LittleBits](https://littlebits.com/) are LEGO-like electronic components designed to allow students of all ages to create with technology.
 
-<img src='https://cdn.shopify.com/s/files/1/1494/3290/t/32/assets/HomepageCircuitGIF_1084x600x_585.gif?37282'>
+<img src='https://cdn.shopify.com/s/files/1/1494/3290/t/32/assets/HomepageCircuitGIF_1084x600x_585.gif?37282' alt="Littlebits">
 
 During my time at EDF Energy, my colleagues and I used them extensively to develop electronics hackathons called [#PrettyCurious]({{< ref "2015-09-25-pretty-curious.md" >}}).
 

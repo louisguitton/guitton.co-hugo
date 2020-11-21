@@ -24,7 +24,7 @@ As part of my degree, I studied waterfall project management ([see this post whe
 
 But recently I decided to brush up on those concepts by reading [Project Management for the Unofficial Project Manager](https://www.goodreads.com/book/show/22859860-project-management-for-the-unofficial-project-manager), a book vulgarising the theory from the [Project Management Institute](https://www.pmi.org/). Here are my notes.
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/81RGtC920EL.jpg"  width="33%" height="33%" style="float: left; margin: 0 2%;">
+<img src="https://images-na.ssl-images-amazon.com/images/I/81RGtC920EL.jpg" alt="Project Management for the Unofficial Project Manager" width="33%" height="33%" style="float: left; margin: 0 2%;">
 
 ## Managing projects is equivalent to Leading people (Chapters 1 & 2)
 
@@ -47,7 +47,7 @@ According to the book, there are **4 foundational behaviours** to practice infor
 1. Clarify expectations (eg: explain one more time, write better tickets, talk in stand-ups, organise one-off clarification meetings, explain how everyone fits in the big picture)
 1. Practice accountability (eg: be an example, finish on time, admit mistakes, chase for completion)
 
-<img src="https://www.pmi.org/-/media/pmi/other-images/logos/pmi_logo_ogshare.png?v=a5703389-c37e-4aee-9aad-b7540f5c6c54"  width="66%" height="33%" style="float: right; margin: 0 2%;">
+<img src="https://www.pmi.org/-/media/pmi/other-images/logos/pmi_logo_ogshare.png?v=a5703389-c37e-4aee-9aad-b7540f5c6c54" alt="Project Management Institute" width="66%" height="33%" style="float: right; margin: 0 2%;">
 
 ## Clear the path to Done (Chapters 3 to 7)
 

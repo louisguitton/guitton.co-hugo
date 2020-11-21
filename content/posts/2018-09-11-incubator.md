@@ -10,7 +10,7 @@ summary: Collecting my thoughts on my time at the incubator Entrepreneur First i
 
 It feels like a long time since I was last employed. In fact it’s been a little over 5 months.
 
-<img src="https://cdn-images-1.medium.com/max/3000/0*lnQQiHu_m4aWWpyf.jpg"  width="33%" height="33%" style="float: left; margin: 0 2%;">
+<img src="https://cdn-images-1.medium.com/max/3000/0*lnQQiHu_m4aWWpyf.jpg" alt="Scaling Ambition podcast by Entrepreneur First" width="33%" height="33%" style="float: left; margin: 0 2%;">
 
 Some of you might know that back in March, I quit my Data Scientist job in eSports to join [an incubator called EF](https://www.joinef.com/). I wanted to see how tech — specifically deep learning — could be applied to Europe, politics and no, **not Cambridge Analytica style**.
 

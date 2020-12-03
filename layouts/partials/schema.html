@@ -1,10 +1,14 @@
-{{/*  https://dev.to/pdwarkanath/adding-structured-data-to-your-hugo-site-58db  */}}
-{{/*  https://developers.google.com/search/docs/data-types/article  */}}
-{{/*  https://search.google.com/test/rich-results  */}}
-{{/*  https://gohugo.io/templates/section-templates/#page-kinds  */}}
+{{/*
+    References:
+        - https://search.google.com/test/rich-results
+        - https://developers.google.com/search/docs/data-types/article
+        - https://developers.google.com/search/docs/data-types/breadcrumb
+        - https://gohugo.io/templates/section-templates/#page-kinds
+        - https://dev.to/pdwarkanath/adding-structured-data-to-your-hugo-site-58db
+*/}}
 {{ if and (eq .Section "posts") (not (eq .Kind "section"))}}
 <script type="application/ld+json">
-    {
+    [{
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": {{ .Title }},
@@ -26,7 +30,52 @@
         "description": {{ .Summary | plainify | safeHTML }},
         "keywords": [{{ range $i, $e := .Keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}],
         "wordcount": {{ .WordCount }}
+    },{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": {{ .Site.Params.publisher_name }},
+            "item": {{ .Site.BaseURL }}
+            },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ .Section | title }},
+            "item": {{ .Section | absURL }}
+            },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ .Title }}
+        }]
     }
+    {{ if .Params.categories }}
+        {{ range $index, $category := .Params.categories }}
+            {{ $term := . }}
+            {{ with $.Site.GetPage (printf "/%s/%s" "categories" $term) }}
+                ,{
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [{
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": {{ $.Site.Params.publisher_name }},
+                        "item": {{ $.Site.BaseURL }}
+                        },{
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": {{ $term | title }},
+                        "item": {{ .Permalink }}
+                        },{
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": {{ $.Title }}
+                    }]
+                }
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    ]
 </script>
 {{ else }}
 {{/*  Blog or WebSite could also work here  */}}

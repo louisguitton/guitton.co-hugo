@@ -1,6 +1,6 @@
 ---
 slug: open-source-datastack
-title: "The Ultimate 2021 Open Source Data Stack"
+title: The Ultimate 2021 Open Source Data Stack
 date: 2020-11-15
 lastmod: 2020-11-15
 summary:

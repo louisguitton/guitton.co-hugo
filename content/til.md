@@ -5,6 +5,8 @@ summary: >
 keywords:
     - learning
 lastmod: 2020-11-15
+# Remove this page from sitemap
+in_sitemap: false
 ---
 
 Things I've learned or bookmarked in the last 3 months, pulling from different APIs.

@@ -16,13 +16,19 @@ pygmentscodefencesguesssyntax = true
 
 googleAnalytics = "UA-140255752-1"
 
+# https://gohugo.io/variables/sitemap/
+[sitemap]
+    filename = "sitemap.xml"
+
 [markup.goldmark.renderer]
     unsafe= true
 
+# https://gohugo.io/variables/taxonomy/
 [taxonomies]
     category = "categories"
     series = "series"
 
+# https://gohugo.io/variables/site/
 [params]
     author = "Louis Guitton"
     info = "Machine Learning Engineer at OneFootball"

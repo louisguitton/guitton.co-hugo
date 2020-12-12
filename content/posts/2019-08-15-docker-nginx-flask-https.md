@@ -41,7 +41,7 @@ The following gist is made of 3 parts:
 1. a setup shell script that manages the SSL certificates generation
 1. a nginx configuration supporting HTTPS
 
-You will need to tweak the hardcoded balues that point to my service `startup-meter.louisguitton.com`.
+You will need to tweak the hardcoded values that point to my service `startup-meter.louisguitton.com`.
 
 {{< gist louisguitton 6682f1190ef594b82f5804c2e81c50ac >}}
 

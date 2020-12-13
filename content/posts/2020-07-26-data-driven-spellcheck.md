@@ -4,6 +4,7 @@ title: A data driven spell checker
 date: 2020-07-26
 lastmod: 2020-07-26
 summary: A funny data-driven way to check for spelling.
+featuredImage: /images/data-spell-checker.png
 ---
 
 Because I'm not a native english speaker, I sometimes wonder what the right spelling of a word is.

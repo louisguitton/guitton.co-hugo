@@ -6,6 +6,9 @@ lastmod: 2020-11-09
 summary: Steps to follow to use AWS Athena as a serving layer for a backend service.
 categories:
   - Data
+featuredImage: /images/athena.png
+images:
+  - /images/athena-serving-layer.png
 ---
 
 ## How to optimise Athena (speed and cost) to unlock backend serving

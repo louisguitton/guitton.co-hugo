@@ -2,10 +2,20 @@
 slug: trotinnettes
 title: Lyon's love for electric scooters
 date: 2019-04-28
-date: 2020-05-23
+lastmod: 2020-05-23
 summary: The rise of electric scooters in Lyon.
 categories:
   - Ideas
+images:
+  - https://cdn-images-1.medium.com/max/5728/1*wKR-663OdGwD3wawK3q5iw.png
+  - https://cdn-images-1.medium.com/max/2320/1*QeSUR4zn6jXVLzp7OoxeBg.png
+  - https://cdn-images-1.medium.com/max/2000/1*Q5ttT0Pt0Y2F4ojWsdiLIg.png
+  - https://cdn-images-1.medium.com/max/2560/1*dZGcAUE880NNbT7YFNDMyQ.png
+  - https://cdn-images-1.medium.com/max/2000/0*CblneF2qHtwzY4GC.jpg
+  - https://cdn-images-1.medium.com/max/2048/1*R1RqptZdSF6VK46dHnoWnw.jpeg
+  - https://cdn-images-1.medium.com/max/2000/1*wK6BWcx96yg-OQFi6uUroQ.jpeg
+  - https://cdn-images-1.medium.com/max/2000/1*46xNjluwGwL567IuwJMyGA.jpeg
+  - https://cdn-images-1.medium.com/max/2000/1*ByxwryGKq6TCZkGsA7MNug.jpeg
 ---
 
 I left Paris and France in mid 2016 after graduation to come live in Berlin. I have never lived in Lyon, and to be honest I don't know the city really well. But last weekend, I attended a wedding there and I was really surprised by Lyon's love for electric scooters.

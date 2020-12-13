@@ -6,6 +6,7 @@ lastmod: 2020-05-27
 summary: My tool stack for Machine Learning Engineering.
 categories:
   - Data
+featuredImage: /images/ml-stack.png
 ---
 
 Here I will try to structure my personal stack for ML Engineering, and update it over time.

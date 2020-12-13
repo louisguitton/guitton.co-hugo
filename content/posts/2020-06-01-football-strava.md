@@ -11,9 +11,9 @@ keywords:
   - football heat map
 categories:
   - ML
-featuredImage: /images/football_strava.png
+featuredImage: /images/football_strava.jpg
 images:
-  - /images/football_strava.png
+  - /images/football_strava.jpg
 ---
 
 ## Existing Options to Track Football Games

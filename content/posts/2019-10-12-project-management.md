@@ -6,6 +6,9 @@ lastmod: 2020-11-09
 summary: A review of the book 'Project Management for the Unofficial Project Manager'.
 categories:
   - Ideas
+images:
+  - https://images-na.ssl-images-amazon.com/images/I/81RGtC920EL.jpg
+  - https://www.pmi.org/-/media/pmi/other-images/logos/pmi_logo_ogshare.png
 ---
 
 *If you like this post, checkout [Design for non designers]({{< ref "2018-07-22-design.md" >}})*

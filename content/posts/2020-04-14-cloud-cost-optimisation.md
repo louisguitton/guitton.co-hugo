@@ -6,6 +6,7 @@ lastmod: 2020-05-23
 summary: A checklist for cloud cost optimisation.
 categories:
   - Data
+featuredImage: /images/cloud-cost.jpg
 ---
 
 This is a microblog, mostly for myself, to keep track of things I need to check when wanting to reduct costs

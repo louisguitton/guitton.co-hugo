@@ -4,6 +4,7 @@ title: "#PrettyCurious - Electronics Hackathons"
 date: 2015-09-25
 lastmod: 2020-05-23
 summary: Teach young girls electronics by running hackathon across the UK.
+featuredImage: /images/pretty-curious.jpg
 ---
 
 Back in 2015, I was living in Brighton, UK, and was working at EDF Energy as a R&D Engineer. The achievement I'm most proud of from that time is something called #PrettyCurious.

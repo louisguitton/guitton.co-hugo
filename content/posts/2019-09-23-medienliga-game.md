@@ -4,6 +4,7 @@ title: media:net 4:2 OneFootball
 date: 2019-09-23
 lastmod: 2020-07-30
 summary: A night in the OneFootball team competing in Berlin's Medienliga.
+featuredImage: /images/medianet.jpg
 ---
 
 At [OneFootball](https://company.onefootball.com/) we are not all football aficionados but for those of us who want to, we can play quite a bit of football.
@@ -19,7 +20,7 @@ My favorite one is the [Medienliga](http://www.medienkicker.org/) where we compe
 
 ## Medienliga / 2. Liga / 5. Spieltag
 
-### Monday Sep 23, Prenzlauer Berg
+**Monday Sep 23, Prenzlauer Berg**
 
 The reporters came in late and missed the first 10 minutes of the 19:15 Medienliga game between Media:net and OneFootball. The blues (Media:net) are sitting in the 7th place of the table while the greens (OneFootball) were sitting at the 5th and hoping to climb.
 

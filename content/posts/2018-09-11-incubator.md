@@ -4,6 +4,10 @@ title: Working on something cool ...
 date: 2018-09-11
 lastmod: 2020-05-23
 summary: Collecting my thoughts on my time at the incubator Entrepreneur First in Berlin.
+images:
+  - https://cdn-images-1.medium.com/max/3000/0*lnQQiHu_m4aWWpyf.jpg
+  - https://cdn-images-1.medium.com/max/3200/0*SqdyBQ9owkfPTQ0W.jpg
+  - https://cdn-images-1.medium.com/max/2876/1*JAcFL116ARMkS12rCWRxoA.png
 ---
 
 > My last 5 months and beyond

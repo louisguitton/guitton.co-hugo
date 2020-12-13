@@ -6,6 +6,7 @@ lastmod: 2020-11-09
 summary: Get data from a S3 data lake or form Athena in python.
 categories:
   - Data
+featuredImage: /images/athena.png
 ---
 
 In this very short post, I just want to gather useful python snippets to get data from a datalake or an athena instance.

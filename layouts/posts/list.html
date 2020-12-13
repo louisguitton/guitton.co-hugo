@@ -13,7 +13,7 @@
 
     {{ .Content }}
 
-    <ul>
+    <ul class="posts-list">
       {{- range .Paginator.Pages -}}
         {{- .Render "li" -}}
       {{- end -}}

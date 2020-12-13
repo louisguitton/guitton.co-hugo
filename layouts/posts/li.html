@@ -1,5 +1,21 @@
+{{ $image := "" }}
+{{ if .Page.Params.featuredImage }}
+  {{ $image = .Page.Params.featuredImage }}
+{{ else }}
+{{- with .Page.Params.images -}}
+  {{ $image = index . 0 }}
+{{ end }}
+{{ end }}
+
+
 <li>
-    <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-    <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+  <a class="img-wrapper" href="{{ .RelPermalink }}">
+    <img src="{{ $image }}">
+  </a>
+  <div>
+    <h2><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</p>
+    <p>{{ .Page.Params.summary }}</p>
     {{ with .Page.Params.Categories }}{{ partial "taxonomy/blog_list_categories" . }}{{ end }}
+  </div>
 </li>

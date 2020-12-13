@@ -11,6 +11,11 @@
   <section class="container post">
     <article>
       <header>
+        {{ if .Page.Params.featuredImage }}
+          <a href="{{ .Page.Params.featuredImage }}">
+            <img src="{{ .Page.Params.featuredImage }}">
+          </a>
+        {{ end }}
         <div class="post-title">
           <h1 class="title">{{ .Title }}</h1>
         </div>
@@ -40,8 +45,6 @@
       <footer>
         {{ partial "posts/series.html" . }}
         {{ partial "posts/disqus.html" . }}
-        {{ partial "posts/commento.html" . }}
-        {{ partial "posts/utteranc.html" . }}
       </footer>
     </article>
 

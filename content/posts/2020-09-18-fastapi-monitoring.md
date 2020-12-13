@@ -18,7 +18,7 @@ keywords:
   - api monitoring
 categories:
   - Code
-featuredImage: /images/4_steps_monitoring.png
+featuredImage: /images/fastapi.png
 images:
   - /images/4_steps_monitoring.png
   - /images/monitoring_backend.png

@@ -8,6 +8,8 @@ categories:
   - Ideas
 aliases:
   - /posts/how-good-was-my-last-blog-post/
+images:
+  - /images/capacitor_discharge.jpg
 ---
 
 

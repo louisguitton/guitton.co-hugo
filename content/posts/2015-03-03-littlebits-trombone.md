@@ -4,6 +4,7 @@ title: Building a Trombone with LittleBits
 date: 2015-03-03
 lastmod: 2020-11-09
 summary: A funny example of what you can built with simple lego-like electronics.
+featuredImage: /images/trombone.jpg
 ---
 
 [LittleBits](https://littlebits.com/) are LEGO-like electronic components designed to allow students of all ages to create with technology.

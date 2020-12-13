@@ -6,6 +6,7 @@ lastmod: 2020-08-01
 summary: My checklist to Applied Machine Learning Research.
 categories:
   - ML
+featuredImage: /images/ml-checklist.png
 ---
 
 I keep coming back to this great piece by John "OpenAi" Schulman : [An Opinionated Guide to ML Research](http://joschu.net/blog/opinionated-guide-ml-research.html).

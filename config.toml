@@ -55,6 +55,8 @@ googleAnalytics = "UA-140255752-1"
     # for schema.org
     publisher_name = "Guitton.co"
 
+    googleAnalytics4 = "G-SYZ6E13PWV"
+
 # Social links
 [[params.social]]
     name = "Github"

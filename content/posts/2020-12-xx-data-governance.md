@@ -13,6 +13,7 @@ categories:
 featuredImage: xxx
 images:
     - xxx
+draft: true
 ---
 
 

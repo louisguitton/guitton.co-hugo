@@ -1,12 +1,23 @@
 ---
-title: "How to add a post to this website"
+slug: {{ .Name }}
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+lastmod: {{ .Date }}
+summary: >
+keywords:
+    -
+categories:
+    -
+featuredImage:
+images:
+    -
+series:
+    -
 draft: true
+# Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
+# Ref: https://gohugo.io/content-management/front-matter
 ---
 
-## Front matter links
-
-- https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
-- https://gohugo.io/content-management/front-matter
 
 ## Template
 
@@ -16,13 +27,7 @@ draft: true
 - An outline of your post with headlines and subheadlines
 - A couple of ideas for your headline
 
-## Content
-
-### Add Markdown
-
-### Add HTML
-
-### Add notebook
+### Adding notebooks
 
 ```bash
 jupyter lab notebooks
@@ -30,3 +35,7 @@ jupyter nbconvert --to html notebooks/20190523-berliner_firmenlauf.ipynb
 mv notebooks/20190523-berliner_firmenlauf.html content/posts/berliner_firmenlauf.html
 # add hugo front matter
 ```
+
+## Resources
+
+1. [My link](url)

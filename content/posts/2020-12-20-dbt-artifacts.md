@@ -154,8 +154,7 @@ cat target/manifest.json | jq '.nodes | ...' > my_data_of_interest.json
 
 Once you get a better idea of what data you need,
 you might want to develop more custom logic around dbt artifacts.
-This is where using python shines: you can write a scripts
-or a couple of classes with the logic you need.
+This is where python shines: you can write a script with the logic you need.
 You can install and import great python libraries.
 For instance, you could use `networkx` to run graph algorithms
 on your dbt DAG.
@@ -163,7 +162,7 @@ on your dbt DAG.
 You will then need to parse the dbt artifacts in python.
 I recommend to use the great [pydantic](https://pydantic-docs.helpmanual.io/)
 library: among other things, it allows to parse JSON files
-with very concise code that allows for focussing on high-level parsing logic.
+with very concise code that lets you focus on high-level parsing logic.
 
 Here is an example logic to parse `manifest.json`:
 
@@ -246,7 +245,7 @@ for model materialization, we can do:
 
 ## Example Application 1: Detecting a Change in Materialization
 
-Let's say you want to check that no materialisation as changed
+Let's say you want to check that no materialisation has changed
 before you run `dbt run`. This is useful because some materialization
 changes require a `--full-refresh`.
 You could achieve the change detection with the following commands:
@@ -265,10 +264,10 @@ You could achieve the change detection with the following commands:
 
 ## Example Application 2: Compute Model Centrality with `networkx`
 
-Once you've parse the `manifest.json`, you have at your disposal
+Once you've parsed the `manifest.json`, you have at your disposal
 the graph of models from your project.
-You could explore using off-the-shelf graph algorithms provided
-by [`networkx`](https://networkx.org/), and see if any of the insights you get are interesting.
+You could explore off-the-shelf graph algorithms provided
+by [`networkx`](https://networkx.org/), and see if any of the insights you get are valuable.
 
 For example, [nx.degree_centrality](https://networkx.org/documentation/stable//reference/algorithms/generated/networkx.algorithms.centrality.degree_centrality.html) can give you
 the list of models that are "central" to your project.
@@ -314,10 +313,13 @@ if __name__ == "__main__":
 Provided you use python 3.8+, there is another dbt artifact that can
 be interesting to you: `graph.gpickle`.
 Instead of parsing `manifest.json` and building the graph yourself,
-you can deserialize the networks graph built by dbt itself. All it
-takes are 2 lines, that's hard to beat, but note that you will rely
+you can deserialize the networkx graph built by dbt itself.
+
+All it takes is 2 lines!
+
+That's hard to beat, but note that you will rely
 on the internal graph definition of `dbt` and won't be able to
-customise it.
+customise it. For example, tests will be nodes on your graph now.
 
 ```python
 import networkx as nx
@@ -325,7 +327,8 @@ import networkx as nx
 G = nx.read_gpickle("target/graph.gpickle")
 ```
 
-Nevertheless, this can be useful for example for a [quick visulisation](https://pyvis.readthedocs.io/en/latest/):
+Nevertheless, this can be useful for example for a quick visulisation
+using [pyvis](https://pyvis.readthedocs.io/en/latest/):
 
 ```python
 from pyvis.network import Network

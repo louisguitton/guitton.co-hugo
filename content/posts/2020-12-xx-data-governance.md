@@ -1,6 +1,6 @@
 ---
-slug: dbt-artifacts
-title: "What to do with your dbt artifacts"
+slug: dbt-governance
+title: "Lightweight Data Governance with dbt"
 date: 2020-12-20
 lastmod: 2020-12-20
 summary: >

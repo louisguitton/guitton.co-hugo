@@ -18,6 +18,7 @@ draft: true
 # Ref: https://gohugo.io/content-management/front-matter
 ---
 
+Hook
 
 ## Template
 

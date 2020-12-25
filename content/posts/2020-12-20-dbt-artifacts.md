@@ -286,16 +286,16 @@ import networkx as nx
 class GraphManifest(Manifest):
     @property
     def node_list(self):
-        return list(m.nodes.keys()) + list(m.sources.keys())
+        return list(self.nodes.keys()) + list(self.sources.keys())
 
     @property
     def edge_list(self):
-        return [(k, d) for k, v in manifest.nodes.items() for d in v.depends_on.nodes]
+        return [(k, d) for k, v in self.nodes.items() for d in v.depends_on.nodes]
 
     def build_graph(self) -> nx.Graph:
         G = nx.Graph()
-        G.add_nodes_from(m.node_list)
-        G.add_edges_from(m.edge_list)
+        G.add_nodes_from(self.node_list)
+        G.add_edges_from(self.edge_list)
         return G
 
 
@@ -303,7 +303,7 @@ if __name__ == "__main__":
     with open("target/manifest.json") as fh:
         data = json.load(fh)
 
-    m = Manifest(**data)
+    m = GraphManifest(**data)
     G = m.build_graph()
     nx.degree_centrality(G)
 ```

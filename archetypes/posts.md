@@ -31,6 +31,15 @@ draft: true
 - How do you want the reader to feel?
 - What should the reader do next?
 
+## If it's a "product", fill in Jobs to be Done
+
+> <span style="color:blue">When I</span> [context],
+<span style="color:red">but</span> [barrier],
+<span style="color:green">help me</span> [goal],
+<span style="color:orange">so I</span> [outcome].
+
+e.g. for Discord: When I want to jump into my favorite game, but I don’t know if there are people around to play, help me safely coordinate with a group of like-minded gamers, so I can easily find a way to enjoy my favorite multiplayer game.
+
 ## Craft the Hook
 
 ## Craft the Outline (1 hour)

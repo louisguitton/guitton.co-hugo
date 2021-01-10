@@ -14,11 +14,11 @@ keywords:
   - dbt lineage graph
 categories:
   - Data
-featuredImage:
+featuredImage: /posts/dbt-search/hero.png
 images:
-  -
-  - /images/dbt.png
-  -
+  - hero.png
+  - amundsen.png
+  - search.png
 draft: true
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
@@ -119,11 +119,6 @@ Other products:
 - Alation
 - Intermix
 
-Reference:
-
-- https://eugeneyan.com/writing/data-discovery-platforms/
-- [EthicalML/awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning#metadata-management)
-- [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
 </details>
 
 ### What are the features of Amundsen
@@ -140,7 +135,8 @@ Reference:
     - table frequent users
     - who has curated/bookmarked what
     - what most common queries for a table look like
-  - TODO: add diagram or table of main features from Amundsen
+
+![Amundsen](amundsen.png)
 
 ### A lightweight alternative to Amundsen
 
@@ -197,7 +193,9 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 ### What does good Search look like
 
 - good search = searchable + faceting + ranking attributes
-  - TODO: add diagram for good search
+
+![Structuring Documents for Search](search.png)
+
 - Amundsen search:
   > A PageRank-inspired search algorithm recommends results based on names, descriptions, tags, and querying/viewing activity on the table/dashboard.
 - For us

@@ -56,7 +56,7 @@ They are used to power the docs website and other dbt features.
 Of course, `dbt docs` is the command that refreshes most artifacts (makes sense, since they were initially introduced to power the docs site).
 But it's interesting to note that `manifest` can be refreshed by other commands than the usual suspects `dbt run` or `dbt test` too.
 
-### Data available in dbt artifacts
+### Available Data in dbt artifacts
 
 `Manifest`:
 > Today, dbt uses this file to populate the [docs site](https://docs.getdbt.com/docs/building-a-dbt-project/documentation), and to perform [state comparison](https://next.docs.getdbt.com/docs/guides/understanding-state/). Members of the community have used this file to run checks on how many models have descriptions and tests.

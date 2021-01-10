@@ -54,7 +54,7 @@ get started on those roadmaps with a lightwieght open source solution.
 
 Star `dbt-metadata-utils` and setup the search engine on their own project.
 
-# JBTD
+# JTBD
 
 - <span style="color:blue">When I</span> want to build a dashboard,
   <span style="color:red">but</span> I don’t know which table to use,
@@ -97,6 +97,8 @@ and that you can get started today on those roadmaps with my lightweight open so
   - no relevance by "model importance"
 - Current solutions = Amundsen or "heavyweight" tools
   - they are an addition to an already large stack of tools
+
+![Amundsen logo](amundsen_logo.png)
 
 <details>
 Related products or tools:
@@ -144,6 +146,8 @@ Other products:
 - the dbt docs have shown that you can get started on those roadmaps with a lightwieght open source solution
 - you can take this idea further
 - You can use dbt artifacts, Algolia's free tier, HTML and JS to build a lightweight data discovery and metadata engine.
+
+![Algolia logo](algolia_logo.png)
 
 ## Designing the solution
 

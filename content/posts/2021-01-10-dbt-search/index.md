@@ -24,96 +24,99 @@ draft: true
 # Ref: https://gohugo.io/content-management/front-matter
 ---
 
-# Six Questions (30 min)
+<!-- # Six Questions (30 min)
 
 - What is the most important point?
-
 You can use dbt artifacts, Algolia's free tier, HTML and JS to build
 a lightweight data discovery search engine.
 
 - Why is that the most important point? (what can you achieve with it)
-
 Data discovery is one common growing pains of dbt projects. You can now build
 a search engine over your dbt models packed with metadata.
 
 - Why should people care? (what's the benefit)
-
 Break knowledge silos around your data models.
 Not doing this can lead to self-service analytics using the wrong model for their dashboard.
 
 - What is the easiest way to understand the most important point?
-
-Seeing the search engine in action and playing with it on a dbt project.
+Seeing the search engine in action and playing with it on a the gitlab dbt project.
 
 - How do you want the reader to feel?
-
 Data governance, data lineage, data discovery don't need to be complicated topics and you can
 get started on those roadmaps with a lightwieght open source solution.
 
 - What should the reader do next?
-
 Star `dbt-metadata-utils` and setup the search engine on their own project.
+-->
 
-# JTBD
+<!-- # Hook + Outline -->
 
-- <span style="color:blue">When I</span> want to build a dashboard,
-  <span style="color:red">but</span> I don’t know which table to use,
-  <span style="color:green">help me</span> search through the available models,
-  <span style="color:orange">so I</span> can be confident in my conclusions.
-- <span style="color:blue">When I</span> am debugging a data model,
-  <span style="color:red">but</span> I don’t know if I can trust it nor where to start,
-  <span style="color:green">help me</span> get data engineering context,
-  <span style="color:orange">so I</span> can be faster to a solution.
+If you've been using `dbt` for a little while, chances are your project has more than 50 models and
+chances are more than 10 people are building or using dashboards based on those models.
 
-# Hook + Outline
+In the best case, self-service analytics users are coming to you with repeting questions about
+what model to use when. In the worst case, they are taking business decisions using the wrong model.
 
-If you've been using dbt for a little while, chances are your project has more than 50 models.
-Chances are more than 10 people are building or using dashboards to answer business questions
-based on those models.
-
-In the worst case, self-service analytics users are using the wrong model
-without knowing. In the best case, they are coming to you with repeting questions about
-what model to use when.
-
-In this post, I will show you how you can build a lightweight metadata search engine
+In this post, I will show you how you can **build a lightweight metadata search engine**
 on top of your dbt metadata to answer all these questions. I hope to show you that
-Data governance, data lineage, and data discovery don't need to be complicated topics
+`data governance`, `data lineage`, and `data discovery` don't need to be complicated topics
 and that you can get started today on those roadmaps with my lightweight open source solution.
 
 ## Problem setting
 
 ### Motivation
 
-- Paco Nathan p115 of Data Teams from Jesse Anderson ([find my review of the book here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))
+In his recent post [The modern data stack: past, present, and future](https://blog.getdbt.com/future-of-the-modern-data-stack/),
+Tristan Handy - the CEO of Fishtown Analytics (the company behind `dbt`) - was writing:
 
-  > If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, they gained much more than just lineage information. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
+> **Governance is a product area whose time has come**. This product category encompasses
+> a broad range of use cases, including discovery of data assets, viewing lineage information,
+> and just generally providing data consumers with the context needed to navigate the sprawling data
+> footprints inside of data-forward organizations. This problem has only been made more painful
+> by the modern data stack to-date, since it has become increasingly easy to ingest, model,
+> and analyze more data.
 
-- [The modern data stack: past, present, and future | dbt blog](https://blog.getdbt.com/future-of-the-modern-data-stack/)
+dbt has its own lightweight governance interface: dbt Docs. They are a great starting point
+and might be enough for a while. However, as time goes by, your dbt project will outgrow its clothes.
+The search in dbt Docs is Regex only, and you might find its relevancy going down with a growing number
+of models. This can beccome important for Data Analysts building dashboards and looking for the right model
+but also for Data Engineers looking to "pull the thread" and debug a model.
+Those use cases can be summarised with the two following ["Jobs to be done"](https://firstround.com/review/build-products-that-solve-real-problems-with-this-lightweight-jtbd-framework/):
 
-  > **Governance** is a product area whose time has come. This product category encompasses a broad range of use cases, including discovery of data assets, viewing lineage information, and just generally providing data consumers with the context needed to navigate the sprawling data footprints inside of data-forward organizations. This problem has only been made more painful by the modern data stack to-date, since it has become increasingly easy to ingest, model, and analyze more data.
+{{< figure src="jtbd.png" caption="Data discovery can solve 2 'Jobs to be Done'" class="figure-center" >}}
 
-- Data Discovery is a common growing pain
-  - Search in dbt docs is based on Regex only.
-  - no relevance by "model importance"
-- Current solutions = Amundsen or "heavyweight" tools
-  - they are an addition to an already large stack of tools
+1. <span style="color:blue">When I</span> want to build a dashboard,
+   <span style="color:red">but</span> I don’t know which table to use,
+   <span style="color:green">help me</span> search through the available models,
+   <span style="color:orange">so I</span> can be confident in my conclusions.
+1. <span style="color:blue">When I</span> am debugging a data model,
+   <span style="color:red">but</span> I don’t know if I can trust it nor where to start,
+   <span style="color:green">help me</span> get data engineering context,
+   <span style="color:orange">so I</span> can be faster to a solution.
 
-![Amundsen logo](amundsen_logo.png)
+Currently, the solution I see teams land on seems to be to roll out "heavyweight" tools like `Amundsen`.
+They were built to tackle those problems and as Paco Nathan writes p 115 of the book [Data Teams by Jesse Anderson](https://www.apress.com/gp/book/9781484262276#:~:text=Jesse%20Anderson%20serves%20in%20three,Kafka%2C%20Hadoop%2C%20and%20Spark.) _(you can find my review of the book [here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))_:
+
+> If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, **they gained much more than just lineage information**. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
+
+{{< figure alt="Amundsen logo" src="amundsen_logo.png" caption="Amundsen and other heavyweight tools are the go-to solution for data discovery" class="figure-center" >}}
+
+Those tools come on top of an already complex stack of tools that data teams need to operate.
+What if we wanted a lightweight solution instead, like dbt Docs?
+What if we wanted to build graphs of our own metadata using only dbt artifacts, some python,
+a search engine and some static HTML and JS files?
 
 <details>
-Related products or tools:
+Related tools:
 
-|                                                                                                                                  | Search | Recommendations | Schemas & Description | Data Preview | Column Statistics | Space/cost metrics | Ownership | Top Users | Lineage | Change Notification | Open Source | Documentation | Supported Sources                                     | Push or Pull |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------- | --------------------- | ------------ | ----------------- | ------------------ | --------- | --------- | ------- | ------------------- | ----------- | ------------- | ----------------------------------------------------- | ------------ |
-| [Amundsen](https://www.amundsen.io/) (Lyft)                                                                                      | ✔      | ✔               | ✔                     | ✔            | ✔                 |                    | ✔         | ✔         | Todo    |                     | ✔           | ✔             | Hive, Redshift, Druit, RDBMS, Presto, Snowflake, etc. | Pull         |
-| [DataHub](https://github.com/linkedin/datahub) (LinkedIn)                                                                        | ✔      |                 | ✔                     |              |                   |                    | ✔         | ✔         | ✔       |                     | ✔           | ✔             | Hive, Kafka, RDBMS                                    | Push         |
-| [Metacat](https://github.com/Netflix/metacat) (Netflix)                                                                          | ✔      |                 | ✔                     |              | ✔                 | ✔                  |           | Todo      |         | Todo                | ✔           |               | Hive, RDS, Teradata, Redshift, S3, Cassandra          |              |
-| Atlas (Apache)                                                                                                                   | ✔      |                 | ✔                     |              |                   |                    |           |           | ✔       | ✔                   | ✔           | ✔             | HBase, Hive, Sqoop, Kafka, Storm                      | Push         |
-| [Marquez](https://marquezproject.github.io/marquez/) (Wework                                                                     | ✔      |                 | ✔                     |              |                   |                    |           |           | ✔       |                     | ✔           |               | S3, Kafka                                             |              |
-| [Databook](https://eng.uber.com/databook/) (Uber)                                                                                | ✔      |                 | ✔                     | ✔            | ✔                 |                    |           |           | ✔       |                     |             |               | Hive, Vertica, MySQL, Postgress, Cassandra            |              |
-| [Dataportal](https://medium.com/airbnb-engineering/democratizing-data-at-airbnb-852d76c51770) (Airbnb)                           | ✔      |                 | ✔                     |              | ✔                 |                    | ✔         | ✔         |         |                     |             |               | Unknown                                               |              |
-| Data Access Layer (Twitter)                                                                                                      | ✔      |                 | ✔                     |              |                   |                    |           |           | ✔       |                     |             |               | HDFS, Vertica, MySQL                                  |              |
-| [Lexikon](https://engineering.atspotify.com/2020/02/27/how-we-improved-data-discovery-for-data-scientists-at-spotify/) (Spotify) | ✔      | ✔               | ✔                     |              |                   |                    | ✔         | ✔         |         |                     |             |               | Unknown                                               |              |
+- [Amundsen](https://www.amundsen.io/) (Lyft)
+- [DataHub](https://github.com/linkedin/datahub) (LinkedIn)
+- [Metacat](https://github.com/Netflix/metacat)(Netflix)
+- [Marquez](https://marquezproject.github.io/marquez/) (Wework)
+- [Databook](https://eng.uber.com/databook/) (Uber)
+- [Dataportal](https://medium.com/airbnb-engineering/democratizing-data-at-airbnb-852d76c51770) (Airbnb)
+- Data Access Layer (Twitter)
+- [Lexikon](https://engineering.atspotify.com/2020/02/27/how-we-improved-data-discovery-for-data-scientists-at-spotify/) (Spotify)
 
 Other products:
 
@@ -121,9 +124,15 @@ Other products:
 - Alation
 - Intermix
 
+Great resources to go further:
+
+- [EthicalML/awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning#metadata-management)
+- [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/) and [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
 </details>
 
 ### What are the features of Amundsen
+
+Search | Recommendations | Schemas & Description | Data Preview | Column Statistics | Space/cost metrics | Ownership | Top Users | Lineage | Change Notification | Open Source | Documentation | Supported Sources | Push or Pull
 
 - Amundsen
   - search: a familiar UX to answer a need
@@ -138,7 +147,7 @@ Other products:
     - who has curated/bookmarked what
     - what most common queries for a table look like
 
-![Amundsen](amundsen.png)
+{{< figure src="amundsen.png" caption="Amundsen's back of a napkin architecture" class="figure-center" >}}
 
 ### A lightweight alternative to Amundsen
 
@@ -240,6 +249,7 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 ### Advanced search features: dynamic filtering
 
 - Rules
+
   - Removing filter values from the query string and using them directly as filters is called dynamic filtering. Dynamic filtering is only one way that Rules can understand and detect the intent of the user.
   - Algolia free license includes "Rules"
   - Based on an “If This Then That” logic, Rules let you make precise modifications to your Search and Discovery experience.
@@ -253,14 +263,10 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 ## Resources
 
 1. [The modern data stack: past, present, and future | dbt blog](https://blog.getdbt.com/future-of-the-modern-data-stack/)
-1. https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1
-1. Metadata Management solutions
-   - [EthicalML/awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning#metadata-management)
-   - https://eugeneyan.com/writing/data-discovery-platforms/ and [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
-1. Amundsen
-   - landing page https://www.amundsen.io/
-   - overview https://www.amundsen.io/amundsen/
-   - architecture https://www.amundsen.io/amundsen/architecture/
+1. [A Jobs to be Done Framework for Startups — JTBD Templates & Examples for Building Products Customers Want | First Round Review](https://firstround.com/review/build-products-that-solve-real-problems-with-this-lightweight-jtbd-framework/)
+1. [Louis Guitton’s review of Data Teams: A Unified Management Model for Successful Data-Focused Teams | Goodreads](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1)
+1. [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
+1. [Architecture - Amundsen](https://www.amundsen.io/amundsen/architecture/)
 1. Redshift metadata
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html

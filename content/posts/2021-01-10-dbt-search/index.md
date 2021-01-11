@@ -64,7 +64,7 @@ and that you can get started today on those roadmaps with my lightweight open so
 
 ## Problem setting
 
-### Motivation
+### Data Governance is Ripe
 
 In his recent post [The modern data stack: past, present, and future](https://blog.getdbt.com/future-of-the-modern-data-stack/),
 Tristan Handy - the CEO of Fishtown Analytics (the company behind `dbt`) - was writing:
@@ -99,7 +99,7 @@ They were built to tackle those problems and as Paco Nathan writes p 115 of the 
 
 > If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, **they gained much more than just lineage information**. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
 
-{{< figure alt="Amundsen logo" src="amundsen_logo.png" caption="Amundsen and other heavyweight tools are the go-to solution for data discovery" class="figure-center" >}}
+{{< figure alt="Amundsen logo" src="amundsen_logo.png" width=500 caption="Amundsen and other heavyweight tools are the go-to solution for data discovery" class="figure-center" >}}
 
 Those tools come on top of an already complex stack of tools that data teams need to operate.
 What if we wanted a lightweight solution instead, like dbt Docs?
@@ -130,9 +130,9 @@ Great resources to go further:
 - [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/) and [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
 </details>
 
-### What are the features of Amundsen
+### The Features of Amundsen and other Metadata Engines
 
-Search | Recommendations | Schemas & Description | Data Preview | Column Statistics | Space/cost metrics | Ownership | Top Users | Lineage | Change Notification | Open Source | Documentation | Supported Sources | Push or Pull
+{{< figure src="amundsen_features.png" caption="10 features from metadata engines" class="figure-center" >}}
 
 - Amundsen
   - search: a familiar UX to answer a need
@@ -156,7 +156,7 @@ Search | Recommendations | Schemas & Description | Data Preview | Column Statist
 - you can take this idea further
 - You can use dbt artifacts, Algolia's free tier, HTML and JS to build a lightweight data discovery and metadata engine.
 
-![Algolia logo](algolia_logo.png)
+{{< figure alt="Algolia logo" src="algolia_logo.png" width=500 caption="Algolia market themselves as a 'flexible search platform'" class="figure-center" >}}
 
 ## Designing the solution
 
@@ -229,6 +229,7 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 
 - Note on the setup: you need the git repo locally with dbt artifacts generated
 - TODO: walkthrough https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/config.py
+- https://docs.getdbt.com/faqs/example-projects/
 
 ### Search as you type with Algolia, how is it setup
 

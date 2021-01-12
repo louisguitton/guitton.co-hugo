@@ -62,9 +62,7 @@ on top of your dbt metadata to answer all these questions. I hope to show you th
 `data governance`, `data lineage`, and `data discovery` don't need to be complicated topics
 and that you can get started today on those roadmaps with my lightweight open source solution.
 
-## Problem setting
-
-### Data Governance is Ripe
+## Data Governance is Ripe
 
 In his recent post [The modern data stack: past, present, and future](https://blog.getdbt.com/future-of-the-modern-data-stack/),
 Tristan Handy - the CEO of Fishtown Analytics (the company behind `dbt`) - was writing:
@@ -130,37 +128,59 @@ Great resources to go further:
 - [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/) and [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
 </details>
 
-### The Features of Amundsen and other Metadata Engines
+## The Features of Amundsen and other Metadata Engines
+
+In the rest of this section, we will take Amundsen as the example for existing metadata engines.
+It is probably the most popular, due to the fact that it's open source, because its UI is friendly
+to non-tech users and because it supports connectors to a lot of data sources. Other open source
+projects even use parts of [its modular architecture](https://www.amundsen.io/amundsen/architecture/)
+like the [project whale](https://github.com/dataframehq/whale)
+(previously called [metaframe](https://towardsdatascience.com/how-to-find-and-organize-your-data-from-the-command-line-852a4042b2be)).
+
+Although we will take Amundsen as the example, what we're interested in here is to figure out
+the features those tools have in common.
 
 {{< figure src="amundsen_features.png" caption="10 features from metadata engines" class="figure-center" >}}
 
-- Amundsen
-  - search: a familiar UX to answer a need
-  - table detail
-    - descriptions of tables and columns
-    - when the table was last updated
-    - table statistics
-    - a preview of the data if permitted
-    - linking the ETL job and code that generated the data.
-  - table usage context
-    - table frequent users
-    - who has curated/bookmarked what
-    - what most common queries for a table look like
+The first feature they all offer is a familiar UX to answer questions: **search**.
+
+Secondly, there is a group of features I will call **table detail** which encompasses table and columns descriptions,
+table statistics, when the table was last updated, a preview of the data if permitted, and linking to the ETL job
+and code that generated the data.
+
+Lastly, comes the **table usage context**: who are the tables frequent users? who has curated or bookmarked what?
+what are the most common queries for a table?
 
 {{< figure src="amundsen.png" caption="Amundsen's back of a napkin architecture" class="figure-center" >}}
 
-### A lightweight alternative to Amundsen
+## A lightweight alternative to Amundsen
 
-- Data governance, data lineage, data discovery don't need to be complicated topics
-- the dbt docs have shown that you can get started on those roadmaps with a lightwieght open source solution
-- you can take this idea further
-- You can use dbt artifacts, Algolia's free tier, HTML and JS to build a lightweight data discovery and metadata engine.
+Although all those features make existing metadata engines the go-to solution, I want to make the case for
+a more lightweight approach.
+
+Documentation tools go stale easily. Or at least in situations where they are not tied with data modeling code.
+dbt and dbt Docs have proven that people _want_ to document their data modeling code (at least in my team).
+We were just waiting for a tool simple and integrated enough for the _culture_ of Data Governance to blossom.
+There are many DevOps books showing that the solution is not the tooling but rather a safety and high-trust culture
+(if you're curious check out [The Phoenix Project](https://www.goodreads.com/book/show/25478858-the-phoenix-project)).
+
+Additionally, dbt sources are a great way to make raw data explicitly labeled. The dbt graph documents data lineage
+for you at the table level and I will show later how we can use that graph to propagate tags with no additional work.
+
+What's missing from dbt Docs to rival with Amundsen? I believe it's a good search engine. Fortunately we don't need
+to build one. This is where we will use [Algolia](https://www.algolia.com/)'s free tier in addition to some static HTML and JS files
+to build our lightweight data discovery and metadata engine.
 
 {{< figure alt="Algolia logo" src="algolia_logo.png" width=500 caption="Algolia market themselves as a 'flexible search platform'" class="figure-center" >}}
 
-## Designing the solution
+_Note: if you're worried that Algolia isn't open source, consider using the project [typesense](https://github.com/typesense/typesense)._
 
-### Available metadata points
+## Available metadata points / Proxying Amundsen with our available tools
+
+TODO: add diagram for this section (architecture diagram for `dbt-metadata-utils`?).
+
+On top of search, we need metadata sources and parsers to collect and organise that metadata,
+and make it _indexable_ (=searchable) in our search engine.
 
 - dbt project
   - dbt artifacts when dbt run or dbt compile
@@ -178,8 +198,6 @@ Others:
 
 - github metadata on dbt project (PR discussions)
 - Data support tickets for incoming requests
-
-### Proxying Amundsen with our available tools
 
 - search: we can use search as a service tools like Algolia; it has a free tier
   - use algolia's free tier (10 units per month = 10k search requests + 10k records)
@@ -201,9 +219,7 @@ Others:
     - metabase example https://discourse.metabase.com/t/metabase-metadata-sql/3688
   - what most common queries for a table look like: Redshift metadata (STL_QUERY) + SQL parser
 
-TODO: add architecture diagram for `dbt-metadata-utils`.
-
-### What does good Search look like
+## What does good Search look like
 
 - good search = searchable + faceting + ranking attributes
 
@@ -260,6 +276,7 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 ### What could Come next
 
 - parsers for Redshift or Metbase metadata
+- column level lineage
 
 ## Resources
 
@@ -268,12 +285,14 @@ TODO: add architecture diagram for `dbt-metadata-utils`.
 1. [Louis Guitton’s review of Data Teams: A Unified Management Model for Successful Data-Focused Teams | Goodreads](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1)
 1. [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
 1. [Architecture - Amundsen](https://www.amundsen.io/amundsen/architecture/)
+1. [dataframehq/whale: 🐳 The stupidly simple data discovery tool.](https://github.com/dataframehq/whale)
+1. [How to find and organize your data from the command-line | by Robert Yi | Towards Data Science](https://towardsdatascience.com/how-to-find-and-organize-your-data-from-the-command-line-852a4042b2be)
+1. [The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win by Gene Kim | Goodreads](https://www.goodreads.com/book/show/25478858-the-phoenix-project)
+1. [Site Search & Discovery powered by AI | Algolia](https://www.algolia.com/)
+1. [typesense/typesense: Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍](https://github.com/typesense/typesense)
+
 1. Redshift metadata
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html
    - https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html
-1. [Documentation | docs.getdbt.com](https://docs.getdbt.com/docs/building-a-dbt-project/documentation/)
-1. [Site Search & Discovery powered by AI | Algolia](https://www.algolia.com/)
-1. [dbt Artifacts | docs.getdbt.com](https://docs.getdbt.com/reference/dbt-artifacts/)
-1. https://next.docs.getdbt.com/reference/artifacts/dbt-artifacts
 1. https://github.com/louisguitton/dbt-metadata-utils

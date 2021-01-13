@@ -77,7 +77,7 @@ Tristan Handy - the CEO of Fishtown Analytics (the company behind `dbt`) - was w
 dbt has its own lightweight governance interface: dbt Docs. They are a great starting point
 and might be enough for a while. However, as time goes by, your dbt project will outgrow its clothes.
 The search in dbt Docs is Regex only, and you might find its relevancy going down with a growing number
-of models. This can beccome important for Data Analysts building dashboards and looking for the right model
+of models. This can become important for Data Analysts building dashboards and looking for the right model
 but also for Data Engineers looking to "pull the thread" and debug a model.
 Those use cases can be summarised with the two following ["Jobs to be done"](https://firstround.com/review/build-products-that-solve-real-problems-with-this-lightweight-jtbd-framework/):
 
@@ -88,12 +88,12 @@ Those use cases can be summarised with the two following ["Jobs to be done"](htt
    <span style="color:green">help me</span> search through the available models,
    <span style="color:orange">so I</span> can be confident in my conclusions.
 1. <span style="color:blue">When I</span> am debugging a data model,
-   <span style="color:red">but</span> I don’t know if I can trust it nor where to start,
+   <span style="color:red">but</span> I don’t know where to start,
    <span style="color:green">help me</span> get data engineering context,
    <span style="color:orange">so I</span> can be faster to a solution.
 
 Currently, the solution I see teams land on seems to be to roll out "heavyweight" tools like `Amundsen`.
-They were built to tackle those problems and as Paco Nathan writes p 115 of the book [Data Teams by Jesse Anderson](https://www.apress.com/gp/book/9781484262276#:~:text=Jesse%20Anderson%20serves%20in%20three,Kafka%2C%20Hadoop%2C%20and%20Spark.) _(you can find my review of the book [here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))_:
+As Paco Nathan writes p.115 of the book [Data Teams by Jesse Anderson](https://www.apress.com/gp/book/9781484262276#:~:text=Jesse%20Anderson%20serves%20in%20three,Kafka%2C%20Hadoop%2C%20and%20Spark.) _(you can find my review of the book [here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))_:
 
 > If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, **they gained much more than just lineage information**. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
 
@@ -130,15 +130,16 @@ Great resources to go further:
 
 ## The Features of Amundsen and other Metadata Engines
 
-In the rest of this section, we will take Amundsen as the example for existing metadata engines.
-It is probably the most popular, due to the fact that it's open source, because its UI is friendly
-to non-tech users and because it supports connectors to a lot of data sources. Other open source
+TODO: don't repeat https://eugeneyan.com/writing/data-discovery-platforms/, instead focus on Algolia; other metadata points will come later
+
+In the rest of this section, we will take Amundsen as an example.
+It is probably the most popular metadata engine, due to the fact that it's open source, that its UI is friendly
+to non-tech users and that it has connectors to a lot of data sources. Other open source
 projects even use parts of [its modular architecture](https://www.amundsen.io/amundsen/architecture/)
 like the [project whale](https://github.com/dataframehq/whale)
 (previously called [metaframe](https://towardsdatascience.com/how-to-find-and-organize-your-data-from-the-command-line-852a4042b2be)).
 
-Although we will take Amundsen as the example, what we're interested in here is to figure out
-the features those tools have in common.
+What we're interested in at this point is to figure out the features Amundsen and others have in common.
 
 {{< figure src="amundsen_features.png" caption="10 features from metadata engines" class="figure-center" >}}
 
@@ -148,7 +149,7 @@ Secondly, there is a group of features I will call **table detail** which encomp
 table statistics, when the table was last updated, a preview of the data if permitted, and linking to the ETL job
 and code that generated the data.
 
-Lastly, comes the **table usage context**: who are the tables frequent users? who has curated or bookmarked what?
+Lastly, comes the **table usage context** group: who are the tables frequent users? who has curated or bookmarked what?
 what are the most common queries for a table?
 
 {{< figure src="amundsen.png" caption="Amundsen's back of a napkin architecture" class="figure-center" >}}
@@ -159,15 +160,15 @@ Although all those features make existing metadata engines the go-to solution, I
 a more lightweight approach.
 
 Documentation tools go stale easily. Or at least in situations where they are not tied with data modeling code.
-dbt and dbt Docs have proven that people _want_ to document their data modeling code (at least in my team).
+dbt and dbt Docs have proven that people _want_ to document their data modeling code (at least in my team 😁).
 We were just waiting for a tool simple and integrated enough for the _culture_ of Data Governance to blossom.
-There are many DevOps books showing that the solution is not the tooling but rather a safety and high-trust culture
+It reminds me of those DevOps books showing that the solution is not the tooling but rather a culture
 (if you're curious check out [The Phoenix Project](https://www.goodreads.com/book/show/25478858-the-phoenix-project)).
 
 Additionally, dbt sources are a great way to make raw data explicitly labeled. The dbt graph documents data lineage
 for you at the table level and I will show later how we can use that graph to propagate tags with no additional work.
 
-What's missing from dbt Docs to rival with Amundsen? I believe it's a good search engine. Fortunately we don't need
+So **what is missing from dbt Docs to rival with Amundsen**? A good search engine. Fortunately we don't need
 to build one. This is where we will use [Algolia](https://www.algolia.com/)'s free tier in addition to some static HTML and JS files
 to build our lightweight data discovery and metadata engine.
 
@@ -177,6 +178,7 @@ _Note: if you're worried that Algolia isn't open source, consider using the proj
 
 ## Available metadata points / Proxying Amundsen with our available tools
 
+TODO: don't repeat https://eugeneyan.com/writing/data-discovery-platforms/, instead focus on Algolia; other metadata points will come later
 TODO: add diagram for this section (architecture diagram for `dbt-metadata-utils`?).
 
 On top of search, we need metadata sources and parsers to collect and organise that metadata,
@@ -223,7 +225,7 @@ Others:
 
 - good search = searchable + faceting + ranking attributes
 
-![Structuring Documents for Search](search.png)
+{{< figure src="search.png" caption="Keys in searchable documents are 1 of 3 types" alt="Structuring Documents for Search" class="figure-center">}}
 
 - Amundsen search:
   > A PageRank-inspired search algorithm recommends results based on names, descriptions, tags, and querying/viewing activity on the table/dashboard.
@@ -295,4 +297,5 @@ Others:
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html
    - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html
    - https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html
+   - predicate columns https://github.com/awslabs/amazon-redshift-utils/blob/master/src/AdminScripts/predicate_columns.sql
 1. https://github.com/louisguitton/dbt-metadata-utils

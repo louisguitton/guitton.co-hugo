@@ -92,7 +92,7 @@ Those use cases can be summarised with the two following ["Jobs to be done"](htt
    <span style="color:green">help me</span> get data engineering context,
    <span style="color:orange">so I</span> can be faster to a solution.
 
-Currently, the solution I see teams land on seems to be to roll out "heavyweight" tools like `Amundsen`.
+These days, the solution to those two problems seems to be rolling out "heavyweight" tools like `Amundsen`.
 As Paco Nathan writes p.115 of the book [Data Teams by Jesse Anderson](https://www.apress.com/gp/book/9781484262276#:~:text=Jesse%20Anderson%20serves%20in%20three,Kafka%2C%20Hadoop%2C%20and%20Spark.) _(you can find my review of the book [here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))_:
 
 > If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, **they gained much more than just lineage information**. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
@@ -100,9 +100,7 @@ As Paco Nathan writes p.115 of the book [Data Teams by Jesse Anderson](https://w
 {{< figure alt="Amundsen logo" src="amundsen_logo.png" width=500 caption="Amundsen and other heavyweight tools are the go-to solution for data discovery" class="figure-center" >}}
 
 Those tools come on top of an already complex stack of tools that data teams need to operate.
-What if we wanted a lightweight solution instead, like dbt Docs?
-What if we wanted to build graphs of our own metadata using only dbt artifacts, some python,
-a search engine and some static HTML and JS files?
+What if we wanted a lightweight solution instead, like `dbt Docs`?
 
 <details>
 Related tools:
@@ -130,37 +128,31 @@ Great resources to go further:
 
 ## The Features of Amundsen and other Metadata Engines
 
-TODO: don't repeat https://eugeneyan.com/writing/data-discovery-platforms/, instead focus on Algolia; other metadata points will come later
+In his great [Teardown of Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
+Eugene Yan summarizes really well the features of Amundsen and other metadata engines and categorises
+them in 3 groups: features to **find data**, features to **understand data** and features to **use data**.
 
-In the rest of this section, we will take Amundsen as an example.
-It is probably the most popular metadata engine, due to the fact that it's open source, that its UI is friendly
-to non-tech users and that it has connectors to a lot of data sources. Other open source
-projects even use parts of [its modular architecture](https://www.amundsen.io/amundsen/architecture/)
-like the [project whale](https://github.com/dataframehq/whale)
+{{< figure src="amundsen.png" caption="Architecture of your friendly neighbourhood metadata engine" class="figure-center" >}}
+
+Its friendly UI with a familiar UX (search) is one of the key factors behind Amundsen's success.
+But another one is [its modular architecture](https://www.amundsen.io/amundsen/architecture/),
+which is already being reused by other metadata open source projects like the [project whale](https://github.com/dataframehq/whale)
 (previously called [metaframe](https://towardsdatascience.com/how-to-find-and-organize-your-data-from-the-command-line-852a4042b2be)).
 
-What we're interested in at this point is to figure out the features Amundsen and others have in common.
+We can further split the 3 categories of features into 10 features of varying implementation difficulty.
+Those features have also varying returns, not represented here.
 
-{{< figure src="amundsen_features.png" caption="10 features from metadata engines" class="figure-center" >}}
+{{< figure src="amundsen_features.png" caption="taxonomy of 10 features from metadata engines, cost opinions are my own" class="figure-center" >}}
 
-The first feature they all offer is a familiar UX to answer questions: **search**.
+What if we wanted to build a 3⭐️-cost metadata engine? What features and technologies would you pick?
 
-Secondly, there is a group of features I will call **table detail** which encompasses table and columns descriptions,
-table statistics, when the table was last updated, a preview of the data if permitted, and linking to the ETL job
-and code that generated the data.
+## A Lightweight Alternative to Amundsen
 
-Lastly, comes the **table usage context** group: who are the tables frequent users? who has curated or bookmarked what?
-what are the most common queries for a table?
-
-{{< figure src="amundsen.png" caption="Amundsen's back of a napkin architecture" class="figure-center" >}}
-
-## A lightweight alternative to Amundsen
-
-Although all those features make existing metadata engines the go-to solution, I want to make the case for
-a more lightweight approach.
+Although it's possible that the _feature completeness_ (everything is in one place) makes the USP of Amundsen
+and others, I want to make the case for a more lightweight approach.
 
 Documentation tools go stale easily. Or at least in situations where they are not tied with data modeling code.
-dbt and dbt Docs have proven that people _want_ to document their data modeling code (at least in my team 😁).
+**dbt has proven with dbt Docs that data people _want_ to document their code** (hi team 😁).
 We were just waiting for a tool simple and integrated enough for the _culture_ of Data Governance to blossom.
 It reminds me of those DevOps books showing that the solution is not the tooling but rather a culture
 (if you're curious check out [The Phoenix Project](https://www.goodreads.com/book/show/25478858-the-phoenix-project)).
@@ -168,58 +160,33 @@ It reminds me of those DevOps books showing that the solution is not the tooling
 Additionally, dbt sources are a great way to make raw data explicitly labeled. The dbt graph documents data lineage
 for you at the table level and I will show later how we can use that graph to propagate tags with no additional work.
 
-So **what is missing from dbt Docs to rival with Amundsen**? A good search engine. Fortunately we don't need
-to build one. This is where we will use [Algolia](https://www.algolia.com/)'s free tier in addition to some static HTML and JS files
-to build our lightweight data discovery and metadata engine.
+In other words, with schemas, descriptions and data lineage, dbt Docs cover the category _Features to Understand_
+from the above diagram. So **what is missing from dbt Docs to rival with Amundsen**? Search.
 
 {{< figure alt="Algolia logo" src="algolia_logo.png" width=500 caption="Algolia market themselves as a 'flexible search platform'" class="figure-center" >}}
 
+A good search engine will cover the _Features to Find_ category. Fortunately, we don't need to build a
+search engine. This is where we will use [Algolia](https://www.algolia.com/)'s free tier in addition to
+some static HTML and JS files to build our lightweight data discovery and metadata engine. Algolia's free
+tier allows you for 10k search requests and 10k records. Given that for us 1 record = 1 dbt model, and
+1 search request = 1 data request from a user, my guess is that the free tier will cover our needs for a while.
+
 _Note: if you're worried that Algolia isn't open source, consider using the project [typesense](https://github.com/typesense/typesense)._
 
-## Available metadata points / Proxying Amundsen with our available tools
+How to get at least one feature in the _Features to Use_ category? Well, a `dbt` project is tracked in
+version control, so by parsing `git`'s metadata, we can for example know each model's owner.
 
-TODO: don't repeat https://eugeneyan.com/writing/data-discovery-platforms/, instead focus on Algolia; other metadata points will come later
-TODO: add diagram for this section (architecture diagram for `dbt-metadata-utils`?).
-
-On top of search, we need metadata sources and parsers to collect and organise that metadata,
-and make it _indexable_ (=searchable) in our search engine.
-
-- dbt project
-  - dbt artifacts when dbt run or dbt compile
-    - [Available Data in dbt artiacts]({{< ref "2020-12-20-dbt-artifacts.md#available-data-in-dbt-artifacts" >}})
-  - git metadata (commit tree)
-- Data warehouse admin views
-  - table stats
-  - query history
-  - query performance
-- BI tool metadata DB
-  - users activity
-  - dashboard curation metadata
-
-Others:
-
-- github metadata on dbt project (PR discussions)
-- Data support tickets for incoming requests
-
-- search: we can use search as a service tools like Algolia; it has a free tier
-  - use algolia's free tier (10 units per month = 10k search requests + 10k records)
-- table detail
-  - descriptions of tables and columns: already covered by dbt docs
-  - when the table was last updated
-    - git metadata: last code change
-    - redshift metadata: last insert (STL_INSERT)
-  - table statistics: redshift metadata (SVV_TABLE_INFO)
-  - a preview of the data if permitted: `select * from table limit 5`;
-  - linking the ETL job and code that generated the data: use dbt DAG and dbt loaders
-- table usage context
-  - table frequent users
-    - table code owner from git metadata
-    - top used tables according to your Data Warehouse (STL_QUERY)
-      - problems: you might reuse users across services
-    - top used tables according to your BI tool
-  - who has curated/bookmarked what: BI tool metadata
-    - metabase example https://discourse.metabase.com/t/metabase-metadata-sql/3688
-  - what most common queries for a table look like: Redshift metadata (STL_QUERY) + SQL parser
+More generally, to extend our lightweight metadata engine, we would add metadata sources and develop
+parsers to collect and organise that metadata. We would then _index_ that metadata in our search engine.
+Examples of metadata sources are:
+- dbt artifacts (_See my post on [how to parse dbt artifacts]({{< ref "2020-12-20-dbt-artifacts.md#available-data-in-dbt-artifacts" >}})_)
+- git metadata
+- BI tool metadata database (e.g. who queries what, who curates what)
+- data warehouse admin views (e.g. for Redshift: [`stl_insert`](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html),
+[`svv_table_info`](https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html),
+[`stl_query`](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html),
+[predicate columns](https://github.com/awslabs/amazon-redshift-utils/blob/master/src/AdminScripts/predicate_columns.sql))
+- ...
 
 ## What does good Search look like
 
@@ -293,9 +260,5 @@ Others:
 1. [Site Search & Discovery powered by AI | Algolia](https://www.algolia.com/)
 1. [typesense/typesense: Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍](https://github.com/typesense/typesense)
 
-1. Redshift metadata
-   - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html
-   - https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html
-   - https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html
-   - predicate columns https://github.com/awslabs/amazon-redshift-utils/blob/master/src/AdminScripts/predicate_columns.sql
+
 1. https://github.com/louisguitton/dbt-metadata-utils

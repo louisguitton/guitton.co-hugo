@@ -132,9 +132,9 @@ Great resources to go further:
 
 ## The Features of Amundsen and other Metadata Engines
 
-In his great [Teardown of Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
-Eugene Yan summarizes really well the features of Amundsen and other metadata engines and categorises
-them in 3 groups: features to **find data**, features to **understand data** and features to **use data**.
+In his great [Teardown of Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/),
+Eugene Yan summarizes really well the features of Amundsen and other metadata engines. He splits
+them in 3 categories: features to **find data**, features to **understand data** and features to **use data**.
 
 {{< figure src="amundsen.png" caption="Architecture of your friendly neighbourhood metadata engine" class="figure-center" >}}
 
@@ -148,7 +148,8 @@ Those features have also varying returns, not represented here.
 
 {{< figure src="amundsen_features.png" caption="taxonomy of 10 features from metadata engines, cost opinions are my own" class="figure-center" >}}
 
-What if we wanted to build a 3⭐️-cost metadata engine? What features and technologies would you pick?
+The key thing to realise is that Lyft might have spent a 15⭐️-cost on Amundsen to assemble all those features.
+But what if we wanted to build a 3⭐️-cost metadata engine? What features and technologies would you pick?
 
 ## A Lightweight Alternative to Amundsen
 
@@ -165,7 +166,8 @@ Additionally, dbt sources are a great way to make raw data explicitly labeled. T
 for you at the table level and I will show later how we can use that graph to propagate tags with no additional work.
 
 In other words, with schemas, descriptions and data lineage, dbt Docs cover the category _Features to Understand_
-from the above diagram. So **what is missing from dbt Docs to rival with Amundsen**? Search.
+from the above diagram. So **what is missing from dbt Docs to rival with Amundsen**? Only a way to sublime
+the work that is already happening in your dbt repository. And that is Search.
 
 {{< figure alt="Algolia logo" src="algolia_logo.png" width=500 caption="Algolia market themselves as a 'flexible search platform'" class="figure-center" >}}
 
@@ -225,11 +227,11 @@ so I'll spare you the rest: it also supports **search-as-you-type** and **facete
 To build the search capability, you could use different technologies. I attended [a talk at Europython 2020
 from Paolo Melchiorre]({{< ref "2020-07-27-europython2020#paolo-melchiorre" >}}) advocating for using good-old
 PostgreSQL's full text search. To my knowledge though, you don't get search as you type.
-This is one of the reasons why people tend to go for ElasticSearch. This will require more engineering
-resources than the serverless Algolia. On the other hand, you won't be throwing money at a SaaS company.
-As we saw though for our use case, the free tier will be enough so we get best of both worlds.
+This is one of the reasons why people tend to go for ElasticSearch. This is a buy or build decision:
+more engineering resources vs "throwing money" at the serverless Algolia.
+As we saw though for our use case, the free tier will be enough so we get the best of both worlds.
 
-Rest the question of structuring our documents for search. Attributes in searchable documents
+Remains the question of structuring our documents for search. Attributes in searchable documents
 are one of three types: searchable attribute (i.e. matches your query),
 a faceting attribute (i.e. a filter) or a ranking attribute (i.e. a weight).
 
@@ -245,28 +247,62 @@ Lastly, we can use the dbt graph to propagate from left to right the _source_ th
 will serve as a useful faceting attribute.
 
 For **ranking attributes**, we will build metrics important to us to prioritise tables for our users.
-Keep in mind that we startes with 2 use cases ('Job to be Done'), so each persona could benefit from
+Keep in mind that we startes with 2 use cases ('Jobs to be Done'), so each persona could benefit from
 a different metric. For example, for "dashboard builders", the goal could be to downrank the corner case models
 so that only models that are "central" are used. But for "data auditers", the goal might be to prioritise
 the models that need attention first. In our case, we will focus on the first persona, and we will use
-a PageRank like algorithm (degree centrality [as shown in my previous post]({{< ref "2020-12-20-dbt-artifacts.md#example-application-2-compute-model-centrality-with-networkx" >}})).
-This is great at the start of your self service analytics journey: dashboard builders might not know
+a PageRank-like algorithm (degree centrality [as shown in my previous post]({{< ref "2020-12-20-dbt-artifacts.md#example-application-2-compute-model-centrality-with-networkx" >}})).
+This is great at the start of your self-service analytics journey: dashboard builders might not know
 what are the good tables yet, so models that are reused by your dbt comitters are a good proxy.
-Later, you could do like Amundsen and rely on the query logs to weight higher the models that are used more.
+Later, you could do like Amundsen and rely on the query logs to weight higher the models that are used the most.
 
 <!-- note: difference between "orderBy" and "customRanking" -->
 
-## Enters [`dbt-metadata-utils`](https://github.com/louisguitton/dbt-metadata-utils)
+## Putting it together in the dbt-metadata-utils repository
 
-- https://github.com/louisguitton/dbt-metadata-utils
-- Note on the setup: you need the git repo locally with dbt artifacts generated
-- TODO: walkthrough https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/config.py
-- https://docs.getdbt.com/faqs/example-projects/
+I have assembled a couple of scripts in the (work in progress) repository called
+[`dbt-metadata-utils`](https://github.com/louisguitton/dbt-metadata-utils). I will walk through
+a couple of key parts here, but feel free to check out the full code there, and if you want to use it on
+your own project, hit me up.
 
-### Search as you type with Algolia, how is it setup
+All you will need is:
 
-- you need a unique ID per record if you want to be able to update record metadata periodically
+- one Algolia account (and API key)
+- one Algolia app inside your fresh account
+- one dbt project in a git repository that you have cloned and pulled locally next to dbt-metadata-utils
 
+For the dbt project, we will use one of [example projects](https://docs.getdbt.com/faqs/example-projects/)
+listed on the dbt docs: the [jaffle_shop codebase](https://github.com/fishtown-analytics/jaffle_shop).
+
+```sh
+# .env file
+ALGOLIA_ADMIN_API_KEY=<fill in here the key you get from your Algolia account>
+ALGOLIA_SEARCH_ONLY_API_KEY=<fill in here the key you get from your Algolia account>
+ALGOLIA_APP_ID=<fill in here the app id you get in your Algolia dashboard>
+
+ALGOLIA_INDEX_NAME=jaffle_shop_nodes
+
+DBT_REPO_LOCAL_PATH=~/workspace/jaffle-shop
+DBT_MANIFEST_PATH=~/workspace/jaffle-shop/target/manifest.json
+
+GIT_METADATA_CACHE_PATH=data/git_metadata
+```
+
+And then run
+
+```sh
+python -m venv venv
+source venv/bin/activate
+make install
+make update-git-metadata
+make update-index
+make run
+```
+
+![Search UI on jaffle_shop](localhost_3000_.png)
+
+<!--
+Search as you type
 - TODO: https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/algolia.py#L135-L159
 - TODO: walk through https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/algolia.py
 
@@ -288,6 +324,8 @@ Later, you could do like Amundsen and rely on the query logs to weight higher th
   - Based on an “If This Then That” logic, Rules let you make precise modifications to your Search and Discovery experience.
 
 - TODO https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/algolia.py#L165-L182
+
+ -->
 
 ## Conclusion
 
@@ -313,3 +351,4 @@ in other places [on my blog]({{< ref "/posts/" >}}).
 1. [Site Search & Discovery powered by AI | Algolia](https://www.algolia.com/)
 1. [typesense/typesense: Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍](https://github.com/typesense/typesense)
 1. [louisguitton/dbt-metadata-utils: Parse dbt artifacts and search dbt models with Algolia](https://github.com/louisguitton/dbt-metadata-utils)
+1. [transform/snowflake-dbt · master · GitLab Data / GitLab Data Team · GitLab](https://gitlab.com/gitlab-data/analytics/-/tree/master/transform/snowflake-dbt)

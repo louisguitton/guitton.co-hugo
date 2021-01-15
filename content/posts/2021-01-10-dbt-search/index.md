@@ -282,8 +282,8 @@ ALGOLIA_APP_ID=<fill in here the app id you get in your Algolia dashboard>
 
 ALGOLIA_INDEX_NAME=jaffle_shop_nodes
 
-DBT_REPO_LOCAL_PATH=~/workspace/jaffle-shop
-DBT_MANIFEST_PATH=~/workspace/jaffle-shop/target/manifest.json
+DBT_REPO_LOCAL_PATH=~/workspace/jaffle_shop
+DBT_MANIFEST_PATH=~/workspace/jaffle_shop/target/manifest.json
 
 GIT_METADATA_CACHE_PATH=data/git_metadata
 ```

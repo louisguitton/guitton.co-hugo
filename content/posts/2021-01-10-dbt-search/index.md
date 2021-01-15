@@ -19,7 +19,6 @@ images:
   - hero.png
   - amundsen.png
   - search.png
-draft: true
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
 ---
@@ -95,7 +94,12 @@ Those use cases can be summarised with the two following ["Jobs to be done"](htt
 These days, the solution to those two problems seems to be rolling out "heavyweight" tools like `Amundsen`.
 As Paco Nathan writes p.115 of the book [Data Teams by Jesse Anderson](https://www.apress.com/gp/book/9781484262276#:~:text=Jesse%20Anderson%20serves%20in%20three,Kafka%2C%20Hadoop%2C%20and%20Spark.) _(you can find my review of the book [here](https://www.goodreads.com/review/show/3675900375?book_show_action=false&from_review_page=1))_:
 
-> If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly in that level of maturity, they each have an open source project regarding a knowledge graph of metadata about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...] Once an organization began to leverage those knowledge graphs, **they gained much more than just lineage information**. They began to recognize the business process pathways from data collection through data management and into revenue bearing use cases.
+> If you look across Uber, Lyft, Netflix, LinkedIn, Stitch Fix, and other firms roughly
+> in that level of maturity, they each have an open source project regarding a **knowledge graph of metadata**
+> about dataset usage -- Amundsen, Data Hub, Marquez and so on. [...]
+> Once an organization began to leverage those knowledge graphs,
+> **they gained much more than just lineage information**. They began to recognize the business
+> process pathways from data collection through data management and into revenue bearing use cases.
 
 {{< figure alt="Amundsen logo" src="amundsen_logo.png" width=500 caption="Amundsen and other heavyweight tools are the go-to solution for data discovery" class="figure-center" >}}
 
@@ -179,39 +183,82 @@ version control, so by parsing `git`'s metadata, we can for example know each mo
 More generally, to extend our lightweight metadata engine, we would add metadata sources and develop
 parsers to collect and organise that metadata. We would then _index_ that metadata in our search engine.
 Examples of metadata sources are:
+
 - dbt artifacts (_See my post on [how to parse dbt artifacts]({{< ref "2020-12-20-dbt-artifacts.md#available-data-in-dbt-artifacts" >}})_)
 - git metadata
 - BI tool metadata database (e.g. who queries what, who curates what)
 - data warehouse admin views (e.g. for Redshift: [`stl_insert`](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_INSERT.html),
-[`svv_table_info`](https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html),
-[`stl_query`](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html),
-[predicate columns](https://github.com/awslabs/amazon-redshift-utils/blob/master/src/AdminScripts/predicate_columns.sql))
+  [`svv_table_info`](https://docs.aws.amazon.com/redshift/latest/dg/r_SVV_TABLE_INFO.html),
+  [`stl_query`](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_QUERY.html),
+  [predicate columns](https://github.com/awslabs/amazon-redshift-utils/blob/master/src/AdminScripts/predicate_columns.sql))
 - ...
 
 ## What does good Search look like
 
-- good search = searchable + faceting + ranking attributes
+Search is going to be key if our metadata engine is to rival with Amundsen, so let's look at Amundsen's docs.
+We know from their architecture page that they use ElasticSearch under the hood. And we can also read that
+we will need a **ranking mechanism** to order our dbt models by relevancy:
+
+> Search for data within your organization by a simple text search. A **PageRank-inspired** search
+> algorithm recommends results based on names, descriptions, tags, and querying/viewing activity
+> on the table/dashboard.
+> -- Source: https://www.amundsen.io/
+
+A bit further in the docs, we learn that Amundsen has three search indices
+and that the search bar uses **multi-index search** against those indices:
+
+> the users could search for any random information in the search bar.
+> In the backend, the search system will use the same query term from users and search
+> across three different entities (tables, people, and dashboards) and return the results
+> with the highest ranking.
+> -- Source: https://www.amundsen.io/amundsen/tutorials/how-to-search-effective/#general-search
+
+We even get examples for **searchable attributes** for the documents in the tables index:
+
+> For Table search, it will search across different fields,
+> including table name, schema name, table or column descriptions, tags and etc
+> -- Source: https://www.amundsen.io/amundsen/tutorials/how-to-search-effective/#general-search
+
+Presumably, there's not much point in reverse engineering an open source project,
+so I'll spare you the rest: it also supports **search-as-you-type** and **faceted search** (applying filters).
+
+To build the search capability, you could use different technologies. I attended [a talk at Europython 2020
+from Paolo Melchiorre]({{< ref "2020-07-27-europython2020#paolo-melchiorre" >}}) advocating for using good-old
+PostgreSQL's full text search. To my knowledge though, you don't get search as you type.
+This is one of the reasons why people tend to go for ElasticSearch. This will require more engineering
+resources than the serverless Algolia. On the other hand, you won't be throwing money at a SaaS company.
+As we saw though for our use case, the free tier will be enough so we get best of both worlds.
+
+Rest the question of structuring our documents for search. Attributes in searchable documents
+are one of three types: searchable attribute (i.e. matches your query),
+a faceting attribute (i.e. a filter) or a ranking attribute (i.e. a weight).
 
 {{< figure src="search.png" caption="Keys in searchable documents are 1 of 3 types" alt="Structuring Documents for Search" class="figure-center">}}
 
-- Amundsen search:
-  > A PageRank-inspired search algorithm recommends results based on names, descriptions, tags, and querying/viewing activity on the table/dashboard.
-- For us
-  - searchable attributes: table names, table descriptions
-  - faceting attributes: build tags on your models
-    - dbt .yml attributes: `tags` if you have good ones, `materialisation` or `resource type`
-    - dbt side effects like folder names (there is a conscious curation effort happening from the code maintainers)
-    - use DAG algos to propagate interesting info you want to use as tags, e.g. build a source based tag using the `fqn` key in the manifest.json
-  - ranking attributes: build metrics that are important for you to prioritise models to your users
-    - note1: difference between "orderBy" and "customRanking"
-    - note2: depending on your use case, your goal will vary:
-      - for JBTD 1, the goal is to downrank the corner case models
-      - for JBTD 2, the goal might be to optimise the cluster's performance
-    - use DAG algos like PageRank = give meaning to the cold start, which is relevant at the start of your self service analytics journey (=people don't know what are good models, so models that are reused by your dbt comitters's models are a good proxy)
-    - usage metrics from redshfit or BI tool
+Our **searchable attributes** will be table names and descriptions.
 
-## Final result
+Our **faceting attributes** will be "tags" on our models: these could be vanilla _dbt tags_ if you have good ones,
+or _materialisation_, _resource type_ or any other key from the `.yml` file.
+Assuming there is a conscious curation effort happening from the code maintainers when they place a model in
+a folder in the dbt codebase, we can hence use folder names as a faceting attribute too.
+Lastly, we can use the dbt graph to propagate from left to right the _source_ that models depend on; this
+will serve as a useful faceting attribute.
 
+For **ranking attributes**, we will build metrics important to us to prioritise tables for our users.
+Keep in mind that we startes with 2 use cases ('Job to be Done'), so each persona could benefit from
+a different metric. For example, for "dashboard builders", the goal could be to downrank the corner case models
+so that only models that are "central" are used. But for "data auditers", the goal might be to prioritise
+the models that need attention first. In our case, we will focus on the first persona, and we will use
+a PageRank like algorithm (degree centrality [as shown in my previous post]({{< ref "2020-12-20-dbt-artifacts.md#example-application-2-compute-model-centrality-with-networkx" >}})).
+This is great at the start of your self service analytics journey: dashboard builders might not know
+what are the good tables yet, so models that are reused by your dbt comitters are a good proxy.
+Later, you could do like Amundsen and rely on the query logs to weight higher the models that are used more.
+
+<!-- note: difference between "orderBy" and "customRanking" -->
+
+## Enters [`dbt-metadata-utils`](https://github.com/louisguitton/dbt-metadata-utils)
+
+- https://github.com/louisguitton/dbt-metadata-utils
 - Note on the setup: you need the git repo locally with dbt artifacts generated
 - TODO: walkthrough https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/config.py
 - https://docs.getdbt.com/faqs/example-projects/
@@ -242,10 +289,16 @@ Examples of metadata sources are:
 
 - TODO https://github.com/louisguitton/dbt-metadata-utils/blob/main/dbt_metadata_utils/algolia.py#L165-L182
 
-### What could Come next
+## Conclusion
 
-- parsers for Redshift or Metbase metadata
-- column level lineage
+There you have it! A lightweight data governance tool on top of dbt artifacts and Algolia.
+I hope this showed you that data governance doesn't need to be a complicated topic,
+and that by using a knowledge graph of metadata, you can get a head start on your roadmap.
+
+Leave a star on the [github project](https://github.com/louisguitton/dbt-metadata-utils), and let me know your thoughts [on twitter](https://twitter.com/louis_guitton).
+I enjoyed building this project and writing this post because it lies at the intersection
+of thress of my areas of interest: NLP, Data and Engineering. I cover those three topics
+in other places [on my blog]({{< ref "/posts/" >}}).
 
 ## Resources
 
@@ -259,6 +312,4 @@ Examples of metadata sources are:
 1. [The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win by Gene Kim | Goodreads](https://www.goodreads.com/book/show/25478858-the-phoenix-project)
 1. [Site Search & Discovery powered by AI | Algolia](https://www.algolia.com/)
 1. [typesense/typesense: Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍](https://github.com/typesense/typesense)
-
-
-1. https://github.com/louisguitton/dbt-metadata-utils
+1. [louisguitton/dbt-metadata-utils: Parse dbt artifacts and search dbt models with Algolia](https://github.com/louisguitton/dbt-metadata-utils)

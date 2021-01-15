@@ -5,8 +5,8 @@ title: "Rethinking the search over your dbt models"
 date: 2021-01-10
 lastmod: 2021-01-10
 summary: >
-  In this post, I'll show you how to improve the search experience
-  of your dbt docs.
+  In this post, I'll show you how to build a lightweight metadata
+  engine on top of dbt artifacts using Algolia.
 keywords:
   - dbt search
   - dbt docs
@@ -17,8 +17,13 @@ categories:
 featuredImage: /posts/dbt-search/hero.png
 images:
   - hero.png
+  - jtbd.png
+  - amundsen_logo.png
   - amundsen.png
+  - amundsen_features.png
+  - algolia_logo.png
   - search.png
+  - localhost_3000_.png
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
 ---

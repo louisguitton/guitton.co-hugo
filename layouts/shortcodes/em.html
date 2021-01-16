@@ -1,0 +1,6 @@
+<!-- https://gohugo.io/templates/shortcode-templates/ -->
+<span class="text-emphasis"
+{{ if or (.Get "background-color") (.Get "color") }}
+    style="{{ with .Get "background-color"}} background-color: {{ . }};{{ end }}{{ with .Get "color"}} color: {{ . }};{{ end }}"
+{{ end }}
+>{{ .Inner }}</span>

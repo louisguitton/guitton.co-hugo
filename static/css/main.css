@@ -1,8 +1,23 @@
-body{
+/* https://fonts.google.com/specimen/Inter?sidebar.open=true&selection.family=Roboto+Slab */
+body {
   font-family: Inter, Georgia, serif;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Roboto Slab, Helvetica, sans-serif;
+}
+
+.text-emphasis {
+  color: #212121;
+  text-decoration: none;
+  background-color: #d4e2d4;
+  padding: 1px 5px;
+  border-radius: 2px;
 }
 
 figure.figure-center {

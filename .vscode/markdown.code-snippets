@@ -1,0 +1,10 @@
+{
+	"hugo shortcode text emphasis": {
+		"scope": "markdown",
+		"prefix": "em",
+		"body": [
+			"{{< em background-color=\"\" color=\"\">}}{{</em>}}"
+		],
+		"description": "Hugo custom shortcode of my creation to highlight a passage"
+	}
+}

@@ -6,5 +6,16 @@
 			"{{< em background-color=\"\" color=\"\">}}{{</em>}}"
 		],
 		"description": "Hugo custom shortcode of my creation to highlight a passage"
+	},
+	"details": {
+		"scope": "markdown",
+		"prefix": "details",
+		"body": [
+			"<details>",
+			"<summary>Summary Goes Here</summary>",
+			"...this is hidden, collapsable content...",
+			"</details>"
+		],
+		"description": "details section"
 	}
 }

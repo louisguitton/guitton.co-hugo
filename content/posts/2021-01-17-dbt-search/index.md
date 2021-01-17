@@ -2,8 +2,8 @@
 slug: dbt-search
 title: "Rethinking the search over your dbt models"
 # "Building a lightweight search engine over your dbt models"
-date: 2021-01-10
-lastmod: 2021-01-10
+date: 2021-01-17
+lastmod: 2021-01-17
 summary: >
   In this post, I'll show you how to build a lightweight metadata
   engine on top of dbt artifacts using Algolia.
@@ -112,6 +112,7 @@ Those tools come on top of an already complex stack of tools that data teams nee
 What if we wanted a lightweight solution instead, like `dbt Docs`?
 
 <details>
+<summary>More on metadata engines</summary>
 Related tools:
 
 - [Amundsen](https://www.amundsen.io/) (Lyft)
@@ -135,11 +136,20 @@ Great resources to go further:
 - [Teardown: What You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/) and [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml#data-discovery)
 </details>
 
+<details>
+<summary>More on self-service analytics</summary>
+
+> I see the word _Data Democratization_ employed more and more often mentioned. I find the most tangible application is derived by the gitlab data team -- Stephan Durry, Head of Data & Insights at OneFootball
+
+[Self-Service Data | GitLab](https://about.gitlab.com/handbook/business-ops/data-team/direction/self-service/)
+
+</details>
+
 ## The Features of Amundsen and other Metadata Engines
 
 In his great [Teardown of Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/),
 Eugene Yan summarizes really well the features of Amundsen and other metadata engines. He splits
-them in 3 categories: features to {{< em background-color="#fa5252">}}find data{{</em>}}, features to {{< em background-color="#4c6ef5">}}understand data{{</em>}} and features to {{< em background-color="#fab005">}}use data{{</em>}}.
+them in 3 categories: features to {{< em background-color="#fa5252" color="white">}}find data{{</em>}}, features to {{< em background-color="#4c6ef5" color="white">}}understand data{{</em>}} and features to {{< em background-color="#fab005" color="white">}}use data{{</em>}}.
 
 {{< figure src="amundsen.png" caption="Architecture of your friendly neighbourhood metadata engine" class="figure-center" >}}
 
@@ -171,13 +181,13 @@ Additionally, dbt sources are a great way to make raw data explicitly labeled. T
 for you at the table level and I will leverage later that graph to propagate tags with no additional work.
 
 In other words, with schemas, descriptions and data lineage, dbt Docs covers the category
-{{< em background-color="#4c6ef5">}}Features to Understand{{</em>}} from the above diagram.
+{{< em background-color="#4c6ef5" color="white">}}Features to Understand{{</em>}} from the above diagram.
 So **what is missing from dbt Docs to rival with Amundsen**? Only a way to sublime
 the work that is already happening in your dbt repository. And that is Search.
 
 {{< figure alt="Algolia logo" src="algolia_logo.png" width=500 caption="Algolia market themselves as a 'flexible search platform'" class="figure-center" >}}
 
-A good search engine will cover the {{< em background-color="#fa5252">}}Features to Find{{</em>}} category.
+A good search engine will cover the {{< em background-color="#fa5252" color="white">}}Features to Find{{</em>}} category.
 Fortunately, we don't need to build a
 search engine. This is where we will use [Algolia](https://www.algolia.com/)'s free tier in addition to
 some static HTML and JS files to build our lightweight data discovery and metadata engine. Algolia's free
@@ -186,7 +196,7 @@ tier allows you for 10k search requests and 10k records per month. Given that fo
 
 _Note: if you're worried that Algolia isn't open source, consider using the project [typesense](https://github.com/typesense/typesense)._
 
-How to get at least one feature in the {{< em background-color="#fab005">}}Features to Use{{</em>}} category? Well, a `dbt` project is tracked in
+How to get at least one feature in the {{< em background-color="#fab005" color="white">}}Features to Use{{</em>}} category? Well, a `dbt` project is tracked in
 version control, so by parsing `git`'s metadata, we can for example know each model's owner.
 
 More generally, to extend our lightweight metadata engine, we would add metadata sources and develop
@@ -211,7 +221,7 @@ we will need a **ranking mechanism** to order our dbt models by relevancy:
 > Search for data within your organization by a simple text search. A **PageRank-inspired** search
 > algorithm recommends results based on names, descriptions, tags, and querying/viewing activity
 > on the table/dashboard.
-> -- [Source](https://www.amundsen.io/)
+> -- [Source](https://www.amundsen.io/#:~:text=A%20PageRank-inspired%20search%20algorithm)
 
 A bit further in the docs, we learn that Amundsen has three search indices
 and that the search bar uses **multi-index search** against those indices:
@@ -230,6 +240,15 @@ We even get examples for **searchable attributes** for the documents in the tabl
 
 Presumably, there's not much point in reverse engineering an open source project,
 so I'll spare you the rest: it also supports **search-as-you-type** and **faceted search** (applying filters).
+
+<details>
+<summary>More on search</summary>
+
+- [Format and Structure Your Data | Algolia Documentation](https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/)
+- [Search Multiple Indices | Algolia Documentation](https://www.algolia.com/doc/api-reference/api-methods/multiple-queries/)
+- [The Flask Mega-Tutorial Part XVI: Full-Text Search - miguelgrinberg.com](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search): Flask and ElasticSearch
+- [Implementing faceted search with Django and PostgreSQL](https://simonwillison.net/2017/Oct/5/django-postgresql-faceted-search/)
+</details>
 
 To build this search capability, you could use different technologies. I attended [a talk at Europython 2020
 from Paolo Melchiorre]({{< ref "2020-07-27-europython2020#paolo-melchiorre" >}}) advocating for using good-old

@@ -92,7 +92,9 @@
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
 
-    {{ partial "google_analytics_4.html" . }}
+    {{ if not .Site.IsServer }}
+      {{ partial "google_analytics_4.html" . }}
+    {{ end }}
 
   </body>
 

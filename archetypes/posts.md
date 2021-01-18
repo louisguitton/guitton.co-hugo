@@ -4,6 +4,7 @@ slug: {{ .Name }}
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
+# description is left empty, it defaults to summary
 summary: >
 keywords:
     # A main keyword you want to write about
@@ -13,6 +14,7 @@ keywords:
 categories:
     -
 featuredImage:
+# The first 6 URLs from the images array are used for image metadata in the OpenGraph internal hugo template
 images:
     -
 series:

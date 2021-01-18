@@ -16,6 +16,8 @@ images:
     - /images/dbt.png
     - /images/jq.png
     - /images/pydantic.png
+series:
+  - Metadata Series
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
 ---

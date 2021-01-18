@@ -15,15 +15,18 @@ keywords:
 categories:
   - Data
 featuredImage: /posts/dbt-search/hero.png
+# The first 6 URLs from the images array are used for image metadata in the OpenGraph internal hugo template
 images:
-  - hero.png
-  - jtbd.png
-  - amundsen_logo.png
-  - amundsen.png
-  - amundsen_features.png
-  - algolia_logo.png
-  - search.png
-  - localhost_3000_.png
+  - /posts/dbt-search/hero.png
+  - /posts/dbt-search/jtbd.png
+  - /posts/dbt-search/amundsen_logo.png
+  - /posts/dbt-search/amundsen.png
+  - /posts/dbt-search/amundsen_features.png
+  - /posts/dbt-search/algolia_logo.png
+  - /posts/dbt-search/search.png
+  - /posts/dbt-search/localhost_3000_.png
+series:
+  - Metadata Series
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
 ---

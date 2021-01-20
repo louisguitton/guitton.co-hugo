@@ -42,10 +42,9 @@ googleAnalytics = "UA-140255752-1"
     favicon_32 = "images/favicon.ico"
     favicon_16 = "images/favicon.ico"
 
-    footercontent = "This website is serverless, check it on <a href='https://github.com/louisguitton/guitton.co' target='_blank' rel='noopener'><i class='fab fa-github'></i> Github</a>"
-
-    hidecredits = false
-    hidecopyright = false
+    footercontent = "Made in Berlin 🇩🇪 with <a href='https://gohugo.io/'>Hugo</a>, <a href='https://www.netlify.com/'>Netlify</a> and <a href='https://aws.amazon.com/lambda/'>AWS Lambda</a>"
+    hidecredits = true
+    hidecopyright = true
 
     rtl = false
 

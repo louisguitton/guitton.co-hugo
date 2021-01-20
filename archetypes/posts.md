@@ -24,6 +24,14 @@ draft: true
 # Ref: https://gohugo.io/content-management/front-matter
 ---
 
+<!--
+Checklist before publication
+- Review Headlines: Talk benefits, not details. Keep it short
+- Review Content skimming: Break it down with bullet points, bolding, spacing
+- Review Story: do I have a beginning, a middle, and end? do I tell my emotions?
+e.g. storyline of a side project: life before the solution / my approach to solving it / complications I faced / end results / what woul I do differently
+-->
+
 ## Six Questions (30 min)
 
 - What is the most important point?

@@ -12,6 +12,10 @@ h6 {
   font-family: Roboto Slab, Helvetica, sans-serif;
 }
 
+.anchor:hover {
+  color: hotpink;
+}
+
 .text-emphasis {
   color: #212121;
   text-decoration: none;

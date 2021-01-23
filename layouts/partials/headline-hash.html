@@ -1,0 +1,2 @@
+<!-- https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/9 -->
+{{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}&nbsp;<a class="anchor" href="#${2}"><i class="fas fa-paperclip"></i></a> ${3}` | safeHTML }}

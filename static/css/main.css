@@ -8,7 +8,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+aside.toc {
   font-family: Roboto Slab, Helvetica, sans-serif;
 }
 
@@ -16,6 +17,64 @@ h6 {
   color: hotpink;
 }
 
+/** Table of content
+Ref: https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
+**/
+/* 1. Enable smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+/* 2. Make nav sticky */
+/* section.post > aside > nav {
+	position: sticky;
+	top: 2rem;
+	align-self: start;
+} */
+
+/* page layout */
+/* section.post {
+  display: grid;
+  grid-template-columns: 1fr 20em;
+  max-width: 90.0em;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 .8rem;
+} */
+
+/* aside.toc {
+  margin-top: 2rem;
+  padding: 0 .8rem;
+} */
+
+.toc > nav {
+  border-left: 4px solid #f0f0f0;
+}
+
+.toc a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #ccc;
+  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.toc a:hover,
+.toc a:focus {
+  color: hotpink;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.toc li {
+  margin-left: 1rem;
+}
+
+
+/** Post page: emphasis and figure **/
 .text-emphasis {
   color: #212121;
   text-decoration: none;
@@ -28,6 +87,7 @@ figure.figure-center {
   text-align: center;
 }
 
+/** Posts list page: Hero images etc... **/
 .list ul li .date {
   text-align: left;
   margin: 0;

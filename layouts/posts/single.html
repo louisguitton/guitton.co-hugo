@@ -38,6 +38,11 @@
         {{ partial "posts/sharing.html" . }}
       </header>
 
+      <aside class="toc">
+        <!-- https://gohugo.io/content-management/toc/ -->
+        {{ .TableOfContents }}
+      </aside>
+
       <div>
         {{ partial "headline-hash.html" .Content }}
       </div>

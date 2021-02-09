@@ -1,17 +1,19 @@
 ---
 slug: dbt-search
-title: "Rethinking the search over your dbt models"
+title: "A lightweight alternative to Amundsen for your dbt project"
+# "Rethinking the search over your dbt models"
 # "Building a lightweight search engine over your dbt models"
 date: 2021-01-17
-lastmod: 2021-01-17
+lastmod: 2021-02-09
 summary: >
-  In this post, I'll show you how to build a lightweight metadata
-  engine on top of dbt artifacts using Algolia.
+  In this post, I'll show you how to build a lightweight data catalog
+  on top of dbt artifacts using Algolia.
 keywords:
   - dbt search
   - dbt docs
   - dbt artifacts
   - dbt lineage graph
+  - data catalog
 categories:
   - Data
 featuredImage: /posts/dbt-search/hero.png
@@ -132,6 +134,8 @@ Other products:
 - Collibra
 - Alation
 - Intermix
+- data.world
+- montecarlodata.com
 
 Great resources to go further:
 
@@ -168,6 +172,20 @@ Those features have also varying returns, not represented here.
 
 The key thing to realise is that Lyft might have spent a 15⭐️-cost on Amundsen to assemble all those features.
 But what if we wanted to build a 3⭐️-cost metadata engine? What features and technologies would you pick?
+
+<details>
+<summary> <b>2021-02-09 Update</b>: <i>The Ground paper from Rise labs</i>
+</summary>
+
+In the seminal paper [Ground: A Data Context Service - RISE Lab](https://rise.cs.berkeley.edu/blog/publication/ground-data-context-service-2/),
+Rise labs have outlined those features with much better terminology that
+I wasn't aware of at the time of first writing this post: the {{< em background-color="#fff2a8" color="">}}ABC of Metadata{{</em>}}
+
+- Application - information on how the data should be interpreted
+- Behavior - information on how the data is created and used
+- Change - information on the frequency and types of updates to the data
+
+</details>
 
 ## A Lightweight Alternative to Amundsen
 

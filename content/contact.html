@@ -9,17 +9,9 @@ summary: Contact form that uses a serverless AWS Lambda function to send me an e
     <p class="bigcard">I'd love to get a card from you!</p>
 
     <div id="card">
-      <form id="serverless-form" action="#">
+      <form id="serverless-form" action="#" onsubmit="return confirm('Do you want to send that postcard?');">
         <div id="leftbox">
-          <textarea
-          id="message"
-          name="message"
-          COLS="35"
-          ROWS="25"
-          placeholder="Your message"
-          required
-        ></textarea>
-        <label for="message" class="visuallyhidden">Body of the message you want to send me</label>
+          <textarea id="message" name="message" cols="35" rows="25" placeholder="Body of the message you want to send me" required></textarea>
         </div>
         <div id="rightbox">
           <div id="send">
@@ -27,10 +19,8 @@ summary: Contact form that uses a serverless AWS Lambda function to send me an e
           </div>
           <div class="line">
             <div id="input">
-              <input type="text" name="name" id="name" placeholder="Name"/>
-              <label for="name" class="visuallyhidden">What is your name?</label>
-              <input type="email" name="email" id="email" placeholder="E-mail" required/>
-              <label for="email" class="visuallyhidden">What is your email?</label>
+              <input type="text" name="name" id="name" placeholder="What is your name?" />
+              <input type="email" name="email" id="email" placeholder="What is your email?" required />
             </div>
           </div>
         </div>

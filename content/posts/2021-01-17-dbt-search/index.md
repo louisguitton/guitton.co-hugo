@@ -4,7 +4,7 @@ title: "A lightweight alternative to Amundsen for your dbt project"
 # "Rethinking the search over your dbt models"
 # "Building a lightweight search engine over your dbt models"
 date: 2021-01-17
-lastmod: 2021-02-09
+lastmod: 2021-04-27
 summary: >
   In this post, I'll show you how to build a lightweight data catalog
   on top of dbt artifacts using Algolia.
@@ -16,6 +16,8 @@ keywords:
   - data catalog
 categories:
   - Data
+series:
+  - Metadata Series
 featuredImage: /posts/dbt-search/hero.png
 # The first 6 URLs from the images array are used for image metadata in the OpenGraph internal hugo template
 images:
@@ -27,8 +29,6 @@ images:
   - /posts/dbt-search/algolia_logo.png
   - /posts/dbt-search/search.png
   - /posts/dbt-search/localhost_3000_.png
-series:
-  - Metadata Series
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
 # Ref: https://gohugo.io/content-management/front-matter
 ---
@@ -70,6 +70,8 @@ In this post, I will show you how you can **build a lightweight metadata search 
 on top of your dbt metadata to answer all these questions. I hope to show you that
 data governance, data lineage, and data discovery don't need to be complicated topics
 and that you can get started today on those roadmaps with my lightweight open source solution.
+
+LIVE DEMO: <http://dbt-metadata-utils.guitton.co>
 
 ## Data Governance is Ripe
 
@@ -380,6 +382,8 @@ I didn't dwell on details, but **our metadata engine's features are**:
 it will use rules to filter documents with loader=airflow
 
 ## Conclusion
+
+LIVE DEMO: <http://dbt-metadata-utils.guitton.co>
 
 There you have it! A lightweight data governance tool on top of dbt artifacts and Algolia.
 I hope this showed you that data governance doesn't need to be a complicated topic,

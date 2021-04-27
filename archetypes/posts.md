@@ -13,11 +13,11 @@ keywords:
     -
 categories:
     -
+series:
+    -
 featuredImage:
 # The first 6 URLs from the images array are used for image metadata in the OpenGraph internal hugo template
 images:
-    -
-series:
     -
 draft: true
 # Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations#front-matter
@@ -43,7 +43,7 @@ e.g. storyline of a side project: life before the solution / my approach to solv
 
 ## If it's a "product", fill in Jobs to be Done
 
-> <span style="color:blue">When I</span> [context],
+<span style="color:blue">When I</span> [context],
 <span style="color:red">but</span> [barrier],
 <span style="color:green">help me</span> [goal],
 <span style="color:orange">so I</span> [outcome].

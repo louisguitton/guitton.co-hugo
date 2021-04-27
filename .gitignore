@@ -1,6 +1,7 @@
 requirements.txt
 public/
 resources/
+content/posts/.obsidian
 
 ### Serverless ###
 # Ignore build directory

@@ -1,0 +1,18 @@
+positions,experience,recommended,low,high
+Ops Engineer,new,250,200,300
+Ops Engineer,qualified,450,300,600
+Dev Engineer,new,500,350,550
+Dev Engineer,qualified,600,550,700
+Dev Engineer,veteran,750,650,850
+Coach,new,450,350,550
+Coach,qualified,600,550,650
+Coach,veteran,800,650,900
+Mentor,veteran,1100,900,1100
+Product Owner,new,400,350,450
+Product Owner,qualified,550,500,600
+Intrapreneur,qualified,700,600,800
+Illustrator,qualified,400,300,500
+UI Designer,qualified,350,400,450
+UX Designer,new,375,300,450
+UX Designer,qulified,525,450,600
+UX Designer,veteran,700,600,800

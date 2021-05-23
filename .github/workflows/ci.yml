@@ -15,9 +15,11 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.78.0"
+      # we check that hugo can build the site
+      # Lighthouse CI can test a static site but I couldn't figure out how to set the port of lhci so that CSS assets load from that basUrl
       - name: Build static website
         run: |
-          hugo --gc --minify
+          hugo --gc --minify -b http://localhost
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -25,6 +27,7 @@ jobs:
           node-version: 12.x
       - name: run Lighthouse CI
         env:
+          HUGO_VERSION: "0.78.0"
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
           npm install -g @lhci/cli@0.7.x

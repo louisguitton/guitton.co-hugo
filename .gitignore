@@ -2,6 +2,7 @@ requirements.txt
 public/
 resources/
 content/posts/.obsidian
+.lighthouseci
 
 ### Serverless ###
 # Ignore build directory

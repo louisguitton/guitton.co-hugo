@@ -1,9 +1,9 @@
 ---
-slug: {{ .Name }}
+slug: freelance-pricing
 # A couple of ideas for your headline
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-lastmod: {{ .Date }}
+title: "Simple freelance pricing guide for developers"
+date: 2021-05-02
+lastmod: 2021-05-02
 # description is left empty, it defaults to summary
 summary: >
 keywords:

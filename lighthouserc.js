@@ -12,7 +12,8 @@ module.exports = {
       ],
     },
     upload: {
-      target: "temporary-public-storage",
+      target: 'lhci',
+      serverBaseUrl: 'https://louisguitton-lhci.herokuapp.com/',
     },
     assert: {
       preset: 'lighthouse:no-pwa',

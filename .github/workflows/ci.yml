@@ -15,6 +15,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.78.0"
+          extended: true
       # we check that hugo can build the site
       # Lighthouse CI can test a static site but I couldn't figure out how to set the port of lhci so that CSS assets load from that basUrl
       - name: Build static website

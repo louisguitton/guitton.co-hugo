@@ -13,7 +13,7 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'https://louisguitton-lhci.herokuapp.com/',
+      serverBaseUrl: 'http://lhci.guitton.co/',
     },
     assert: {
       preset: 'lighthouse:no-pwa',

@@ -2,7 +2,7 @@
 slug: fastapi-monitoring
 title: How to monitor your FastAPI service
 date: 2020-09-18
-lastmod: 2020-11-14
+lastmod: 2021-05-30
 summary: In this post I explain how to get visibility into
   your FastAPI application's performance
   for both development and production environments.
@@ -121,6 +121,9 @@ The NewRelic python agent now supports Starlette and FastAPI out of the box.
 OpenTelemetry provides a standard for steps 1 (with `Instrumentors`) and 2 (with `Exporters`) from the 4 steps above. One of the big advantages of
 OpenTelemetry is that you can send the events to any monitoring
 backend (commercial or open source). This is especially **awesome because you can use the same intrumentation setup for `development`, `staging` and `production` environments**.
+
+_Update - May 30th, 2021:_
+[Github is now adopting OpenTelemetry](https://github.blog/2021-05-26-why-and-how-github-is-adopting-opentelemetry/)
 
 Note that depending on the language you use for your microservice, your mileage may vary. For example,
 there is no NewRelic OpenTelemetry Exporter in Python yet.

@@ -97,6 +97,10 @@ googleAnalytics = "UA-140255752-1"
     weight = 3
     url = "/freelance/"
 [[menu.main]]
+    name = "Resume"
+    weight = 3
+    url = "/resume.html"
+[[menu.main]]
     name = "Contact"
     weight = 4
     url = "/contact/"

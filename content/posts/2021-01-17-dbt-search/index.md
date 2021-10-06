@@ -320,7 +320,7 @@ All you will need is:
 - clone dbt-metadata-utils on the same machine than your dbt project
 - create one Algolia account (and API key)
 - create one Algolia app inside that account
-- run the commands layed out later
+- run the commands laid out later
 
 For the dbt project, we will use one of the [example projects](https://docs.getdbt.com/faqs/example-projects/)
 listed on the dbt docs: the [jaffle_shop codebase](https://github.com/fishtown-analytics/jaffle_shop).

@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "*.html": "jinja-html"
+    },
+    "python.formatting.provider": "black",
+    "[markdown]": {
     }
 }

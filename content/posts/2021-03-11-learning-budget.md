@@ -62,7 +62,7 @@ if you're getting started with airflow, don't go for https://www.astronomer.io/c
 the key is to have a routine of learning and a self-budget : were you taking online classes before? were you buying books before ?
 It's not because you have money that you should spend it: if you're not used to buying and reading textbooks, you're going to waste time and money.
 
-But it does help to feel "liberated" (although no one was stopping you from investing your own money in yoursefl)
+But it does help to feel "liberated" (although no one was stopping you from investing your own money in yourself)
 
 ## If it's a "product", fill in Jobs to be Done
 
@@ -76,7 +76,7 @@ e.g. for Discord: When I want to jump into my favorite game, but I don’t know 
 ## Craft the Hook
 
 ## Craft the Outline (1 hour)
-<!-- bullet points or headlines and subheadlines -->
+<!-- bullet points or headlines and sub-headlines -->
 
 ## Resources
 

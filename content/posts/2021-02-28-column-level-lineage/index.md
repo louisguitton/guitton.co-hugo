@@ -31,8 +31,10 @@ Checklist before publication
 - Review Headlines: Talk benefits, not details. Keep it short
 - Review Content skimming: Break it down with bullet points, bolding, spacing
 - Review Story: do I have a beginning, a middle, and end? do I tell my emotions?
-e.g. storyline of a side project: life before the solution / my approach to solving it / complications I faced / end results / what woul I do differently
+e.g. storyline of a side project: life before the solution / my approach to solving it / complications I faced / end results / what would I do differently
 -->
+
+<!-- TODO: rethink this post in light of https://medium.com/data-monzo/mapping-our-data-journey-with-column-lineage-56209c00606d -->
 
 ## Six Questions (30 min)
 

@@ -18,7 +18,7 @@ Lately, I've been monitoring my website and trying to grow it organically.
 {{< tweet 1248945877886087169 >}}
 
 I post naturally almost once a month, but given I have limited time,
-I'm interested in understanding how I can maximise the impact of one post on my website tracking data.
+I'm interested in understanding how I can maximize the impact of one post on my website tracking data.
 
 First (and we won't cover this here), you might wonder how to define success of you online project:
 
@@ -42,7 +42,7 @@ On April 8th, a new competing (and really cool) tool was launched **with a bang*
 
 Here, I won't dive into its features or its inception story, but rather highlight 2 of its attributes which made me think:
 
-1. although the project was started by a solo dev, he realised that **build it and they will come** is not true;
+1. although the project was started by a solo dev, he realized that **build it and they will come** is not true;
   instead he partnered with a content marketing expert as a co-founder,
   and given the tool's gained popularity, it's safe to say that this decision paid off
 1. this tool pushes the **open data** movement further as devs can now share their tracking data directly
@@ -64,7 +64,7 @@ Here I intend to collect a growing list of website tracking data points. The goa
 - on that week, the HackerNews post brought a total of 16k of the 46k (~35%) users (to be compared to the 15k of the first day).
   This means that the reach you get on HackerNews is limited to the launch day.
 - But that content marketing strategy really paid off, as the post was also cited in the HackerNews newsletter.
-  If was featured #2 of the top 10 "*Favorites*" that week. And we see that over the week, it brought 2k ouf of the 46k (~4%) users.
+  If was featured #2 of the top 10 "*Favorites*" that week. And we see that over the week, it brought 2k out of the 46k (~4%) users.
 - the effect of such a viral post looks to me like a *capacitor discharge curve* with a time constant a bit shorter
   than a day. This electronics jargon means that after 3 to 4 days, you're back at the normal organic traffic.
 - organic traffic before was averaging at ~100 users per day; and after was averaging at ~1k users per day.
@@ -98,7 +98,7 @@ More details here:
 ## My blog is smaller, but how much so ?
 
 So, we saw here the power of **Content Marketing** for any online project (a personal blog or a SaaS launch).
-A new post can bring a "peak" of users that we modelled as a *capacitor discharge curve* in this post.
+A new post can bring a "peak" of users that we modeled as a *capacitor discharge curve* in this post.
 
 ![capacitor_discharge](/images/capacitor_discharge.jpg "Capacitor discharge model for content marketing")
 
@@ -117,10 +117,10 @@ In my case, because my peak brought ~40 users and koaning.io's peak brought ~800
 
 ## Conclusion
 
-Full disclaimer, this appraoch is simplistic and I have not looked for literature that models Content Marketing this way.
+Full disclaimer, this approach is simplistic and I have not looked for literature that models Content Marketing this way.
 Here are a couple issues I can see:
 
-- I look at 1 isolated content outreach and not recurring content outreachs (maybe over multiple outreachs that discharge curve doesn't look the same)
+- I look at 1 isolated content outreach and not recurring content outreaches (maybe over multiple outreaches that discharge curve doesn't look the same)
 - I also assume that all content referrers are equal: Twitter was "my HackerNews" in this post. But is this true? If you have a database of customers email addresses, is an email outreach more efficient? Is a mobile push notification in your native app behaving the same etc...?
 
 Despite all that, I hope I gave you a quick way to eyeball the success of your last content outreach and to gauge how much work you still need to put in to reach the numbers you're after 😀!

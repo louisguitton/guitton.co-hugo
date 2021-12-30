@@ -298,7 +298,7 @@ will serve as a useful faceting attribute.
 For {{< em background-color="#e67700" color="white">}}ranking attributes{{</em>}}, we will build metrics important to us to prioritise tables for our users.
 Keep in mind that we started with 2 use cases ('Jobs to be Done'), so each persona could benefit from
 a different metric. For example, for "dashboard builders", the goal could be to downrank the corner case models
-so that only models that are "central" are used. But for "data auditers", the goal might be to prioritise
+so that only models that are "central" are used. But for "data auditors", the goal might be to prioritise
 the models that need attention first. In our case, we will focus on the first persona, and we will use
 a PageRank-like algorithm (degree centrality [as shown in my previous post]({{< ref "2020-12-20-dbt-artifacts.md#example-application-2-compute-model-centrality-with-networkx" >}})).
 This is great at the start of your self-service analytics journey: dashboard builders might not know

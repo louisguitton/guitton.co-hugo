@@ -25,6 +25,6 @@ repos:
         name: codespell
         description: Checks for common misspellings in text files.
         entry: codespell -i 3 content/**/*.md
-        language: system
+        language: python
         types: [python]
         additional_dependencies: ['codespell==1.17.1']

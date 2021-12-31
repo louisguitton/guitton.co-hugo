@@ -16,6 +16,7 @@ Next + markdown
 ## TODO
 
 - add markdown plugins to get to an OK experience
+- add Google Analytics
 
 - setup about and other pages to use contentlayer OtherPage model
 - add SSG support for tweets

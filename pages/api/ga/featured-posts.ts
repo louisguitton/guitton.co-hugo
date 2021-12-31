@@ -3,18 +3,11 @@
 // Ref: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type PageView = {
-  page: string;
-  title: string;
-  views: number;
-  since: string;
-};
-type Data = PageView[];
+import { FeaturedPosts } from "../../../lib/types";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<FeaturedPosts>
 ) {
   // YYYY-MM-DD or relative by using today, yesterday, or the NdaysAgo
   // Ref: https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/DateRange
@@ -42,8 +35,7 @@ export default async function handler(
     dimensions: [
       {
         name: "pagePath",
-      },
-      { name: "pageTitle" },
+      }
     ],
     metrics: [
       {
@@ -68,7 +60,6 @@ export default async function handler(
 
   const result = response.rows!.map((p) => ({
     page: p.dimensionValues![0].value!,
-    title: p.dimensionValues![1].value!,
     views: parseInt(p.metricValues![0].value!),
     since: startDate,
   }));

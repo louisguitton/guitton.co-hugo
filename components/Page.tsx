@@ -8,7 +8,7 @@ const Body: React.FC<{}> = ({ children }) => {
 }
 
 const Container: React.FC<{}> = ({ children }) => {
-  return <div className="flex-grow w-full">{children}</div>;
+  return <main className="flex-grow w-full">{children}</main>;
 }
 
 const Page: React.FC<{}> = ({ children }) => {

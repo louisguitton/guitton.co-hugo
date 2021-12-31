@@ -11,10 +11,10 @@ type StaticProps = {
 
 const BlogLayout: React.FC<StaticProps> = ({ post, children }) => {
   return (
-    <div>
+    <article>
       <h1>{post.title}</h1>
       {children}
-    </div>
+    </article>
   );
 };
 

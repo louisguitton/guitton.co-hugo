@@ -32,7 +32,9 @@ const PostPage: React.FC<StaticProps> = ({ post }) => {
 export default PostPage;
 
 export const getStaticPaths: GetStaticPaths = () => ({
-  paths: allBlogs.map((p) => ({ params: { slug: p.slug } })),
+  paths: allBlogs.map((p) => ({
+    params: { slug: p.slug ? p.slug : p.fnSlug },
+  })),
   fallback: false,
 });
 

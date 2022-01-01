@@ -16,6 +16,10 @@ Next + markdown
 ## TODO
 
 - add markdown plugins to get to an OK experience
+  - https://github.com/leerob/leerob.io/blob/main/components/Container.tsx#L119-L122
+  - https://github.com/leerob/leerob.io/blob/main/layouts/blog.tsx#L53
+  - https://github.com/leerob/leerob.io/blob/main/styles/global.css#L66-L115
+  - https://github.com/leerob/leerob.io/blob/main/contentlayer.config.ts#L87-L102
 - add Google Analytics
 
 - setup about and other pages to use contentlayer OtherPage model

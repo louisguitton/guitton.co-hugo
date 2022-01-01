@@ -79,7 +79,23 @@ const OtherPage = defineDocumentType(() => ({
   filePathPattern: "*.mdx",
   bodyType: "mdx",
   fields: {
-    title: { type: "string", required: true },
+    title: {
+      type: "string",
+      description: "the title for the content. Used for SEO",
+      required: true,
+    },
+    summary: {
+      type: "string",
+      required: true,
+      description:
+        "text used when providing a summary of the article in the .Summary page variable; details available in the content-summaries section. Used for SEO.",
+    },
+    lastmod: {
+      type: "date",
+      description:
+        "the datetime at which the content was last modified. Used for SEO.",
+      required: true,
+    },
   },
   computedFields,
 }));

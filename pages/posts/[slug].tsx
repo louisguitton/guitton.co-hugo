@@ -4,22 +4,9 @@ import { allBlogs } from ".contentlayer/data";
 import { Button } from "../../components/Button";
 import type { Blog } from ".contentlayer/types";
 import { GetStaticProps, GetStaticPaths } from "next";
+import BlogLayout from "../../components/BlogLayout";
 
-type StaticProps = {
-  post: Blog;
-};
-
-const BlogLayout: React.FC<StaticProps> = ({ post, children }) => {
-  return (
-    <article>
-      <h1>{post.title}</h1>
-      {children}
-    </article>
-  );
-};
-
-// TODO: add static tweets
-const PostPage: React.FC<StaticProps> = ({ post }) => {
+const PostPage: React.FC<{ post: Blog }> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);
 
   return (

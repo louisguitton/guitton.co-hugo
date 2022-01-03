@@ -15,14 +15,16 @@ Next + markdown
 
 ## TODO
 
-- add markdown plugins to get to an OK experience
+- [ ] refactor header with clsx
+- [ ] refactor other components with clsx
+- [ ] build OK reading experience for the body using either markdown plugins or custom CSS
   - https://github.com/leerob/leerob.io/blob/main/components/Container.tsx#L119-L122
   - https://github.com/leerob/leerob.io/blob/main/layouts/blog.tsx#L53
   - https://github.com/leerob/leerob.io/blob/main/styles/global.css#L66-L115
   - https://github.com/leerob/leerob.io/blob/main/contentlayer.config.ts#L87-L102
-- add Google Analytics
+- [ ] add Google Analytics
 
-- setup about and other pages to use contentlayer OtherPage model
-- add SSG support for tweets
+- [ ] setup about and other pages to use contentlayer OtherPage model
+- [ ] add SSG support for tweets
 
-- add search page for the lolz https://docs.google.com/presentation/d/1Iqb4rz1txVASXHpdjwogbiDvetVkjI9GMa7lQoIh7j4/edit#slide=id.g10a562423c5_0_4
+- [ ] add search page for the lolz https://docs.google.com/presentation/d/1Iqb4rz1txVASXHpdjwogbiDvetVkjI9GMa7lQoIh7j4/edit#slide=id.g10a562423c5_0_4

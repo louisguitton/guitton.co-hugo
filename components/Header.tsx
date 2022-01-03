@@ -1,9 +1,11 @@
+import clsx from "clsx";
 import Link from "next/link";
+import { px } from "../styles/constants";
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full px-8 text-gray-700 bg-white">
-      <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+    <header className={clsx(px, "text-gray-700")}>
+      <div className="container flex flex-col flex-wrap items-center justify-between py-5 md:flex-row max-w-7xl">
         <div className="relative flex flex-col md:flex-row">
           <Link href="/">
             <a className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">

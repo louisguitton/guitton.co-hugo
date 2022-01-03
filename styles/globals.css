@@ -8,6 +8,15 @@
 
 /* Write you own custom component styles here */
 
+/* Ref: https://github.com/Cosbgn/tailwindcss-tooltips */
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */

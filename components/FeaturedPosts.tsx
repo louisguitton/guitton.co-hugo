@@ -55,9 +55,9 @@ const FeaturedPost: React.FC<{ post: Post }> = ({ post }) => {
             {moment(post.date).format("MMMM Do, YYYY")}
           </span>
           ·
-          <span className="flex items-center ml-2 font-semibold ">
+          <span className="ml-2 font-semibold align-middle has-tooltip">
             {post.views} <EyeIcon className="inline-block w-4 h-4 ml-1" />
-            {/* TODO: add tooltip that says (since 1 year) */}
+            <span className="mt-4 -ml-16 text-xs tooltip w-28">(since 1 year)</span>
           </span>
         </span>
       </a>

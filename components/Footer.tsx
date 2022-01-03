@@ -42,6 +42,7 @@ const Footer: React.FC = () => {
         {Object.entries(navigation).map(([key, value]) => {
           return (
             <nav
+              aria-labelledby="footer-navigation"
               className={clsx("col-span-1", "flex flex-col", "space-y-2")}
               key={key}>
               <p

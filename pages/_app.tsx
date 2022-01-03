@@ -10,7 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>guitton.co</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
+
+        {/* Ref: https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/ */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
       </Head>
 
       {/* Ref: https://github.com/garmeeh/next-seo#add-seo-to-page */}

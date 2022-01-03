@@ -1,17 +1,18 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { allBlogs } from ".contentlayer/data";
-import { Button } from "../../components/Button";
 import type { Blog } from ".contentlayer/types";
 import { GetStaticProps, GetStaticPaths } from "next";
 import BlogLayout from "../../components/BlogLayout";
+
+const componentsUsedInPosts = {}
 
 const PostPage: React.FC<{ post: Blog }> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);
 
   return (
     <BlogLayout post={post}>
-      <Component components={{ Button }} />
+      <Component components={componentsUsedInPosts} />
     </BlogLayout>
   );
 };

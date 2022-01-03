@@ -35,8 +35,9 @@ const navigation = {
 const Footer: React.FC = () => {
   return (
     <footer className={clsx(px, "pt-12")} aria-labelledby="footer-heading">
-      <div className="grid grid-cols-3 gap-10">
-        <div className={clsx("col-span-3", "text-sm text-gray-500")}>
+      <div
+        className={clsx("grid grid-cols-3 gap-8", "border-t border-gray-200")}>
+        <div className={clsx("col-span-3", "text-sm text-gray-500", "pt-8")}>
           Made in 🇩🇪 Berlin with TypeScript, NextJS, TailwindCSS, and Vercel.
         </div>
         {Object.entries(navigation).map(([key, value]) => {

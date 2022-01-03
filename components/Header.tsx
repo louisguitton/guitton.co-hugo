@@ -25,7 +25,12 @@ const Header: React.FC = () => {
               <Link href="/">
                 <a className="flex items-center space-x-2">
                   <ShoppingBagIcon className="w-8 h-8 fill-primary-600" />
-                  <span className="hidden text-xl font-black leading-none text-gray-900 select-none sm:block">
+                  <span
+                    className={clsx(
+                      "hidden sm:block",
+                      "text-xl font-black text-gray-900",
+                      "select-none"
+                    )}>
                     guitton<span className="text-primary-600">.</span>co
                   </span>
                 </a>
@@ -51,7 +56,13 @@ const Header: React.FC = () => {
               </div>
             </div>
             <div className="flex -mr-2 sm:hidden">
-              <Disclosure.Button className="inline-flex justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+              <Disclosure.Button
+                className={clsx(
+                  "inline-flex justify-center p-2",
+                  "text-gray-400 rounded-md",
+                  "hover:text-gray-500 hover:bg-gray-100",
+                  "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+                )}>
                 <span className="sr-only">Open main menu</span>
                 {open ? (
                   <XIcon className="block w-6 h-6" aria-hidden="true" />

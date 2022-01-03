@@ -7,9 +7,9 @@ import Page from "../components/Page";
 const seoConfig = {
   title: "guitton.co - personal website of Louis Guitton, not Louis Vuitton",
   description:
-    "My personal serverless website where I blog and store useful snippets for python software development, machine learning, data engineering, and flow blockchain development.",
+    "I blog about python software development, machine learning, data engineering, and flow blockchain development.",
   baseUrl: "https://guitton.co",
-  image: "/images/louis.jpg",
+  image: "https://guitton.co/images/louis.jpg",
 };
 
 // TODO: fix canonical URL
@@ -53,8 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           },
         }}
         twitter={{
-          handle: "@louis_guitton",
-          site: "",
+          site: "@louis_guitton",
           cardType: "summary_large_image",
         }}
         additionalMetaTags={[

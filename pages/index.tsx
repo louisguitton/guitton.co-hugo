@@ -1,12 +1,12 @@
 // Ref: https://swr.vercel.app/docs/with-nextjs
 import FeaturedPosts from "../components/FeaturedPosts";
 import Hero from "../components/Hero";
-import { FeaturedPosts as FeaturedPostsData, Post } from "../lib/types";
+import { FeaturedPostsData, Post } from "../lib/types";
 import useSWR, { SWRConfig } from "swr";
 import fetcher from "../lib/fetcher";
 import { allBlogs } from ".contentlayer/data";
-import { getGoogleAnalyticsFeaturedPosts } from "./api/ga/featured-posts";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { getGoogleAnalyticsFeaturedPosts } from "../lib/google";
 
 export const getStaticProps: GetStaticProps = async () => {
   const results = await getGoogleAnalyticsFeaturedPosts("365daysAgo");

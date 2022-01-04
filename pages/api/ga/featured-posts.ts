@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { cacheConfig } from "../../../lib/constants";
 import { getGoogleAnalyticsFeaturedPosts } from "../../../lib/google";
 import { FeaturedPostsData } from "../../../lib/types";
 
@@ -16,7 +17,9 @@ export default async function handler(
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=1200, stale-while-revalidate=600"
+    `public, s-maxage=${cacheConfig.backend}, stale-while-revalidate=${
+      cacheConfig.backend * 2
+    }`
   );
 
   return res.status(200).json(result);

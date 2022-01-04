@@ -7,6 +7,7 @@ import fetcher from "../lib/fetcher";
 import { allBlogs } from ".contentlayer/data";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { getGoogleAnalyticsFeaturedPosts } from "../lib/google";
+import { cacheConfig } from "../lib/constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const results = await getGoogleAnalyticsFeaturedPosts("365daysAgo");
@@ -16,13 +17,14 @@ export const getStaticProps: GetStaticProps = async () => {
         "/api/ga/featured-posts?startDate=365daysAgo": results,
       },
     },
+    // revalidate is in seconds, Ref: https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+    revalidate: cacheConfig.backend,
   };
 };
 
 function FeaturedSection() {
   const { data: featuredPosts } = useSWR<FeaturedPostsData>(
-    "/api/ga/featured-posts?startDate=365daysAgo",
-    fetcher
+    "/api/ga/featured-posts?startDate=365daysAgo"
   );
   if (!featuredPosts) {
     return <div>Loading ...</div>;
@@ -78,7 +80,17 @@ function Index({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Hero />
-      <SWRConfig value={{ fallback }}>
+      {/* References:
+        - https://swr.vercel.app/docs/global-configuration
+        - https://swr.vercel.app/docs/options#options
+      */}
+      <SWRConfig
+        value={{
+          fallback,
+          fetcher,
+          // refreshInterval is in ms
+          refreshInterval: cacheConfig.frontend * 1000,
+        }}>
         <FeaturedSection />
       </SWRConfig>
     </>

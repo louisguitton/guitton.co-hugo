@@ -6,4 +6,8 @@ module.exports = withContentlayer()({
   images: {
     domains: ["guitton.co", "cdn.devdojo.com"],
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 });

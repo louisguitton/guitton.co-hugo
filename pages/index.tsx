@@ -5,17 +5,21 @@ import { FeaturedPostsData, Post } from "../lib/types";
 import useSWR, { SWRConfig } from "swr";
 import fetcher from "../lib/fetcher";
 import { allBlogs } from ".contentlayer/data";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { getGoogleAnalyticsFeaturedPosts } from "../lib/google";
 import { cacheConfig } from "../lib/constants";
+import { NextSeo } from "next-seo";
 
 export const getStaticProps: GetStaticProps = async () => {
   const results = await getGoogleAnalyticsFeaturedPosts("365daysAgo");
   return {
     props: {
+      // SWR fallback data
       fallback: {
         "/api/ga/featured-posts?startDate=365daysAgo": results,
       },
+      // For SEO
+      url: new URL("/", process.env.BASE_URL).href,
     },
     // revalidate is in seconds, Ref: https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
     revalidate: cacheConfig.backend,
@@ -76,9 +80,19 @@ function FeaturedSection() {
   return <FeaturedPosts posts={posts.concat(hardcodedPosts)} />;
 }
 
-function Index({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) {
+const Index: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  fallback,
+  url,
+}) => {
   return (
     <>
+      <NextSeo
+        canonical={url}
+        openGraph={{
+          url: url,
+        }}
+      />
+
       <Hero />
       {/* References:
         - https://swr.vercel.app/docs/global-configuration
@@ -95,6 +109,6 @@ function Index({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) {
       </SWRConfig>
     </>
   );
-}
+};
 
 export default Index;

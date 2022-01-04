@@ -74,7 +74,7 @@ const FeaturedPosts: React.FC<{ posts: Post[] }> = ({ posts }) => {
             "px-3 py-2 bg-gray-800",
             "text-sm font-medium text-white uppercase"
           )}>
-          Most Read
+          Most Read Articles
         </h2>
       </div>
       <div className="grid grid-cols-12 gap-1">

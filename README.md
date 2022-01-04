@@ -15,7 +15,6 @@ Next + markdown
 
 ## TODO
 
-- [ ] add jsonschema for SEO
 - [ ] make sure trailing slash are there for SEO
 - [ ] build OK reading experience for the body using either markdown plugins or custom CSS
   - https://github.com/leerob/leerob.io/blob/main/components/Container.tsx#L119-L122

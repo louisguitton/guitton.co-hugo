@@ -1,14 +1,15 @@
-import { NextSeo } from "next-seo";
+import { BreadcrumbJsonLd, NextSeo } from "next-seo";
 import type { GetStaticProps, NextPage } from "next";
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
     // For SEO
+    host: process.env.BASE_URL!,
     url: new URL("/about", process.env.BASE_URL).href,
   },
 });
 
-const AboutPage: NextPage<{ url: string }> = ({ url }) => {
+const AboutPage: NextPage<{ host: string; url: string }> = ({ host, url }) => {
   return (
     <>
       <NextSeo
@@ -25,6 +26,20 @@ const AboutPage: NextPage<{ url: string }> = ({ url }) => {
             username: "louis_guitton",
           },
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "guitton.co",
+            item: host,
+          },
+          {
+            position: 2,
+            name: "about",
+            item: url,
+          },
+        ]}
       />
 
       <div>

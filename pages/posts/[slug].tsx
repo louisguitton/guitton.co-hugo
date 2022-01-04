@@ -4,7 +4,7 @@ import { allBlogs } from ".contentlayer/data";
 import type { Blog } from ".contentlayer/types";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import BlogLayout from "../../components/BlogLayout";
-import { NextSeo } from "next-seo";
+import { BlogJsonLd, BreadcrumbJsonLd, NextSeo } from "next-seo";
 
 const componentsUsedInPosts = {};
 
@@ -22,12 +22,17 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
       // for content
       post,
       // For SEO
+      host: process.env.BASE_URL!,
       url: new URL(`/posts/${post.slug}`, process.env.BASE_URL).href,
     },
   };
 };
 
-const PostPage: NextPage<{ post: Blog; url: string }> = ({ post, url }) => {
+const PostPage: NextPage<{ post: Blog; host: string; url: string }> = ({
+  post,
+  host,
+  url,
+}) => {
   const Component = useMDXComponent(post.body.code);
 
   return (
@@ -58,6 +63,36 @@ const PostPage: NextPage<{ post: Blog; url: string }> = ({ post, url }) => {
             },
           ],
         }}
+      />
+      <BlogJsonLd
+        url={url}
+        title={post.title}
+        images={[post.image]}
+        datePublished={post.date}
+        dateModified={post.lastmod}
+        authorName="Louis Guitton"
+        description={post.summary}
+      />
+      <BreadcrumbJsonLd
+        // TODO: add support to next-seo for multiple breadcrumb trails
+        // currently it overrides with the last one
+        itemListElements={[
+          {
+            position: 1,
+            name: "guitton.co",
+            item: host,
+          },
+          {
+            position: 2,
+            name: "blog",
+            item: new URL(`/posts/`, host).href,
+          },
+          {
+            position: 3,
+            name: post.title,
+            item: url,
+          },
+        ]}
       />
 
       <BlogLayout post={post}>

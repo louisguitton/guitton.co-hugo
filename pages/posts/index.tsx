@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
-import { NextSeo } from "next-seo";
+import { BreadcrumbJsonLd, NextSeo } from "next-seo";
 import type { Blog } from ".contentlayer/types";
 import { allBlogs } from ".contentlayer/data";
 import Link from "next/link";
@@ -8,14 +8,16 @@ export const getStaticProps: GetStaticProps = async () => ({
   props: {
     allBlogs,
     // For SEO
+    host: process.env.BASE_URL!,
     url: new URL("/posts", process.env.BASE_URL).href,
   },
 });
 
-const ListPostsPage: NextPage<{ allBlogs: Blog[]; url: string }> = ({
-  allBlogs,
-  url,
-}) => {
+const ListPostsPage: NextPage<{
+  allBlogs: Blog[];
+  host: string;
+  url: string;
+}> = ({ allBlogs, host, url }) => {
   return (
     <>
       <NextSeo
@@ -26,6 +28,21 @@ const ListPostsPage: NextPage<{ allBlogs: Blog[]; url: string }> = ({
           url: url,
         }}
       />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "guitton.co",
+            item: host,
+          },
+          {
+            position: 2,
+            name: "blog",
+            item: url,
+          },
+        ]}
+      />
+
       <div>
         <h1 className="text-2xl font-bold">Hello blog posts</h1>
         <ul className="pt-12">

@@ -67,7 +67,7 @@ const FeaturedPost: React.FC<{ post: Post }> = ({ post }) => {
 
 const FeaturedPosts: React.FC<{ posts: Post[] }> = ({ posts }) => {
   return (
-    <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28">
+    <section className="relative pt-16 pb-10">
       <div className="flex justify-between w-full pb-5">
         <h2
           className={clsx(

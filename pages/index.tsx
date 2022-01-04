@@ -1,12 +1,25 @@
+// Ref: https://swr.vercel.app/docs/with-nextjs
 import FeaturedPosts from "../components/FeaturedPosts";
 import Hero from "../components/Hero";
 import { FeaturedPosts as FeaturedPostsData, Post } from "../lib/types";
-import useSWR from "swr";
+import useSWR, { SWRConfig } from "swr";
 import fetcher from "../lib/fetcher";
 import { allBlogs } from ".contentlayer/data";
-import type { Blog } from ".contentlayer/types";
+import { getGoogleAnalyticsFeaturedPosts } from "./api/ga/featured-posts";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-function Index() {
+export const getStaticProps: GetStaticProps = async () => {
+  const results = await getGoogleAnalyticsFeaturedPosts("365daysAgo");
+  return {
+    props: {
+      fallback: {
+        "/api/ga/featured-posts?startDate=365daysAgo": results,
+      },
+    },
+  };
+};
+
+function FeaturedSection() {
   const { data: featuredPosts } = useSWR<FeaturedPostsData>(
     "/api/ga/featured-posts?startDate=365daysAgo",
     fetcher
@@ -58,11 +71,16 @@ function Index() {
       views: 7,
     },
   ];
+  return <FeaturedPosts posts={posts.concat(hardcodedPosts)} />;
+}
 
+function Index({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Hero />
-      <FeaturedPosts posts={posts.concat(hardcodedPosts)} />
+      <SWRConfig value={{ fallback }}>
+        <FeaturedSection />
+      </SWRConfig>
     </>
   );
 }

@@ -20,11 +20,10 @@ Next + markdown
 - [ ] generate rss.xml https://github.com/leerob/leerob.io/blob/main/scripts/generate-rss.mjs
   - [ ] compare with https://guitton.co/index.xml
 - [ ] build OK reading experience for the body using either markdown plugins or custom CSS
-  - https://github.com/leerob/leerob.io/blob/main/components/Container.tsx#L119-L122
-  - https://github.com/leerob/leerob.io/blob/main/layouts/blog.tsx#L53
   - https://github.com/leerob/leerob.io/blob/main/styles/global.css#L66-L115
   - https://github.com/leerob/leerob.io/blob/main/contentlayer.config.ts#L87-L102
 - [ ] add Google Analytics
+- [ ] add breadcrumbs https://tailwindui.com/components/application-ui/navigation/breadcrumbs
 
 - [ ] setup about and other pages to use contentlayer OtherPage model
 - [ ] add SSG support for tweets
